@@ -1,40 +1,42 @@
-# libirsample示例程序结构以及使用流程介绍
+# libirsample program structure and user's manual
 
 
 
-## 一、程序结构
+## 1. Program structure
 
 ![](./irsample_structure.png)
 
-如图，sample分为了sample、camera、display、temperature、cmd等模块，每个模块作用如下：
+As shown, the sample includes these modules: sample, camera, display, temperature, cmd. The function of each module as follows:
 
-**sample模块**：在sample.cpp中配置好了相关参数之后，调用camera模块，与红外机芯建立连接，并控制出图。之后sample会创建stream、display、temperature、cmd这四个线程用于对应信息的处理。
+**sample module**: After configuring the relevant parameters in sample.cpp, call the camera module to establish a connection with the infrared camera, and stream the image. Later sample module will create 4 threads: stream, display,  temperature, and cmd, to process the corresponding information.
 
-**camera模块**：用于获取机芯信息，当stream线程获取到原始红外帧信息的时候，会将红外帧信息raw frame切分为图像信息image frame和温度信息temp frame，并发送信号，传递给对应的模块做相应的处理，当image frame和temp frame处理完成后发送信号给camera线程，camera线程继续下一次循环。
+**camera module**: Used to obtain the information of infrared cameras. When stream thread obtains the original infrared frames, the raw frames will be divided into the image information(image frame) and temperature information(temp frame).At the same time, the signals will be transmitted to the corresponding modules. When image frame and temp frame's processing is compete, the signals will be transmitted back to camera thread, to continue the next loop.
 
-**display模块**：获取图像帧信息之后，根据之前frame_info里参数的设定，做图像数据格式转换、翻转/镜像、旋转等处理，最后调用opencv显示出来图像。
+**display module**: After obtaining the image frame information, according to the configuration of the parameters in frame_info, the image will be processed by data format conversion, flipping, mirroring, rotation and so on. In the end, it calls opencv to display the processed image.
 
-**temperature模块**：获取温度帧信息之后，根据之前frame_info里参数的设定，做图像数据格式转换、翻转/镜像、旋转等处理。
+**temperature module**: After obtaining the temperature frame information, according to the configuration of the parameters in frame_info, the image will be processed by data format conversion, flipping, mirroring, rotation and so on.
 
-**cmd模块**：控制发送对应的命令给红外机芯。
-
-
-
-## 二、程序编译方式
-
-在windows平台，libir_sample文件夹下已经提供了一个完整的VS2019工程，运行示例需要opencv库和pthreadVC2.dll（已经放入）。
-
-在linux平台，libir_sample文件夹下提供了 `Makefile` 和`CMakeLists.txt`文件，在编译时需要删除opencv2文件夹（Linux需要另行安装）。如果不需要opencv，可以在display.h文件中，注释掉`#define OPENCV_ENABLE`，并在 `Makefile` 或`CMakeLists.txt`中注释掉opencv相关内容，然后再编译。
+**cmd module**: Sending the corresponding command to the infrared camera.
 
 
 
-## 三、程序使用流程
+## 2. Program compilation method
 
-### 1.连接机芯
+On windows, a complete VS2019 project is provided in the libir_sample folder, the opencv library and pthreadVC2.dll are required to run the example (already placed).
 
-在sample.cpp的main函数中，通过调用ir_camera_open来选择对应的机芯，并从机芯获取相关的参数信息stream_frame_info。
+On linux, there are `Makefile` and `CMakeLists.txt` files in libir_sample, you need to remove the opencv2 folder at compile time (Linux needs to install it separately). If you don't need opencv, you can comment `#define OPENCV_ENABLE` in the display.h file, and comment opencv related content in the `Makefile` or `CMakeLists.txt` before compiling.
 
-在获取到参数信息之后，还需要调用load_stream_frame_info函数来补充对display和temperature两个模块的设置，比如宽高信息，旋转/镜像/翻转设置，是否需要调用库中自带的伪彩映射表，输入格式和输出格式，申请buffer空间等。
+
+
+
+
+## 3. User's manual
+
+### 3.1 Camera connection
+
+In the main function of sample.cpp, the corresponding camera is selected by calling ir_camera_oepn, and get the relevant parameters information(stream_frame_info) from the camera.
+
+After obtaining the parameter information, it is required to call load_stream_frame_info function to supplement  the settings for display and temperature modules, such as: width and height information, rotation/mirror/flip settings, pseudo color included in the library enable switch, input and output frame format, apply for buffer space, and so on.
 
 ```c
         stream_frame_info->image_info.width = stream_frame_info->camera_param.width;
@@ -54,23 +56,21 @@
         stream_frame_info->temp_byte_size = stream_frame_info->temp_info.width * stream_frame_info->temp_info.height * 2;
 ```
 
+The following is the definition of the StreamFrameInfo_t structure. Note these parameters:
 
+FrameInfo_t-width/height: width and height parameters, need to be filled in.
 
-如下是StreamFrameInfo_t结构体的定义，注意这几项参数：
+FrameInfo_t-byte_size: byte size of current frame_info, the display_image_process function in display.cpp will be filled in automatic according to the data format while streaming. 
 
-FrameInfo_t-width/height:宽高参数，需要填写
+FrameInfo_t-rotate_side/mirror_flip_status: flip/mirror/rotate and so on status, need to be filled in.
 
-FrameInfo_t-byte_size:frame_info当前的字节大小，在出图显示的时候，display.cpp的display_image_process函数里会根据数据格式来计算填写
+FrameInfo_t-input_format/output_format: the data format of input and output frame, such as Y14 data input, RGB888 output, and so on, need to be filled in.
 
-FrameInfo_t-rotate_side/mirror_flip_status:翻转/镜像、旋转等状态，需要填写
+FrameInfo_t-pseudo_color_status: the switch of pseudo color. The pseudo color mapping table in the libirprocess library will be called, if the switch is turned on. Need to be filled in.
 
-FrameInfo_t-input_format/output_format:输入和输出的数据格式，比如Y14数据输入，RGB888输出，需要填写
+FrameInfot-imgenhance_status:If the switch of image stretch. The image stretching algorithm in libirprocess library will be called to stretch Y14 / Y16 data, Need to be filled in.
 
-FrameInfo_t-pseudo_color_status:伪彩色开关，如果打开会调用libirprocess库内的伪彩映射表，需要填写
-
-FrameInfo_t-img_enhance_status:图像拉伸开关，如果打开会调用libirprocess库内的图像拉伸算法，将Y14/Y16数据拉伸，需要填写
-
-StreamFrameInfo_t-image_byte_size/temp_byte_size:输入帧数据的字节大小，填0即收不到数据，根据需要切分的数据大小来填写
+StreamFrameInfo_t-image_byte_size/temp_byte_size: the byte size of the input frame. If it is filled in 0, then no data can be received. Fill it in according to the size of the data that needs to be split.
 
 ```c
 typedef struct {
@@ -99,9 +99,9 @@ typedef struct {
 
 
 
-### 2.控制出图
+### 3.2 Streaming control
 
-在打开设备，获取到相关的参数信息，并补充完对display和temperature两个模块的参数设置之后，就可以调用ir_camera_stream_on或ir_camera_stream_on_with_callback（打开宏USER_FUNCTION_CALLBACK，就可以调用自定义回调函数）来出图了。display.cpp的display_function中，在等待到一帧的信号之后调用display_one_frame。
+After opening the device and getting the relevant parameter information, and filling in the configuration of display and temperature modules, you can call ir_camera_stream_on or ir_camera_stream_on_with_callback(open the macro USER_FUNCTION_CALLBACK to call the custom callback function)  function to stream.In the display_function of display.cpp, display_one_frame will be called after waiting for the signal of one frame to arrive.
 
 ```c
 	while (is_streaming)
@@ -123,7 +123,7 @@ typedef struct {
 
 
 
-在display_one_frame函数中，会调用display_image_process来处理图像数据格式，根据stream_frame_info->image_info的输入输出的数据格式input_format、output_format，以及伪彩设置pseudo_color_status，来调用libirparse库做对应的转换。然后再根据stream_frame_info->image_info的mirror_flip_status和rotate_side等状态，做对应的旋转、镜像、翻转操作。最后用opencv的imshow函数显示出来。
+In the display_one_frame fucntion, display_image_process will be called to process the image data format. According to the input and output data formats (input_format, output_format) and pseudo-color settings (pseudo_color_status ) of stream_frame_info->image_info, the libirparse will be called to do corresponding conversion. And do flip, mirror, rotation operations according to the mirror_flip_status and rotate_side of stream_frame_info->image_info. Finally, it is displayed by the imshow function of opencv.
 
 ```c
 	display_image_process(stream_frame_info->image_frame, pix_num, &stream_frame_info->image_info);
@@ -148,7 +148,7 @@ typedef struct {
 
 
 
-在stream_function函数中，可以通过设置stream_time的数值来控制出图的时长，这边是循环出图100*fps帧，在没有丢帧、超时的时候，一般出图时长就是100秒。
+In the stream_function function, you can control the duration of the graph by setting the value of stream_time. The sample is set to 100*fps display time. Without frame loss or timeout, the expected time of display  is 100 seconds.
 
         int stream_time = 100;  //unit:s
         while (is_streaming && (i <= stream_time * fps))//display stream_time seconds
@@ -163,9 +163,9 @@ typedef struct {
             r = uvc_frame_get(stream_frame_info->raw_frame);
 
 
-### 3.发送命令
+### 3.3 Command send
 
-在cmd.cpp的command_sel函数中，在输入不同数字后，触发对应的命令。
+In the command_sel function of cmd.cpp, the corresponding commands are triggered by input different numbers.
 
 ```c
 //command thread function
@@ -185,13 +185,11 @@ void* cmd_function(void* threadarg)
 }
 ```
 
-需要注意的是，如果多线程发送命令，则需要加入互斥锁，否则命令会互相串扰。
 
 
+### 3.4 Temperature measurement
 
-### 4.测温功能
-
-在temperature.cpp的temperature_function函数中，在等待到一帧信号之后，计数器累加，每积累25帧调用一次测温，支持点、线、框三种测温方式。
+In the temperature_function function of temperature.cpp, when got one frame signal arrived, the counter add 1. Every 25 frames call the temperature measurement once, which supports 3 measurement modes: point, line and area.
 
 ```c
 	while (is_streaming)
@@ -218,19 +216,21 @@ void* cmd_function(void* threadarg)
 	}
 ```
 
-
-
-### 5.结束程序
-
-在sample的main函数里，调用`destroy_pthread_sem`以关闭信号，调用`uvc_camera_close`来关闭设备连接。
+It should be noted that if commands are sent in multi-thread, you may need to add the mutex lock, otherwise the commands will crosstalk each other.
 
 
 
-### 6.更新固件
+### 3.5 End program
 
-在cmd.cpp的`update_fw_cmd`函数中，在传入更新固件的文件路径之后，这个函数可以通过控制命令来更新固件信息。
+In the main function of the sample, call `destroy_pthread_sem`to turn off the signal, and call `uvc_camera_close` to disconnect the device connection.
 
-第一步，检查设备当前状态，是rom模式（能保持烧录功能的最小模式）还是cache模式（正常模式），切换到rom模式后检查确认。
+
+
+### 3.6 Update firmware
+
+In the cmd.cpp of the sample, call `update_fw_cmd` function to update the firmware. After passing the file path, the function can update the new firmware  through control command.
+
+Step1: Check the current state of the device, whether it is in rom mode(the smallest mode that can keep the burning function) or cache mode(normal mode), switch to rom mode and check  to confirm.
 
 ```c
 //1)check current device status is rom mode or cache mode
@@ -262,7 +262,7 @@ void* cmd_function(void* threadarg)
 
 
 
-第二步，配置flash寄存器状态
+Step 2: Configure the flash register state.
 
 ```c
 //2) reset spi status before spi access
@@ -276,7 +276,7 @@ void* cmd_function(void* threadarg)
 
 
 
-第三步，擦除需要烧录的flash区域，固件flash起始地址为0，长度为256k（64个扇区，每个扇区大小为4k）。
+Step 3: Erase the flash area to be burned, with a firmware flash starting address of 0 and a length of 256k (64 sectors, each 4k in size).
 
 ```c
 	//3)erase and check erase area
@@ -326,7 +326,7 @@ void* cmd_function(void* threadarg)
 
 
 
-第四步，写入并校对新固件。
+Step 4: Write and proofread the new firmware.
 
 ```c
 //4) write fw, read and compare
@@ -366,7 +366,7 @@ void* cmd_function(void* threadarg)
 
 
 
-第五步，写入cache的tag，代表校验正确，可以切换到cache模式。
+Step 5: Write the cache tag, which means the check result is correct and the camera chip can switch to cache mode.
 
 ```c
 	//5)write cache tag
@@ -375,7 +375,7 @@ void* cmd_function(void* threadarg)
 
 
 
-第六步，重启rom模式，若第五步tag正确，此时就会自动切换到cache模式，更新完毕。
+Step 6: Restart the rom mode, if Step 5 's tag is correct, it will automatically switch to cache mode, and the update is finished.
 
 ```c
 //6)reboot rom
@@ -385,9 +385,10 @@ void* cmd_function(void* threadarg)
 ```
 
 
-### 7.测温二次修正
 
-见cmp.cpp中的case16中通过read_nuc_parameter()函数读取了相关的nuc参数并且函数calculate_org_env_cali_parameter()计算出机芯中的测温修正系数。
+### 3.7 Secondary correction of temperature measurement
+
+see cmp.cpp In case16 function read_nuc_parameter() reads the relevant NUC parameter and   function calculate_org_env_cali_parameter() calculates the temperature measurement correction coefficient in the device.
 ```c
     case 16:
 		read_nuc_parameter();
@@ -403,7 +404,7 @@ void* cmd_function(void* threadarg)
 		printf("Tu=%d\n", org_env_param.Tu);
 		break;
 ```
-case 17中通过读取tau.bin并设定新的目标发射率，大气温度，反射温度，距离，湿度进行新的测温修正系数计算，通过tpd_get_point_temp_info读取机芯内某一点的原始温度，并换算成开尔文温度，调用temp_calc_with_new_env_calibration函数进行测温修正，输出修正后的温度。
+In case 17, by reading tau.bin and new target emissivity, atmospheric temperature, reflection temperature, distance and humidity are set to calculate the new temperature measurement correction coefficient,and tpd_get_point_temp_info function reads the original temperature of a point in the device, converts it into Kelvin temperature, and temp_calc_with_new_env_calibration function is used to correct the temperature and output the corrected temperature.
 ```c
 	case 17:
 		calculate_new_env_cali_parameter("tau.bin", 1, 40, 40, 2, 0.8);
@@ -415,9 +416,9 @@ case 17中通过读取tau.bin并设定新的目标发射率，大气温度，反
 		break;
 ```
 
-### 8.防灼伤保护和自动增益切换功能
+### 3.7 Overexposure and auto gain switch function
 
-见camera.cpp中的stream_function函数，两个功能是独立的，都基于温度数据`stream_frame_info->temp_frame`进行判断。
+See stream_function in camera.cpp. The overexposure and auto gain switch functions are two independent functions, which are based on the temperature data `stream_frame_info->temp_frame`.
 
 ```c
         if (stream_frame_info->raw_frame != NULL)
