@@ -1,0 +1,187 @@
+\hypertarget{libirprocess_8h_source}{}\doxysection{libirprocess.\+h}
+\mbox{\hyperlink{libirprocess_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_LIBIRPROCESS\_H\_}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_LIBIRPROCESS\_H\_}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{5 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <stdarg.h>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 }
+\DoxyCodeLine{19 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{20     uint16\_t \mbox{\hyperlink{struct_image_res__t_ae4045f03203cc25aa841628b0d3d7778}{width}};    }
+\DoxyCodeLine{21     uint16\_t \mbox{\hyperlink{struct_image_res__t_a442a77a57b9b3e651db2a69d06d5d42d}{height}};   }
+\DoxyCodeLine{22 \}\mbox{\hyperlink{struct_image_res__t}{ImageRes\_t}};}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 }
+\DoxyCodeLine{28 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{29     uint8\_t \mbox{\hyperlink{struct_agc_stretch_param__t_a859736ae4ba8634d7c113ca2e2e90601}{enable}};}
+\DoxyCodeLine{30     uint16\_t \mbox{\hyperlink{struct_agc_stretch_param__t_a39ce6baaa008cc28515db6e7b8ffb526}{lower\_limit}};   }
+\DoxyCodeLine{31     uint16\_t \mbox{\hyperlink{struct_agc_stretch_param__t_a96193455fc7182cf66ac608f95924ea1}{upper\_limit}};   }
+\DoxyCodeLine{32 \}\mbox{\hyperlink{struct_agc_stretch_param__t}{AgcStretchParam\_t}};}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 }
+\DoxyCodeLine{38 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{39     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_agc_param__t_a6c9bdd9755c949887823818eea17b41e}{highDiscardRatio}};     }
+\DoxyCodeLine{40     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_agc_param__t_a606622c139ae2c7b0e13ae3b82ab0c12}{lowDiscardRatio}};      }
+\DoxyCodeLine{41     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_agc_param__t_afe464375b9cb92a2415bbcc19d27c3c8}{maxStepThdRatio}};      }
+\DoxyCodeLine{42     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_agc_param__t_a38faad4bb62c67bbdebc2dd251dc48c3}{minStepThdRatio}};      }
+\DoxyCodeLine{43     uint32\_t \mbox{\hyperlink{struct_agc_param__t_ad8821295178e20ee02f53a8d767abf36}{rangeGain}};         }
+\DoxyCodeLine{44     \textcolor{keywordtype}{float}  \mbox{\hyperlink{struct_agc_param__t_ad82944c98f79ef38ce6852282fd89952}{alphaRatio}};          }
+\DoxyCodeLine{45     \textcolor{keywordtype}{float}  \mbox{\hyperlink{struct_agc_param__t_a2180a7a199542fbe3b354da0753fb5af}{offsetRatio}};         }
+\DoxyCodeLine{46     \mbox{\hyperlink{struct_agc_stretch_param__t}{AgcStretchParam\_t}} \mbox{\hyperlink{struct_agc_param__t_ae46b641614426940c18b612630d0469b}{stretch\_param}};}
+\DoxyCodeLine{47 \}\mbox{\hyperlink{struct_agc_param__t}{AgcParam\_t}};}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 }
+\DoxyCodeLine{53 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{54     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_dde_param__t_a380097d00f01eecc0c56d5b8e4d5d2b5}{startCoef}};        }
+\DoxyCodeLine{55     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_dde_param__t_a0c12ae215a0daed021d97dc970d8455f}{maxCoef}};        }
+\DoxyCodeLine{56     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_dde_param__t_a4a5616553ab16a98be2361a590afeafc}{endCoef}};      }
+\DoxyCodeLine{57     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_dde_param__t_a5e89f465bb655c79ee792795111fe4e0}{startMinThd}};    }
+\DoxyCodeLine{58     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_dde_param__t_ae4011becba3dd0bfd2ee5b1d22274ed7}{startMaxThd}};    }
+\DoxyCodeLine{59     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_dde_param__t_a5a141a79d19322837103c07f08f8e566}{endMaxThd}};      }
+\DoxyCodeLine{60     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_dde_param__t_af8453a9ebd34ecbb165d4288d0264660}{endMinThd}};      }
+\DoxyCodeLine{61 \}\mbox{\hyperlink{struct_dde_param__t}{DdeParam\_t}};}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 }
+\DoxyCodeLine{67 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{68     \mbox{\hyperlink{struct_agc_param__t}{AgcParam\_t}} \mbox{\hyperlink{struct_img_enhance_param__t_a8cad3281730f13f4100660282a280ce0}{agc\_param}};    }
+\DoxyCodeLine{69     \mbox{\hyperlink{struct_dde_param__t}{DdeParam\_t}} \mbox{\hyperlink{struct_img_enhance_param__t_ac7d52c8044f69bf49e5fd86a5d5642f8}{dde\_param}};    }
+\DoxyCodeLine{70 \}\mbox{\hyperlink{struct_img_enhance_param__t}{ImgEnhanceParam\_t}};}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 }
+\DoxyCodeLine{76 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{77     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_gain_switch_param__t_adf83fbd4dc5a4f1e826e07bed31d1d34}{above\_pixel\_prop}};     }
+\DoxyCodeLine{78     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_gain_switch_param__t_aa6294add4ac26ffad78b7d1de2f87b45}{above\_temp\_data}};           }
+\DoxyCodeLine{79     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_gain_switch_param__t_a036a71f19fc6311b5832f25cc13f1182}{below\_pixel\_prop}};     }
+\DoxyCodeLine{80     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_gain_switch_param__t_aa385e75f9052e78681a78cfc6f50edf0}{below\_temp\_data}};           }
+\DoxyCodeLine{81 \}\mbox{\hyperlink{struct_gain_switch_param__t}{GainSwitchParam\_t}};}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 }
+\DoxyCodeLine{87 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{88     \mbox{\hyperlink{libirprocess_8h_a1d05cad2eddf6f18ef1ca3683c6f3c92a4d64afd742a5752421a89c92ac7ead7f}{IRPROC\_LOG\_DEBUG}}            = 0,    }
+\DoxyCodeLine{89     \mbox{\hyperlink{libirprocess_8h_a1d05cad2eddf6f18ef1ca3683c6f3c92a60d43736c5ed955ef15cd25c419a69db}{IRPROC\_LOG\_ERROR}}            = 1,    }
+\DoxyCodeLine{90     \mbox{\hyperlink{libirprocess_8h_a1d05cad2eddf6f18ef1ca3683c6f3c92a9b60606387bbbc2d260c83f4656a9103}{IRPROC\_LOG\_NO\_PRINT}}         = 2     }
+\DoxyCodeLine{91 \}\mbox{\hyperlink{libirprocess_8h_a1d05cad2eddf6f18ef1ca3683c6f3c92}{irproc\_log\_level\_t}};}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 }
+\DoxyCodeLine{97 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{98     \mbox{\hyperlink{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57aa04259c1240d2bb2e37b43471925875ee}{IRPROC\_SUCCESS}}              = 0,    }
+\DoxyCodeLine{99     \mbox{\hyperlink{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57aa05bbc320655f2deb7a01ea9c01b684b9}{IRPROC\_ERROR\_PARAM}}          = -\/1,   }
+\DoxyCodeLine{100     \mbox{\hyperlink{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57aadd3befe7d09aff06cdc64ebf703c468d}{IRPROC\_FMT\_NOT\_SUPPORTED}}    = -\/2,    }
+\DoxyCodeLine{101     \mbox{\hyperlink{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57aa878231398b64fa3b1fdd4cc037e3125d}{IRPROC\_MALLOC\_FAILED}}        = -\/3,     }
+\DoxyCodeLine{102     \mbox{\hyperlink{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57aacad5d42f3a8e3661dc6fed65c8598b83}{IRPROC\_ERROR\_SOURCE}}         = -\/4,     }
+\DoxyCodeLine{103 \}\mbox{\hyperlink{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57a}{irproc\_error\_t}};}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 }
+\DoxyCodeLine{109 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{110     \mbox{\hyperlink{libirprocess_8h_a52fd30261619bc0807381861b64c1244ab0ee89c5645ad12e535857b04886e458}{IRPROC\_SRC\_FMT\_Y14}} = 0,     }
+\DoxyCodeLine{111     \mbox{\hyperlink{libirprocess_8h_a52fd30261619bc0807381861b64c1244af5d8dfa7564abf12bfdb919b8f3bfe69}{IRPROC\_SRC\_FMT\_YUV422}},      }
+\DoxyCodeLine{112     \mbox{\hyperlink{libirprocess_8h_a52fd30261619bc0807381861b64c1244a250ee291a5209aef24b11649b51cc561}{IRPROC\_SRC\_FMT\_YUV444}},      }
+\DoxyCodeLine{113     \mbox{\hyperlink{libirprocess_8h_a52fd30261619bc0807381861b64c1244a598410a2bb3da05c3a9b57df55db8334}{IRPROC\_SRC\_FMT\_RGB888}},      }
+\DoxyCodeLine{114     \mbox{\hyperlink{libirprocess_8h_a52fd30261619bc0807381861b64c1244a897e98da349df54d2333205057deb6f0}{IRPROC\_SRC\_FMT\_BGR888}}       }
+\DoxyCodeLine{115 \}\mbox{\hyperlink{libirprocess_8h_a52fd30261619bc0807381861b64c1244}{irproc\_src\_fmt\_t}};}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117 }
+\DoxyCodeLine{121 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{122     \mbox{\hyperlink{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a1b975894125f44091b6f4da70ee618ab}{IRPROC\_COLOR\_MODE\_1}} = 1,    }
+\DoxyCodeLine{123     \mbox{\hyperlink{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a40228404e45cb23cc4608f87509b2916}{IRPROC\_COLOR\_MODE\_2}},        }
+\DoxyCodeLine{124     \mbox{\hyperlink{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a6ca07c46d1acd2a805532579fc24e069}{IRPROC\_COLOR\_MODE\_3}},        }
+\DoxyCodeLine{125     \mbox{\hyperlink{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a48cf07ee05168e8d1826175e67e3106b}{IRPROC\_COLOR\_MODE\_4}},        }
+\DoxyCodeLine{126     \mbox{\hyperlink{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7ae17b3ee0ae0a0dea4b73927b3b10d74d}{IRPROC\_COLOR\_MODE\_5}},        }
+\DoxyCodeLine{127     \mbox{\hyperlink{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a0e84eb799bea47fae136b7a3e24117b8}{IRPROC\_COLOR\_MODE\_6}},        }
+\DoxyCodeLine{128     \mbox{\hyperlink{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a245c4e212e28a8337116b241c74b288c}{IRPROC\_COLOR\_MODE\_7}},        }
+\DoxyCodeLine{129     \mbox{\hyperlink{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7ade63712946cdcb2b23d41f6d619bca33}{IRPROC\_COLOR\_MODE\_8}},        }
+\DoxyCodeLine{130     \mbox{\hyperlink{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a9bddb6647c1a5fc857edeca64e307de1}{IRPROC\_COLOR\_MODE\_9}},        }
+\DoxyCodeLine{131     \mbox{\hyperlink{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a764e3ec8b7feaa7a77efdc3c42eed4dc}{IRPROC\_COLOR\_MODE\_10}},       }
+\DoxyCodeLine{132     \mbox{\hyperlink{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a227f5c90993312dc51625f166b8ed9fe}{IRPROC\_COLOR\_MODE\_11}},       }
+\DoxyCodeLine{133     \mbox{\hyperlink{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7afc37e6dd5558a4ccf88591975cb07359}{IRPROC\_COLOR\_MODE\_12}},       }
+\DoxyCodeLine{134     \mbox{\hyperlink{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7ad78fb542f9094edede4fa580c7ee1266}{IRPROC\_COLOR\_MODE\_13}},       }
+\DoxyCodeLine{135     \mbox{\hyperlink{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a81b07cbdd4ffda980e58e231b86356f5}{IRPROC\_COLOR\_MODE\_14}},       }
+\DoxyCodeLine{136     \mbox{\hyperlink{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7ae12e5b7a810365a6e96f79fd9957f58e}{IRPROC\_COLOR\_MODE\_15}},       }
+\DoxyCodeLine{137     \mbox{\hyperlink{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a7843c629d3f2e463a3f7c892d259db8d}{IRPROC\_COLOR\_MODE\_16}},       }
+\DoxyCodeLine{138     \mbox{\hyperlink{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a50161f09d50c7826bd2872bbda81a158}{IRPROC\_COLOR\_MODE\_17}},       }
+\DoxyCodeLine{139     \mbox{\hyperlink{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a1eb068fcdd14ad2cd99351754c174558}{IRPROC\_COLOR\_MODE\_18}},       }
+\DoxyCodeLine{140     \mbox{\hyperlink{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a91444df5343ae54ad23924c5c1133773}{IRPROC\_COLOR\_MODE\_19}},       }
+\DoxyCodeLine{141     \mbox{\hyperlink{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a961abbeb1251654677d1bcd4e4d08b58}{IRPROC\_COLOR\_MODE\_20}},       }
+\DoxyCodeLine{142 \}\mbox{\hyperlink{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7}{irproc\_color\_mode\_t}};}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#if defined(\_WIN32)}}
+\DoxyCodeLine{146 \textcolor{preprocessor}{\#define DLLEXPORT \_\_declspec(dllexport)}}
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#elif defined(linux) || defined(unix)}}
+\DoxyCodeLine{148 \textcolor{preprocessor}{\#define DLLEXPORT}}
+\DoxyCodeLine{149 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152 \textcolor{preprocessor}{\#if defined(\_WIN32)}}
+\DoxyCodeLine{153 \textcolor{preprocessor}{    \#define IRPROC\_DEBUG(format, ...) irproc\_debug\_print("{}libirprocess debug [\%s:\%d/\%s] "{}} format "{}\(\backslash\)n"{}, \(\backslash\)}
+\DoxyCodeLine{154                                                         \_\_FILE\_\_,\_\_LINE\_\_, \_\_FUNCTION\_\_, \_\_VA\_ARGS\_\_)}
+\DoxyCodeLine{155 \textcolor{preprocessor}{    \#define IRPROC\_ERROR(format, ...) irproc\_error\_print("{}libirprocess error [\%s:\%d/\%s] "{}} format "{}\(\backslash\)n"{}, \(\backslash\)}
+\DoxyCodeLine{156                                                         \_\_FILE\_\_,\_\_LINE\_\_, \_\_FUNCTION\_\_, \_\_VA\_ARGS\_\_)}
+\DoxyCodeLine{157 \textcolor{preprocessor}{\#elif defined(linux) || defined(unix)}}
+\DoxyCodeLine{158 \textcolor{preprocessor}{    \#include <libgen.h>}}
+\DoxyCodeLine{159 \textcolor{preprocessor}{    \#define IRPROC\_DEBUG(format, ...) irproc\_debug\_print("{}libirprocess debug [\%s:\%d/\%s] "{}} format "{}\(\backslash\)n"{}, \(\backslash\)}
+\DoxyCodeLine{160                                                         basename(\_\_FILE\_\_), \_\_LINE\_\_, \_\_FUNCTION\_\_, \#\#\_\_VA\_ARGS\_\_)}
+\DoxyCodeLine{161 \textcolor{preprocessor}{    \#define IRPROC\_ERROR(format, ...) irproc\_error\_print("{}libirprocess error [\%s:\%d/\%s] "{}} format "{}\(\backslash\)n"{}, \(\backslash\)}
+\DoxyCodeLine{162                                                         basename(\_\_FILE\_\_), \_\_LINE\_\_, \_\_FUNCTION\_\_, \#\#\_\_VA\_ARGS\_\_)}
+\DoxyCodeLine{163 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165 \textcolor{keyword}{extern} void (*\mbox{\hyperlink{libirprocess_8h_a53a7e081cc78b32d0b902b869282ff35}{irproc\_debug\_print}})(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* fmt, ...);}
+\DoxyCodeLine{166 \textcolor{keyword}{extern} void (*\mbox{\hyperlink{libirprocess_8h_a3337e097efe333d3e3bc6db0acd5301e}{irproc\_error\_print}})(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* fmt, ...);}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{175 DLLEXPORT \textcolor{keywordtype}{char}* \mbox{\hyperlink{libirprocess_8h_a03f1e005ab8c5fe7ab197a0153f1d5ec}{irproc\_version}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177 }
+\DoxyCodeLine{184 DLLEXPORT \textcolor{keywordtype}{void} \mbox{\hyperlink{libirprocess_8h_acef2c9f27d4ee7d2910c01ad83e4ff30}{irproc\_log\_register}}(\mbox{\hyperlink{libirprocess_8h_a1d05cad2eddf6f18ef1ca3683c6f3c92}{irproc\_log\_level\_t}} log\_level);}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{186 }
+\DoxyCodeLine{197 DLLEXPORT \mbox{\hyperlink{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57a}{irproc\_error\_t}} \mbox{\hyperlink{libirprocess_8h_adc9645420303ab3c3df8f180d57249e4}{rotate\_left\_90}}(uint8\_t* src, \mbox{\hyperlink{struct_image_res__t}{ImageRes\_t}} image\_res, \mbox{\hyperlink{libirprocess_8h_a52fd30261619bc0807381861b64c1244}{irproc\_src\_fmt\_t}} input\_fmt, uint8\_t* dst);}
+\DoxyCodeLine{198 }
+\DoxyCodeLine{199 }
+\DoxyCodeLine{210 DLLEXPORT \mbox{\hyperlink{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57a}{irproc\_error\_t}} \mbox{\hyperlink{libirprocess_8h_ad0468d58b1305489cfc91e10cc7078a5}{rotate\_right\_90}}(uint8\_t* src, \mbox{\hyperlink{struct_image_res__t}{ImageRes\_t}} image\_res, \mbox{\hyperlink{libirprocess_8h_a52fd30261619bc0807381861b64c1244}{irproc\_src\_fmt\_t}} input\_fmt, uint8\_t* dst);}
+\DoxyCodeLine{211 }
+\DoxyCodeLine{212 }
+\DoxyCodeLine{223 DLLEXPORT \mbox{\hyperlink{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57a}{irproc\_error\_t}} \mbox{\hyperlink{libirprocess_8h_a382e703887e28fc5261bb7d82bd3fe1c}{rotate\_180}}(uint8\_t* src, \mbox{\hyperlink{struct_image_res__t}{ImageRes\_t}} image\_res, \mbox{\hyperlink{libirprocess_8h_a52fd30261619bc0807381861b64c1244}{irproc\_src\_fmt\_t}} input\_fmt, uint8\_t* dst);}
+\DoxyCodeLine{224 }
+\DoxyCodeLine{225 }
+\DoxyCodeLine{236 DLLEXPORT \mbox{\hyperlink{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57a}{irproc\_error\_t}} \mbox{\hyperlink{libirprocess_8h_ae8c5c1c16b575a6e3b153e501de2d962}{mirror}}(uint8\_t* src, \mbox{\hyperlink{struct_image_res__t}{ImageRes\_t}} image\_res, \mbox{\hyperlink{libirprocess_8h_a52fd30261619bc0807381861b64c1244}{irproc\_src\_fmt\_t}} input\_fmt, uint8\_t* dst);}
+\DoxyCodeLine{237 }
+\DoxyCodeLine{238 }
+\DoxyCodeLine{249 DLLEXPORT \mbox{\hyperlink{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57a}{irproc\_error\_t}} \mbox{\hyperlink{libirprocess_8h_a501cbd2ad09a2ecc6536f487a2b093a2}{flip}}(uint8\_t* src, \mbox{\hyperlink{struct_image_res__t}{ImageRes\_t}} image\_res, \mbox{\hyperlink{libirprocess_8h_a52fd30261619bc0807381861b64c1244}{irproc\_src\_fmt\_t}} input\_fmt, uint8\_t* dst);}
+\DoxyCodeLine{250 }
+\DoxyCodeLine{251 }
+\DoxyCodeLine{262 DLLEXPORT \mbox{\hyperlink{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57a}{irproc\_error\_t}} \mbox{\hyperlink{libirprocess_8h_a8bfd96567998614046efde475e974d82}{y14\_map\_to\_yuyv\_pseudocolor}}(uint16\_t* image\_y14, uint32\_t pix\_num, \(\backslash\)}
+\DoxyCodeLine{263                                                      \mbox{\hyperlink{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7}{irproc\_color\_mode\_t}} color\_mode, uint8\_t* out\_yuv);}
+\DoxyCodeLine{264 }
+\DoxyCodeLine{265 }
+\DoxyCodeLine{275 DLLEXPORT \mbox{\hyperlink{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57a}{irproc\_error\_t}} \mbox{\hyperlink{libirprocess_8h_aeab0b9765be1abdaeb907eba11728b61}{y14\_image\_spatial\_noise\_reduction}}(uint16\_t* src, \mbox{\hyperlink{struct_image_res__t}{ImageRes\_t}} image\_res, \(\backslash\)}
+\DoxyCodeLine{276                                                   uint16\_t* dst);}
+\DoxyCodeLine{277 }
+\DoxyCodeLine{278 }
+\DoxyCodeLine{289 DLLEXPORT \mbox{\hyperlink{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57a}{irproc\_error\_t}} \mbox{\hyperlink{libirprocess_8h_a2558debdb4c3dc6809484e447b5589f8}{y14\_image\_enhance}}(uint16\_t* src, \mbox{\hyperlink{struct_image_res__t}{ImageRes\_t}} image\_res, \(\backslash\)}
+\DoxyCodeLine{290                                            \mbox{\hyperlink{struct_img_enhance_param__t}{ImgEnhanceParam\_t}} img\_enhance\_param, uint16\_t* dst);}
+\DoxyCodeLine{291 }
+\DoxyCodeLine{292 }
+\DoxyCodeLine{303 DLLEXPORT \mbox{\hyperlink{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57a}{irproc\_error\_t}} \mbox{\hyperlink{libirprocess_8h_a016bb3a56b10c91aefdf81807f9b1d83}{gain\_switch\_detect}}(uint16\_t* temp\_data, \mbox{\hyperlink{struct_image_res__t}{ImageRes\_t}} image\_res, \(\backslash\)}
+\DoxyCodeLine{304                                            \mbox{\hyperlink{struct_gain_switch_param__t}{GainSwitchParam\_t}} gain\_switch\_param, uint8\_t* detect\_flag);}
+\DoxyCodeLine{305 }
+\DoxyCodeLine{306 }
+\DoxyCodeLine{318 DLLEXPORT \mbox{\hyperlink{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57a}{irproc\_error\_t}} \mbox{\hyperlink{libirprocess_8h_a955442d5049f615e52542889fc2259c6}{overexposure\_detect}}(uint16\_t* temp\_data, \mbox{\hyperlink{struct_image_res__t}{ImageRes\_t}} image\_res, \textcolor{keywordtype}{int} over\_temp\_data, \(\backslash\)}
+\DoxyCodeLine{319                                              \textcolor{keywordtype}{float} pixel\_above\_prop, uint8\_t* detect\_flag);}
+\DoxyCodeLine{320 }
+\DoxyCodeLine{321 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{322 \}}
+\DoxyCodeLine{323 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{324 }
+\DoxyCodeLine{325 \textcolor{preprocessor}{\#endif }}
+
+\end{DoxyCode}

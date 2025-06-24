@@ -1,0 +1,94 @@
+\hypertarget{libirparse_8h_source}{}\doxysection{libirparse.\+h}
+\mbox{\hyperlink{libirparse_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_LIBIRPARSE\_H\_}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_LIBIRPARSE\_H\_}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{5 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <stdarg.h>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#if defined(\_WIN32)}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#define DLLEXPORT \_\_declspec(dllexport)}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#elif defined(linux) || defined(unix)}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#define DLLEXPORT}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{22 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{23         \mbox{\hyperlink{libirparse_8h_a39f953928efe8d23f4159b2a36e4d2f3a965d76766e796b132df924a0604eaf29}{IRPARSE\_LOG\_DEBUG}} = 0,     }
+\DoxyCodeLine{24         \mbox{\hyperlink{libirparse_8h_a39f953928efe8d23f4159b2a36e4d2f3aac4fbdda0294815e4abbf17192686280}{IRPARSE\_LOG\_ERROR}} = 1,     }
+\DoxyCodeLine{25         \mbox{\hyperlink{libirparse_8h_a39f953928efe8d23f4159b2a36e4d2f3a30e51d789adfa7ec49dd62877a4a0c5d}{IRPARSE\_LOG\_NO\_PRINT}} = 2,   }
+\DoxyCodeLine{26 \}\mbox{\hyperlink{libirparse_8h_a39f953928efe8d23f4159b2a36e4d2f3}{irparse\_log\_level\_t}};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 }
+\DoxyCodeLine{32 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{33     \mbox{\hyperlink{libirparse_8h_a8d94284b2d8b9459bc9fb1e8c9476a32aca634d6a88d562a3cc90ce9ebfb3daad}{IRPARSE\_SUCCESS}} = 0,         }
+\DoxyCodeLine{34     \mbox{\hyperlink{libirparse_8h_a8d94284b2d8b9459bc9fb1e8c9476a32a170a6fbb60629c2c461e136cfa719581}{IRPARSE\_ERROR\_PARAM}} = -\/1     }
+\DoxyCodeLine{35 \}\mbox{\hyperlink{libirparse_8h_a8d94284b2d8b9459bc9fb1e8c9476a32}{irparse\_error\_t}};}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#if defined(\_WIN32)}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{    \#define IRPARSE\_DEBUG(format, ...) irparse\_debug\_print("{}libirparse debug [\%s:\%d/\%s] "{}} format "{}\(\backslash\)n"{}, \(\backslash\)}
+\DoxyCodeLine{40                                                             \_\_FILE\_\_,\_\_LINE\_\_, \_\_FUNCTION\_\_, \_\_VA\_ARGS\_\_)}
+\DoxyCodeLine{41 \textcolor{preprocessor}{    \#define IRPARSE\_ERROR(format, ...) irparse\_error\_print("{}libirparse error [\%s:\%d/\%s] "{}} format "{}\(\backslash\)n"{}, \(\backslash\)}
+\DoxyCodeLine{42                                                             \_\_FILE\_\_,\_\_LINE\_\_, \_\_FUNCTION\_\_, \_\_VA\_ARGS\_\_)}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#elif defined(linux) || defined(unix)}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{    \#include <libgen.h>}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{    \#define IRPARSE\_DEBUG(format, ...) irparse\_debug\_print("{}libirparse debug [\%s:\%d/\%s] "{}} format "{}\(\backslash\)n"{}, \(\backslash\)}
+\DoxyCodeLine{46                                                             basename(\_\_FILE\_\_), \_\_LINE\_\_, \_\_FUNCTION\_\_, \#\#\_\_VA\_ARGS\_\_)}
+\DoxyCodeLine{47 \textcolor{preprocessor}{    \#define IRPARSE\_ERROR(format, ...) irparse\_error\_print("{}libirparse error [\%s:\%d/\%s] "{}} format "{}\(\backslash\)n"{}, \(\backslash\)}
+\DoxyCodeLine{48                                                             basename(\_\_FILE\_\_), \_\_LINE\_\_, \_\_FUNCTION\_\_, \#\#\_\_VA\_ARGS\_\_)}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{keyword}{extern} void (*\mbox{\hyperlink{libirparse_8h_a787cf352c038cb9cc12490832e527672}{irparse\_debug\_print}})(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* fmt, ...);}
+\DoxyCodeLine{52 \textcolor{keyword}{extern} void (*\mbox{\hyperlink{libirparse_8h_ab99662557112b958df0c766dba7ee3a5}{irparse\_error\_print}})(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* fmt, ...);}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 }
+\DoxyCodeLine{62 DLLEXPORT \textcolor{keywordtype}{char}* \mbox{\hyperlink{libirparse_8h_aceee187c31f0c4bf42657ea680c6d3f2}{irparse\_version}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 }
+\DoxyCodeLine{74 DLLEXPORT \mbox{\hyperlink{libirparse_8h_a8d94284b2d8b9459bc9fb1e8c9476a32}{irparse\_error\_t}} \mbox{\hyperlink{libirparse_8h_ab65f8a0011ca4dba969299fe2766a47a}{y16\_to\_y14}}(uint16\_t* y16\_data, \textcolor{keywordtype}{int} pixel\_num, uint16\_t* y14\_data);}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 }
+\DoxyCodeLine{86 DLLEXPORT \mbox{\hyperlink{libirparse_8h_a8d94284b2d8b9459bc9fb1e8c9476a32}{irparse\_error\_t}} \mbox{\hyperlink{libirparse_8h_a3bcc8c31110ae2254361acf47f5bd007}{y14\_to\_y8}}(uint16\_t* y14\_data, \textcolor{keywordtype}{int} pixel\_num, uint8\_t* y8\_data);}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 }
+\DoxyCodeLine{98 DLLEXPORT \mbox{\hyperlink{libirparse_8h_a8d94284b2d8b9459bc9fb1e8c9476a32}{irparse\_error\_t}} \mbox{\hyperlink{libirparse_8h_afd0c10ce8eff5bc931fc0612f1e5b86a}{y14\_to\_rgb}}(uint16\_t* packet\_data, \textcolor{keywordtype}{int} pixel\_num, uint8\_t* rgb\_data);}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 }
+\DoxyCodeLine{110 DLLEXPORT \mbox{\hyperlink{libirparse_8h_a8d94284b2d8b9459bc9fb1e8c9476a32}{irparse\_error\_t}} \mbox{\hyperlink{libirparse_8h_a526475fd8ee2d28d07132d35e142f5a0}{y14\_to\_yuv444}}(uint16\_t* packet\_data, \textcolor{keywordtype}{int} pixel\_num, uint8\_t* yuv\_data);}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112 }
+\DoxyCodeLine{122 DLLEXPORT \mbox{\hyperlink{libirparse_8h_a8d94284b2d8b9459bc9fb1e8c9476a32}{irparse\_error\_t}} \mbox{\hyperlink{libirparse_8h_ad05c9ca36027604bb6de855fa8a1ee45}{yuv444\_to\_yuv422}}(uint8\_t* yuv444\_data, \textcolor{keywordtype}{int} pixel\_num, uint8\_t* yuv422\_data);}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124 }
+\DoxyCodeLine{134 DLLEXPORT \mbox{\hyperlink{libirparse_8h_a8d94284b2d8b9459bc9fb1e8c9476a32}{irparse\_error\_t}} \mbox{\hyperlink{libirparse_8h_a51370bc0474ae9c0245118d7370b3e87}{yuv422\_to\_rgb}}(uint8\_t* yuv422, \textcolor{keywordtype}{int} pixel\_num, uint8\_t* rgb\_data);}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136 }
+\DoxyCodeLine{146 DLLEXPORT \mbox{\hyperlink{libirparse_8h_a8d94284b2d8b9459bc9fb1e8c9476a32}{irparse\_error\_t}} \mbox{\hyperlink{libirparse_8h_ae82b3ba297dfbcedd8ed61923dc44286}{yuv444\_to\_rgb}}(uint8\_t* packet\_data, \textcolor{keywordtype}{int} pixel\_num, uint8\_t* rgb\_data);}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148 }
+\DoxyCodeLine{158 DLLEXPORT \mbox{\hyperlink{libirparse_8h_a8d94284b2d8b9459bc9fb1e8c9476a32}{irparse\_error\_t}} \mbox{\hyperlink{libirparse_8h_a2b8add69a8bae18618d805003742cf6e}{rgb\_to\_bgr}}(uint8\_t* rgb\_data, \textcolor{keywordtype}{int} pixel\_num, uint8\_t* bgr\_data);}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160 }
+\DoxyCodeLine{171 DLLEXPORT \mbox{\hyperlink{libirparse_8h_a8d94284b2d8b9459bc9fb1e8c9476a32}{irparse\_error\_t}} \mbox{\hyperlink{libirparse_8h_abf0bdca94e883e66f472cee24204e77c}{yuv422\_add\_y}}(uint8\_t* src, \textcolor{keywordtype}{int} pixel\_num, \textcolor{keywordtype}{int} y\_value, uint8\_t* dst);}
+\DoxyCodeLine{172 }
+\DoxyCodeLine{173 }
+\DoxyCodeLine{185 DLLEXPORT \mbox{\hyperlink{libirparse_8h_a8d94284b2d8b9459bc9fb1e8c9476a32}{irparse\_error\_t}} \mbox{\hyperlink{libirparse_8h_aed86f5ff8dd302945b08db49ec4ffa86}{raw\_data\_cut}}(uint8\_t* raw\_data, \textcolor{keywordtype}{int} image\_byte\_size, \textcolor{keywordtype}{int} temp\_byte\_size, \(\backslash\)}
+\DoxyCodeLine{186                                         uint8\_t* image\_data, uint8\_t* temp\_data);}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{188 }
+\DoxyCodeLine{195 DLLEXPORT \textcolor{keywordtype}{void} \mbox{\hyperlink{libirparse_8h_a7518e056a2174a95841eddfad677c298}{irparse\_log\_register}}(\mbox{\hyperlink{libirparse_8h_a39f953928efe8d23f4159b2a36e4d2f3}{irparse\_log\_level\_t}} log\_level);}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{197 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{198 \}}
+\DoxyCodeLine{199 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{200 }
+\DoxyCodeLine{201 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,290 @@
+\hypertarget{all__config_8h}{}\doxysection{all\+\_\+config.\+h File Reference}
+\label{all__config_8h}\index{all\_config.h@{all\_config.h}}
+
+
+Header file of Configuration.  
+
+
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{all__config_8h_a4fc8c6dfa8b9e4f914988f56c237fbde}{FALCON\+\_\+\+CMD}}
+\item 
+\#define \mbox{\hyperlink{all__config_8h_a58c79a61a6cd44230389e89073efe459}{PRODUCT\+\_\+\+TYPE}}~\char`\"{}FALCON\char`\"{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{all__config_8h_a289b3e9a37338df0a7b258cafdfc7c46}{vdcmd\+\_\+driver\+\_\+type}} \{ \mbox{\hyperlink{all__config_8h_a289b3e9a37338df0a7b258cafdfc7c46a9d1c99b7592961c047189ec266e48ae8}{VDCMD\+\_\+\+USB\+\_\+\+VDCMD}} = 0
+, \mbox{\hyperlink{all__config_8h_a289b3e9a37338df0a7b258cafdfc7c46a3900da308cb90865b7c960fe8e4cedad}{VDCMD\+\_\+\+I2\+C\+\_\+\+USB\+\_\+\+VDCMD}}
+, \mbox{\hyperlink{all__config_8h_a289b3e9a37338df0a7b258cafdfc7c46a61868dc07d7654704762c9cd9a00d967}{VDCMD\+\_\+\+I2\+C\+\_\+\+VDCMD}}
+, \mbox{\hyperlink{all__config_8h_a289b3e9a37338df0a7b258cafdfc7c46a901a0cf586d4ac39d40102e07fd3b79e}{VDCMD\+\_\+\+UART\+\_\+\+VDCMD}}
+ \}
+\begin{DoxyCompactList}\small\item\em Restore defaut config types. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390}{iruvc\+\_\+error\+\_\+t}} \{ \newline
+\mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390ad502897d0f045dbdc5a47e12dfb44049}{IRUVC\+\_\+\+SUCCESS}} = 0
+, \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390a808cd5e3dc22df7678575553e5deb605}{IRUVC\+\_\+\+ERROR\+\_\+\+PARAM}} = -\/1
+, \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390a121eb3f37bd4e99170bb4126e5ee4710}{IRUVC\+\_\+\+UVC\+\_\+\+INIT\+\_\+\+FAIL}} = -\/2
+, \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390a8ff0fef5992196cffd7def5862e01324}{IRUVC\+\_\+\+GET\+\_\+\+DEVICE\+\_\+\+LIST\+\_\+\+FAIL}} = -\/3
+, \newline
+\mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390a7ebaa6539773f8efeaed8465bab8dae4}{IRUVC\+\_\+\+FIND\+\_\+\+DEVICE\+\_\+\+FAIL}} = -\/4
+, \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390acac9e0bddc8da95678605a208b517495}{IRUVC\+\_\+\+NOT\+\_\+\+GET\+\_\+\+DEVICE\+\_\+\+INFO}} = -\/5
+, \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390a71e7cb886518621978cf88c8dc5a5c7a}{IRUVC\+\_\+\+DEVICE\+\_\+\+OPEN\+\_\+\+FAIL}} = -\/6
+, \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390aee565314b9da432857f7ee7ca9e912a5}{IRUVC\+\_\+\+GET\+\_\+\+DEVICE\+\_\+\+DESCRIPTOR\+\_\+\+FAIL}} = -\/7
+, \newline
+\mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390a29c0c0a9a8a528b8497eab1ba86df975}{IRUVC\+\_\+\+DEVICE\+\_\+\+OPENED}} = -\/8
+, \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390a76a666df67fc80039ce7b2c1d2b464de}{IRUVC\+\_\+\+GET\+\_\+\+FORMAT\+\_\+\+FAIL}} = -\/9
+, \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390a0055d17d0a53940dd9d48361638ac98e}{IRUVC\+\_\+\+USER\+\_\+\+CALLBACK\+\_\+\+EMPTY}} = -\/10
+, \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390a959b6f2e4c45f27aa0af88cbee84f773}{IRUVC\+\_\+\+START\+\_\+\+STREAMING\+\_\+\+FAIL}} = -\/11
+, \newline
+\mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390ab3748cd25597065f416d7f813b91b1a6}{IRUVC\+\_\+\+GET\+\_\+\+FRAME\+\_\+\+OVER\+\_\+\+TIME}} = -\/12
+, \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390a44bf76acfc30e076af2d7baf3a13a5d0}{IRUVC\+\_\+\+VDCMD\+\_\+\+NOT\+\_\+\+REGISTER}} = -\/13
+, \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390a6018236a26a53dd747586e9a1895c7f3}{IRUVC\+\_\+\+VDCMD\+\_\+\+REGISTER\+\_\+\+FAIL}} = -\/14
+, \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390a0d0b23302ce324e8aaf4d7dd2799003b}{IRUVC\+\_\+\+CONTROL\+\_\+\+TRANSFER\+\_\+\+FAIL}} = -\/15
+, \newline
+\mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390a2812e947ad3855bb197e98e95a817b5a}{IRUVC\+\_\+\+CHECK\+\_\+\+DONE\+\_\+\+FAIL}} = -\/16
+, \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390a0d6d7e054f333e79436bd9d3b3c71ce9}{IRUVC\+\_\+\+VDCMD\+\_\+\+TOO\+\_\+\+LONG}} = -\/17
+, \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390af063d6b6cfdf304d571a9076ff95e497}{IRUVC\+\_\+\+RESET\+\_\+\+DEVICE\+\_\+\+FAIL}} = -\/18
+, \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390aac35adf1b7e5ff3c4ac27cce73369804}{IRUVC\+\_\+\+CLEAR\+\_\+\+HALT\+\_\+\+FAIL}} = -\/19
+, \newline
+\mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390a57cbbc4bcce446d475182ce8780637df}{IRUVC\+\_\+\+UNSUPPORTED\+\_\+\+CMD}} = -\/20
+, \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390a91a9f4ac103708174da9216993ee47e0}{IRUVC\+\_\+\+I2\+C\+\_\+\+TRANSFER\+\_\+\+FAIL}} = -\/21
+, \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390a7e473467a125a2768b8420b0683b8634}{IRUVC\+\_\+\+I2\+C\+\_\+\+DEVICE\+\_\+\+OPEN\+\_\+\+FAIL}} = -\/22
+, \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390ac11a6b47b930f1fba17f1fd5306421c4}{IRUVC\+\_\+\+I2\+C\+\_\+\+GET\+\_\+\+REGISTER\+\_\+\+FAIL}} = -\/23
+, \newline
+\mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390a0ac42e7aba01d31559dbd9bb15e05d64}{IRUVC\+\_\+\+I2\+C\+\_\+\+SET\+\_\+\+REGISTER\+\_\+\+FAIL}} = -\/24
+, \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390a09d78055ce1eb7f896a52843c84891d2}{IRUVC\+\_\+\+MEM\+\_\+\+ALLOC\+\_\+\+FAIL}} = -\/25
+, \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390a253f06e5f9da628dce0c12103e45448a}{IRUVC\+\_\+\+CMD\+\_\+\+EXECUTE\+\_\+\+FAIL}} = -\/26
+ \}
+\begin{DoxyCompactList}\small\item\em Return error\textquotesingle{}s type. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{all__config_8h_aec639dc0ea9770ef145f8ff592f6fad6}{iruvc\+\_\+log\+\_\+level\+\_\+t}} \{ \mbox{\hyperlink{all__config_8h_aec639dc0ea9770ef145f8ff592f6fad6a80db490931fa078c3ae1cf93cf113733}{IRUVC\+\_\+\+LOG\+\_\+\+DEBUG}} = 0
+, \mbox{\hyperlink{all__config_8h_aec639dc0ea9770ef145f8ff592f6fad6ac3090e36b2c70d17e14c48e2dc1654f6}{IRUVC\+\_\+\+LOG\+\_\+\+ERROR}} = 1
+, \mbox{\hyperlink{all__config_8h_aec639dc0ea9770ef145f8ff592f6fad6a175cd3ae00efdfa3a569496901b8a7d3}{IRUVC\+\_\+\+LOG\+\_\+\+NO\+\_\+\+PRINT}} = 2
+ \}
+\begin{DoxyCompactList}\small\item\em Log message levels. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+void($\ast$ \mbox{\hyperlink{all__config_8h_a85fb5a37a3e4914b8d777b33d3a747c7}{iruvc\+\_\+debug\+\_\+print}} )(const char $\ast$fmt,...)
+\begin{DoxyCompactList}\small\item\em Print debug infomation. \end{DoxyCompactList}\item 
+void($\ast$ \mbox{\hyperlink{all__config_8h_ae93567fafc99de7a93048270e7ff5c7e}{iruvc\+\_\+error\+\_\+print}} )(const char $\ast$fmt,...)
+\begin{DoxyCompactList}\small\item\em Print error infomation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file of Configuration. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{all__config_8h_a4fc8c6dfa8b9e4f914988f56c237fbde}\label{all__config_8h_a4fc8c6dfa8b9e4f914988f56c237fbde}} 
+\index{all\_config.h@{all\_config.h}!FALCON\_CMD@{FALCON\_CMD}}
+\index{FALCON\_CMD@{FALCON\_CMD}!all\_config.h@{all\_config.h}}
+\doxysubsubsection{\texorpdfstring{FALCON\_CMD}{FALCON\_CMD}}
+{\footnotesize\ttfamily \#define FALCON\+\_\+\+CMD}
+
+\mbox{\Hypertarget{all__config_8h_a58c79a61a6cd44230389e89073efe459}\label{all__config_8h_a58c79a61a6cd44230389e89073efe459}} 
+\index{all\_config.h@{all\_config.h}!PRODUCT\_TYPE@{PRODUCT\_TYPE}}
+\index{PRODUCT\_TYPE@{PRODUCT\_TYPE}!all\_config.h@{all\_config.h}}
+\doxysubsubsection{\texorpdfstring{PRODUCT\_TYPE}{PRODUCT\_TYPE}}
+{\footnotesize\ttfamily \#define PRODUCT\+\_\+\+TYPE~\char`\"{}FALCON\char`\"{}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{all__config_8h_aaeb013a130bdccf32eaf935de3813390}\label{all__config_8h_aaeb013a130bdccf32eaf935de3813390}} 
+\index{all\_config.h@{all\_config.h}!iruvc\_error\_t@{iruvc\_error\_t}}
+\index{iruvc\_error\_t@{iruvc\_error\_t}!all\_config.h@{all\_config.h}}
+\doxysubsubsection{\texorpdfstring{iruvc\_error\_t}{iruvc\_error\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390}{iruvc\+\_\+error\+\_\+t}}}
+
+
+
+Return error\textquotesingle{}s type. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRUVC\_SUCCESS@{IRUVC\_SUCCESS}!all\_config.h@{all\_config.h}}\index{all\_config.h@{all\_config.h}!IRUVC\_SUCCESS@{IRUVC\_SUCCESS}}}\mbox{\Hypertarget{all__config_8h_aaeb013a130bdccf32eaf935de3813390ad502897d0f045dbdc5a47e12dfb44049}\label{all__config_8h_aaeb013a130bdccf32eaf935de3813390ad502897d0f045dbdc5a47e12dfb44049}} 
+IRUVC\+\_\+\+SUCCESS&success \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRUVC\_ERROR\_PARAM@{IRUVC\_ERROR\_PARAM}!all\_config.h@{all\_config.h}}\index{all\_config.h@{all\_config.h}!IRUVC\_ERROR\_PARAM@{IRUVC\_ERROR\_PARAM}}}\mbox{\Hypertarget{all__config_8h_aaeb013a130bdccf32eaf935de3813390a808cd5e3dc22df7678575553e5deb605}\label{all__config_8h_aaeb013a130bdccf32eaf935de3813390a808cd5e3dc22df7678575553e5deb605}} 
+IRUVC\+\_\+\+ERROR\+\_\+\+PARAM&parameters error \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRUVC\_UVC\_INIT\_FAIL@{IRUVC\_UVC\_INIT\_FAIL}!all\_config.h@{all\_config.h}}\index{all\_config.h@{all\_config.h}!IRUVC\_UVC\_INIT\_FAIL@{IRUVC\_UVC\_INIT\_FAIL}}}\mbox{\Hypertarget{all__config_8h_aaeb013a130bdccf32eaf935de3813390a121eb3f37bd4e99170bb4126e5ee4710}\label{all__config_8h_aaeb013a130bdccf32eaf935de3813390a121eb3f37bd4e99170bb4126e5ee4710}} 
+IRUVC\+\_\+\+UVC\+\_\+\+INIT\+\_\+\+FAIL&libiruvc\textquotesingle{}s service context initialize failed \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRUVC\_GET\_DEVICE\_LIST\_FAIL@{IRUVC\_GET\_DEVICE\_LIST\_FAIL}!all\_config.h@{all\_config.h}}\index{all\_config.h@{all\_config.h}!IRUVC\_GET\_DEVICE\_LIST\_FAIL@{IRUVC\_GET\_DEVICE\_LIST\_FAIL}}}\mbox{\Hypertarget{all__config_8h_aaeb013a130bdccf32eaf935de3813390a8ff0fef5992196cffd7def5862e01324}\label{all__config_8h_aaeb013a130bdccf32eaf935de3813390a8ff0fef5992196cffd7def5862e01324}} 
+IRUVC\+\_\+\+GET\+\_\+\+DEVICE\+\_\+\+LIST\+\_\+\+FAIL&get device list failed \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRUVC\_FIND\_DEVICE\_FAIL@{IRUVC\_FIND\_DEVICE\_FAIL}!all\_config.h@{all\_config.h}}\index{all\_config.h@{all\_config.h}!IRUVC\_FIND\_DEVICE\_FAIL@{IRUVC\_FIND\_DEVICE\_FAIL}}}\mbox{\Hypertarget{all__config_8h_aaeb013a130bdccf32eaf935de3813390a7ebaa6539773f8efeaed8465bab8dae4}\label{all__config_8h_aaeb013a130bdccf32eaf935de3813390a7ebaa6539773f8efeaed8465bab8dae4}} 
+IRUVC\+\_\+\+FIND\+\_\+\+DEVICE\+\_\+\+FAIL&find device via pid/vid/name failed \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRUVC\_NOT\_GET\_DEVICE\_INFO@{IRUVC\_NOT\_GET\_DEVICE\_INFO}!all\_config.h@{all\_config.h}}\index{all\_config.h@{all\_config.h}!IRUVC\_NOT\_GET\_DEVICE\_INFO@{IRUVC\_NOT\_GET\_DEVICE\_INFO}}}\mbox{\Hypertarget{all__config_8h_aaeb013a130bdccf32eaf935de3813390acac9e0bddc8da95678605a208b517495}\label{all__config_8h_aaeb013a130bdccf32eaf935de3813390acac9e0bddc8da95678605a208b517495}} 
+IRUVC\+\_\+\+NOT\+\_\+\+GET\+\_\+\+DEVICE\+\_\+\+INFO&find device via pid/vid/name failed \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRUVC\_DEVICE\_OPEN\_FAIL@{IRUVC\_DEVICE\_OPEN\_FAIL}!all\_config.h@{all\_config.h}}\index{all\_config.h@{all\_config.h}!IRUVC\_DEVICE\_OPEN\_FAIL@{IRUVC\_DEVICE\_OPEN\_FAIL}}}\mbox{\Hypertarget{all__config_8h_aaeb013a130bdccf32eaf935de3813390a71e7cb886518621978cf88c8dc5a5c7a}\label{all__config_8h_aaeb013a130bdccf32eaf935de3813390a71e7cb886518621978cf88c8dc5a5c7a}} 
+IRUVC\+\_\+\+DEVICE\+\_\+\+OPEN\+\_\+\+FAIL&open device fail \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRUVC\_GET\_DEVICE\_DESCRIPTOR\_FAIL@{IRUVC\_GET\_DEVICE\_DESCRIPTOR\_FAIL}!all\_config.h@{all\_config.h}}\index{all\_config.h@{all\_config.h}!IRUVC\_GET\_DEVICE\_DESCRIPTOR\_FAIL@{IRUVC\_GET\_DEVICE\_DESCRIPTOR\_FAIL}}}\mbox{\Hypertarget{all__config_8h_aaeb013a130bdccf32eaf935de3813390aee565314b9da432857f7ee7ca9e912a5}\label{all__config_8h_aaeb013a130bdccf32eaf935de3813390aee565314b9da432857f7ee7ca9e912a5}} 
+IRUVC\+\_\+\+GET\+\_\+\+DEVICE\+\_\+\+DESCRIPTOR\+\_\+\+FAIL&get device\textquotesingle{}s descriptor failed \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRUVC\_DEVICE\_OPENED@{IRUVC\_DEVICE\_OPENED}!all\_config.h@{all\_config.h}}\index{all\_config.h@{all\_config.h}!IRUVC\_DEVICE\_OPENED@{IRUVC\_DEVICE\_OPENED}}}\mbox{\Hypertarget{all__config_8h_aaeb013a130bdccf32eaf935de3813390a29c0c0a9a8a528b8497eab1ba86df975}\label{all__config_8h_aaeb013a130bdccf32eaf935de3813390a29c0c0a9a8a528b8497eab1ba86df975}} 
+IRUVC\+\_\+\+DEVICE\+\_\+\+OPENED&device already opened \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRUVC\_GET\_FORMAT\_FAIL@{IRUVC\_GET\_FORMAT\_FAIL}!all\_config.h@{all\_config.h}}\index{all\_config.h@{all\_config.h}!IRUVC\_GET\_FORMAT\_FAIL@{IRUVC\_GET\_FORMAT\_FAIL}}}\mbox{\Hypertarget{all__config_8h_aaeb013a130bdccf32eaf935de3813390a76a666df67fc80039ce7b2c1d2b464de}\label{all__config_8h_aaeb013a130bdccf32eaf935de3813390a76a666df67fc80039ce7b2c1d2b464de}} 
+IRUVC\+\_\+\+GET\+\_\+\+FORMAT\+\_\+\+FAIL&device doesn\textquotesingle{}t provide a matching stream \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRUVC\_USER\_CALLBACK\_EMPTY@{IRUVC\_USER\_CALLBACK\_EMPTY}!all\_config.h@{all\_config.h}}\index{all\_config.h@{all\_config.h}!IRUVC\_USER\_CALLBACK\_EMPTY@{IRUVC\_USER\_CALLBACK\_EMPTY}}}\mbox{\Hypertarget{all__config_8h_aaeb013a130bdccf32eaf935de3813390a0055d17d0a53940dd9d48361638ac98e}\label{all__config_8h_aaeb013a130bdccf32eaf935de3813390a0055d17d0a53940dd9d48361638ac98e}} 
+IRUVC\+\_\+\+USER\+\_\+\+CALLBACK\+\_\+\+EMPTY&user\textquotesingle{}s callback fucntion is empty \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRUVC\_START\_STREAMING\_FAIL@{IRUVC\_START\_STREAMING\_FAIL}!all\_config.h@{all\_config.h}}\index{all\_config.h@{all\_config.h}!IRUVC\_START\_STREAMING\_FAIL@{IRUVC\_START\_STREAMING\_FAIL}}}\mbox{\Hypertarget{all__config_8h_aaeb013a130bdccf32eaf935de3813390a959b6f2e4c45f27aa0af88cbee84f773}\label{all__config_8h_aaeb013a130bdccf32eaf935de3813390a959b6f2e4c45f27aa0af88cbee84f773}} 
+IRUVC\+\_\+\+START\+\_\+\+STREAMING\+\_\+\+FAIL&device start streaming failed \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRUVC\_GET\_FRAME\_OVER\_TIME@{IRUVC\_GET\_FRAME\_OVER\_TIME}!all\_config.h@{all\_config.h}}\index{all\_config.h@{all\_config.h}!IRUVC\_GET\_FRAME\_OVER\_TIME@{IRUVC\_GET\_FRAME\_OVER\_TIME}}}\mbox{\Hypertarget{all__config_8h_aaeb013a130bdccf32eaf935de3813390ab3748cd25597065f416d7f813b91b1a6}\label{all__config_8h_aaeb013a130bdccf32eaf935de3813390ab3748cd25597065f416d7f813b91b1a6}} 
+IRUVC\+\_\+\+GET\+\_\+\+FRAME\+\_\+\+OVER\+\_\+\+TIME&over time when getting frame \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRUVC\_VDCMD\_NOT\_REGISTER@{IRUVC\_VDCMD\_NOT\_REGISTER}!all\_config.h@{all\_config.h}}\index{all\_config.h@{all\_config.h}!IRUVC\_VDCMD\_NOT\_REGISTER@{IRUVC\_VDCMD\_NOT\_REGISTER}}}\mbox{\Hypertarget{all__config_8h_aaeb013a130bdccf32eaf935de3813390a44bf76acfc30e076af2d7baf3a13a5d0}\label{all__config_8h_aaeb013a130bdccf32eaf935de3813390a44bf76acfc30e076af2d7baf3a13a5d0}} 
+IRUVC\+\_\+\+VDCMD\+\_\+\+NOT\+\_\+\+REGISTER&vdcmd not registered \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRUVC\_VDCMD\_REGISTER\_FAIL@{IRUVC\_VDCMD\_REGISTER\_FAIL}!all\_config.h@{all\_config.h}}\index{all\_config.h@{all\_config.h}!IRUVC\_VDCMD\_REGISTER\_FAIL@{IRUVC\_VDCMD\_REGISTER\_FAIL}}}\mbox{\Hypertarget{all__config_8h_aaeb013a130bdccf32eaf935de3813390a6018236a26a53dd747586e9a1895c7f3}\label{all__config_8h_aaeb013a130bdccf32eaf935de3813390a6018236a26a53dd747586e9a1895c7f3}} 
+IRUVC\+\_\+\+VDCMD\+\_\+\+REGISTER\+\_\+\+FAIL&vdcmd register failed \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRUVC\_CONTROL\_TRANSFER\_FAIL@{IRUVC\_CONTROL\_TRANSFER\_FAIL}!all\_config.h@{all\_config.h}}\index{all\_config.h@{all\_config.h}!IRUVC\_CONTROL\_TRANSFER\_FAIL@{IRUVC\_CONTROL\_TRANSFER\_FAIL}}}\mbox{\Hypertarget{all__config_8h_aaeb013a130bdccf32eaf935de3813390a0d0b23302ce324e8aaf4d7dd2799003b}\label{all__config_8h_aaeb013a130bdccf32eaf935de3813390a0d0b23302ce324e8aaf4d7dd2799003b}} 
+IRUVC\+\_\+\+CONTROL\+\_\+\+TRANSFER\+\_\+\+FAIL&control transter failed \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRUVC\_CHECK\_DONE\_FAIL@{IRUVC\_CHECK\_DONE\_FAIL}!all\_config.h@{all\_config.h}}\index{all\_config.h@{all\_config.h}!IRUVC\_CHECK\_DONE\_FAIL@{IRUVC\_CHECK\_DONE\_FAIL}}}\mbox{\Hypertarget{all__config_8h_aaeb013a130bdccf32eaf935de3813390a2812e947ad3855bb197e98e95a817b5a}\label{all__config_8h_aaeb013a130bdccf32eaf935de3813390a2812e947ad3855bb197e98e95a817b5a}} 
+IRUVC\+\_\+\+CHECK\+\_\+\+DONE\+\_\+\+FAIL&checking vdcmd send failed \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRUVC\_VDCMD\_TOO\_LONG@{IRUVC\_VDCMD\_TOO\_LONG}!all\_config.h@{all\_config.h}}\index{all\_config.h@{all\_config.h}!IRUVC\_VDCMD\_TOO\_LONG@{IRUVC\_VDCMD\_TOO\_LONG}}}\mbox{\Hypertarget{all__config_8h_aaeb013a130bdccf32eaf935de3813390a0d6d7e054f333e79436bd9d3b3c71ce9}\label{all__config_8h_aaeb013a130bdccf32eaf935de3813390a0d6d7e054f333e79436bd9d3b3c71ce9}} 
+IRUVC\+\_\+\+VDCMD\+\_\+\+TOO\+\_\+\+LONG&vdcmd\textquotesingle{}s length is too long \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRUVC\_RESET\_DEVICE\_FAIL@{IRUVC\_RESET\_DEVICE\_FAIL}!all\_config.h@{all\_config.h}}\index{all\_config.h@{all\_config.h}!IRUVC\_RESET\_DEVICE\_FAIL@{IRUVC\_RESET\_DEVICE\_FAIL}}}\mbox{\Hypertarget{all__config_8h_aaeb013a130bdccf32eaf935de3813390af063d6b6cfdf304d571a9076ff95e497}\label{all__config_8h_aaeb013a130bdccf32eaf935de3813390af063d6b6cfdf304d571a9076ff95e497}} 
+IRUVC\+\_\+\+RESET\+\_\+\+DEVICE\+\_\+\+FAIL&reset device fail \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRUVC\_CLEAR\_HALT\_FAIL@{IRUVC\_CLEAR\_HALT\_FAIL}!all\_config.h@{all\_config.h}}\index{all\_config.h@{all\_config.h}!IRUVC\_CLEAR\_HALT\_FAIL@{IRUVC\_CLEAR\_HALT\_FAIL}}}\mbox{\Hypertarget{all__config_8h_aaeb013a130bdccf32eaf935de3813390aac35adf1b7e5ff3c4ac27cce73369804}\label{all__config_8h_aaeb013a130bdccf32eaf935de3813390aac35adf1b7e5ff3c4ac27cce73369804}} 
+IRUVC\+\_\+\+CLEAR\+\_\+\+HALT\+\_\+\+FAIL&clear halt fail \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRUVC\_UNSUPPORTED\_CMD@{IRUVC\_UNSUPPORTED\_CMD}!all\_config.h@{all\_config.h}}\index{all\_config.h@{all\_config.h}!IRUVC\_UNSUPPORTED\_CMD@{IRUVC\_UNSUPPORTED\_CMD}}}\mbox{\Hypertarget{all__config_8h_aaeb013a130bdccf32eaf935de3813390a57cbbc4bcce446d475182ce8780637df}\label{all__config_8h_aaeb013a130bdccf32eaf935de3813390a57cbbc4bcce446d475182ce8780637df}} 
+IRUVC\+\_\+\+UNSUPPORTED\+\_\+\+CMD&unsupported command \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRUVC\_I2C\_TRANSFER\_FAIL@{IRUVC\_I2C\_TRANSFER\_FAIL}!all\_config.h@{all\_config.h}}\index{all\_config.h@{all\_config.h}!IRUVC\_I2C\_TRANSFER\_FAIL@{IRUVC\_I2C\_TRANSFER\_FAIL}}}\mbox{\Hypertarget{all__config_8h_aaeb013a130bdccf32eaf935de3813390a91a9f4ac103708174da9216993ee47e0}\label{all__config_8h_aaeb013a130bdccf32eaf935de3813390a91a9f4ac103708174da9216993ee47e0}} 
+IRUVC\+\_\+\+I2\+C\+\_\+\+TRANSFER\+\_\+\+FAIL&i2c transfer fail \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRUVC\_I2C\_DEVICE\_OPEN\_FAIL@{IRUVC\_I2C\_DEVICE\_OPEN\_FAIL}!all\_config.h@{all\_config.h}}\index{all\_config.h@{all\_config.h}!IRUVC\_I2C\_DEVICE\_OPEN\_FAIL@{IRUVC\_I2C\_DEVICE\_OPEN\_FAIL}}}\mbox{\Hypertarget{all__config_8h_aaeb013a130bdccf32eaf935de3813390a7e473467a125a2768b8420b0683b8634}\label{all__config_8h_aaeb013a130bdccf32eaf935de3813390a7e473467a125a2768b8420b0683b8634}} 
+IRUVC\+\_\+\+I2\+C\+\_\+\+DEVICE\+\_\+\+OPEN\+\_\+\+FAIL&i2c device open fail \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRUVC\_I2C\_GET\_REGISTER\_FAIL@{IRUVC\_I2C\_GET\_REGISTER\_FAIL}!all\_config.h@{all\_config.h}}\index{all\_config.h@{all\_config.h}!IRUVC\_I2C\_GET\_REGISTER\_FAIL@{IRUVC\_I2C\_GET\_REGISTER\_FAIL}}}\mbox{\Hypertarget{all__config_8h_aaeb013a130bdccf32eaf935de3813390ac11a6b47b930f1fba17f1fd5306421c4}\label{all__config_8h_aaeb013a130bdccf32eaf935de3813390ac11a6b47b930f1fba17f1fd5306421c4}} 
+IRUVC\+\_\+\+I2\+C\+\_\+\+GET\+\_\+\+REGISTER\+\_\+\+FAIL&i2c get register fail \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRUVC\_I2C\_SET\_REGISTER\_FAIL@{IRUVC\_I2C\_SET\_REGISTER\_FAIL}!all\_config.h@{all\_config.h}}\index{all\_config.h@{all\_config.h}!IRUVC\_I2C\_SET\_REGISTER\_FAIL@{IRUVC\_I2C\_SET\_REGISTER\_FAIL}}}\mbox{\Hypertarget{all__config_8h_aaeb013a130bdccf32eaf935de3813390a0ac42e7aba01d31559dbd9bb15e05d64}\label{all__config_8h_aaeb013a130bdccf32eaf935de3813390a0ac42e7aba01d31559dbd9bb15e05d64}} 
+IRUVC\+\_\+\+I2\+C\+\_\+\+SET\+\_\+\+REGISTER\+\_\+\+FAIL&i2c set register fail \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRUVC\_MEM\_ALLOC\_FAIL@{IRUVC\_MEM\_ALLOC\_FAIL}!all\_config.h@{all\_config.h}}\index{all\_config.h@{all\_config.h}!IRUVC\_MEM\_ALLOC\_FAIL@{IRUVC\_MEM\_ALLOC\_FAIL}}}\mbox{\Hypertarget{all__config_8h_aaeb013a130bdccf32eaf935de3813390a09d78055ce1eb7f896a52843c84891d2}\label{all__config_8h_aaeb013a130bdccf32eaf935de3813390a09d78055ce1eb7f896a52843c84891d2}} 
+IRUVC\+\_\+\+MEM\+\_\+\+ALLOC\+\_\+\+FAIL&memory allocation fail \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRUVC\_CMD\_EXECUTE\_FAIL@{IRUVC\_CMD\_EXECUTE\_FAIL}!all\_config.h@{all\_config.h}}\index{all\_config.h@{all\_config.h}!IRUVC\_CMD\_EXECUTE\_FAIL@{IRUVC\_CMD\_EXECUTE\_FAIL}}}\mbox{\Hypertarget{all__config_8h_aaeb013a130bdccf32eaf935de3813390a253f06e5f9da628dce0c12103e45448a}\label{all__config_8h_aaeb013a130bdccf32eaf935de3813390a253f06e5f9da628dce0c12103e45448a}} 
+IRUVC\+\_\+\+CMD\+\_\+\+EXECUTE\+\_\+\+FAIL&command excute fail ~\newline
+ \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{all__config_8h_aec639dc0ea9770ef145f8ff592f6fad6}\label{all__config_8h_aec639dc0ea9770ef145f8ff592f6fad6}} 
+\index{all\_config.h@{all\_config.h}!iruvc\_log\_level\_t@{iruvc\_log\_level\_t}}
+\index{iruvc\_log\_level\_t@{iruvc\_log\_level\_t}!all\_config.h@{all\_config.h}}
+\doxysubsubsection{\texorpdfstring{iruvc\_log\_level\_t}{iruvc\_log\_level\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{all__config_8h_aec639dc0ea9770ef145f8ff592f6fad6}{iruvc\+\_\+log\+\_\+level\+\_\+t}}}
+
+
+
+Log message levels. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRUVC\_LOG\_DEBUG@{IRUVC\_LOG\_DEBUG}!all\_config.h@{all\_config.h}}\index{all\_config.h@{all\_config.h}!IRUVC\_LOG\_DEBUG@{IRUVC\_LOG\_DEBUG}}}\mbox{\Hypertarget{all__config_8h_aec639dc0ea9770ef145f8ff592f6fad6a80db490931fa078c3ae1cf93cf113733}\label{all__config_8h_aec639dc0ea9770ef145f8ff592f6fad6a80db490931fa078c3ae1cf93cf113733}} 
+IRUVC\+\_\+\+LOG\+\_\+\+DEBUG&all debug\&error infomation \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRUVC\_LOG\_ERROR@{IRUVC\_LOG\_ERROR}!all\_config.h@{all\_config.h}}\index{all\_config.h@{all\_config.h}!IRUVC\_LOG\_ERROR@{IRUVC\_LOG\_ERROR}}}\mbox{\Hypertarget{all__config_8h_aec639dc0ea9770ef145f8ff592f6fad6ac3090e36b2c70d17e14c48e2dc1654f6}\label{all__config_8h_aec639dc0ea9770ef145f8ff592f6fad6ac3090e36b2c70d17e14c48e2dc1654f6}} 
+IRUVC\+\_\+\+LOG\+\_\+\+ERROR&all error infomation \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRUVC\_LOG\_NO\_PRINT@{IRUVC\_LOG\_NO\_PRINT}!all\_config.h@{all\_config.h}}\index{all\_config.h@{all\_config.h}!IRUVC\_LOG\_NO\_PRINT@{IRUVC\_LOG\_NO\_PRINT}}}\mbox{\Hypertarget{all__config_8h_aec639dc0ea9770ef145f8ff592f6fad6a175cd3ae00efdfa3a569496901b8a7d3}\label{all__config_8h_aec639dc0ea9770ef145f8ff592f6fad6a175cd3ae00efdfa3a569496901b8a7d3}} 
+IRUVC\+\_\+\+LOG\+\_\+\+NO\+\_\+\+PRINT&no print infomation(default) \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{all__config_8h_a289b3e9a37338df0a7b258cafdfc7c46}\label{all__config_8h_a289b3e9a37338df0a7b258cafdfc7c46}} 
+\index{all\_config.h@{all\_config.h}!vdcmd\_driver\_type@{vdcmd\_driver\_type}}
+\index{vdcmd\_driver\_type@{vdcmd\_driver\_type}!all\_config.h@{all\_config.h}}
+\doxysubsubsection{\texorpdfstring{vdcmd\_driver\_type}{vdcmd\_driver\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{all__config_8h_a289b3e9a37338df0a7b258cafdfc7c46}{vdcmd\+\_\+driver\+\_\+type}}}
+
+
+
+Restore defaut config types. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VDCMD\_USB\_VDCMD@{VDCMD\_USB\_VDCMD}!all\_config.h@{all\_config.h}}\index{all\_config.h@{all\_config.h}!VDCMD\_USB\_VDCMD@{VDCMD\_USB\_VDCMD}}}\mbox{\Hypertarget{all__config_8h_a289b3e9a37338df0a7b258cafdfc7c46a9d1c99b7592961c047189ec266e48ae8}\label{all__config_8h_a289b3e9a37338df0a7b258cafdfc7c46a9d1c99b7592961c047189ec266e48ae8}} 
+VDCMD\+\_\+\+USB\+\_\+\+VDCMD&send command by USB \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VDCMD\_I2C\_USB\_VDCMD@{VDCMD\_I2C\_USB\_VDCMD}!all\_config.h@{all\_config.h}}\index{all\_config.h@{all\_config.h}!VDCMD\_I2C\_USB\_VDCMD@{VDCMD\_I2C\_USB\_VDCMD}}}\mbox{\Hypertarget{all__config_8h_a289b3e9a37338df0a7b258cafdfc7c46a3900da308cb90865b7c960fe8e4cedad}\label{all__config_8h_a289b3e9a37338df0a7b258cafdfc7c46a3900da308cb90865b7c960fe8e4cedad}} 
+VDCMD\+\_\+\+I2\+C\+\_\+\+USB\+\_\+\+VDCMD&send command by I2\+C\+\_\+\+USB \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VDCMD\_I2C\_VDCMD@{VDCMD\_I2C\_VDCMD}!all\_config.h@{all\_config.h}}\index{all\_config.h@{all\_config.h}!VDCMD\_I2C\_VDCMD@{VDCMD\_I2C\_VDCMD}}}\mbox{\Hypertarget{all__config_8h_a289b3e9a37338df0a7b258cafdfc7c46a61868dc07d7654704762c9cd9a00d967}\label{all__config_8h_a289b3e9a37338df0a7b258cafdfc7c46a61868dc07d7654704762c9cd9a00d967}} 
+VDCMD\+\_\+\+I2\+C\+\_\+\+VDCMD&send command by I2\+C(linux with i2c port only) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VDCMD\_UART\_VDCMD@{VDCMD\_UART\_VDCMD}!all\_config.h@{all\_config.h}}\index{all\_config.h@{all\_config.h}!VDCMD\_UART\_VDCMD@{VDCMD\_UART\_VDCMD}}}\mbox{\Hypertarget{all__config_8h_a289b3e9a37338df0a7b258cafdfc7c46a901a0cf586d4ac39d40102e07fd3b79e}\label{all__config_8h_a289b3e9a37338df0a7b258cafdfc7c46a901a0cf586d4ac39d40102e07fd3b79e}} 
+VDCMD\+\_\+\+UART\+\_\+\+VDCMD&send command by UART \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{all__config_8h_a85fb5a37a3e4914b8d777b33d3a747c7}\label{all__config_8h_a85fb5a37a3e4914b8d777b33d3a747c7}} 
+\index{all\_config.h@{all\_config.h}!iruvc\_debug\_print@{iruvc\_debug\_print}}
+\index{iruvc\_debug\_print@{iruvc\_debug\_print}!all\_config.h@{all\_config.h}}
+\doxysubsubsection{\texorpdfstring{iruvc\_debug\_print}{iruvc\_debug\_print}}
+{\footnotesize\ttfamily void($\ast$ iruvc\+\_\+debug\+\_\+print) (const char $\ast$fmt,...) (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Print debug infomation. 
+
+\mbox{\Hypertarget{all__config_8h_ae93567fafc99de7a93048270e7ff5c7e}\label{all__config_8h_ae93567fafc99de7a93048270e7ff5c7e}} 
+\index{all\_config.h@{all\_config.h}!iruvc\_error\_print@{iruvc\_error\_print}}
+\index{iruvc\_error\_print@{iruvc\_error\_print}!all\_config.h@{all\_config.h}}
+\doxysubsubsection{\texorpdfstring{iruvc\_error\_print}{iruvc\_error\_print}}
+{\footnotesize\ttfamily void($\ast$ iruvc\+\_\+error\+\_\+print) (const char $\ast$fmt,...) (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Print error infomation. 
+

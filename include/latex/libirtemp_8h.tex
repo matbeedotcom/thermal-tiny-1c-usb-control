@@ -1,0 +1,1502 @@
+\hypertarget{libirtemp_8h}{}\doxysection{libirtemp.\+h File Reference}
+\label{libirtemp_8h}\index{libirtemp.h@{libirtemp.h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_temp_data_res__t}{Temp\+Data\+Res\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Temp\+Data resulution. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_search_info__t}{Search\+Info\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em The search information of KT curve. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_kt_info__t}{Kt\+Info\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em The turning address of KT curve. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_vtemp_info__t}{Vtemp\+Info\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Some vtemp constants for vtemp convert to true temperature. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_cali_point__t}{Cali\+Point\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em The environment temperature point of primary calibration. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_cali_factor__t}{Cali\+Factor\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em The normalization coefficient of KT curve. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_env_temp__t}{Env\+Temp\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em The environment temperature in double point calibration process. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_v_temp_set__t}{VTemp\+Set\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em The vtemp of sensor in double point calibration process. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_re_cali_factor__t}{Re\+Cali\+Factor\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em The correction factor after recalibration process. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_env_param__t}{Env\+Param\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Environment factor correction parameter. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_env_factor__t}{Env\+Factor\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Environment factor correction coefficient. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_temp_threshold__t}{Temp\+Threshold\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Temperature Threshold. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_nuc_factor__t}{Nuc\+Factor\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em NUC map factor. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_dot__t}{Dot\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{struct_dot__t}{Dot\+\_\+t}} definition. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_line__t}{Line\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{struct_line__t}{Line\+\_\+t}} definition. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_area__t}{Area\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{struct_area__t}{Area\+\_\+t}} definition. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_temp_info__t}{Temp\+Info\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Temperature infomation definition. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_env_correct_param}{Env\+Correct\+Param}}
+\begin{DoxyCompactList}\small\item\em Temperature infomation definition. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_multi_point_calib_temp__t}{Multi\+Point\+Calib\+Temp\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Temperature infomation definition. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_multi_point_calib_nuc__t}{Multi\+Point\+Calib\+Nuc\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Temperature infomation definition. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_correct_table__t}{Correct\+Table\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structsecond__calibration__param__t}{second\+\_\+calibration\+\_\+param\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em the parameter of SECOND\+\_\+\+CALIBRATION\+\_\+\+V1 algorithm \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structsecond__calibration__result__t}{second\+\_\+calibration\+\_\+result\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em the calibration of SECOND\+\_\+\+CALIBRATION\+\_\+\+V1 algorithm \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structktbt__correct__param__t}{ktbt\+\_\+correct\+\_\+param\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{struct_multi_point_calib_param__t}{Multi\+Point\+Calib\+Param\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{struct_multi_point_calib_array__t}{Multi\+Point\+Calib\+Array\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{struct_two_point_calib_result__t}{Two\+Point\+Calib\+Result\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{libirtemp_8h_a002b2f4894492820fe708b1b7e7c5e70}{EPSILON}}~0.\+001
+\item 
+\#define \mbox{\hyperlink{libirtemp_8h_a87e5826d0a5f1d9ec9b1ca0eb296c404}{TEMP\+\_\+\+NUM}}~14
+\item 
+\#define \mbox{\hyperlink{libirtemp_8h_a94160ba384bc9ecae84fd9ee4100be83}{DIST\+\_\+\+NUM}}~64
+\item 
+\#define \mbox{\hyperlink{libirtemp_8h_a1e142b68b640bb18d25c27aebb70cf0c}{NEW\+\_\+\+DIST\+\_\+\+NUM}}~88
+\item 
+\#define \mbox{\hyperlink{libirtemp_8h_a85f08643095a9a9963291a892d1fbb72}{DIST\+\_\+\+NUM\+\_\+\+V3}}~88
+\item 
+\#define \mbox{\hyperlink{libirtemp_8h_a2ee137732d8ceb8faa1b38acd1a79c85}{TARGET\+\_\+\+TEMP\+\_\+\+NUM}}~56
+\item 
+\#define \mbox{\hyperlink{libirtemp_8h_afc03dc9c21066025236f560f4dd67efb}{NEW\+\_\+\+TARGET\+\_\+\+TEMP\+\_\+\+NUM}}~42
+\item 
+\#define \mbox{\hyperlink{libirtemp_8h_ae49ac645adb0e1a0430769c22daccbeb}{TARGET\+\_\+\+TEMP\+\_\+\+NUM\+\_\+\+V3}}~45
+\item 
+\#define \mbox{\hyperlink{libirtemp_8h_a8d41e68295232e5aef15a7ee7a547acb}{HIGH\+\_\+\+GAIN}}~1
+\item 
+\#define \mbox{\hyperlink{libirtemp_8h_ac2835ff11283952aa24b4e0a27bc4df8}{LOW\+\_\+\+GAIN}}~0
+\item 
+\#define \mbox{\hyperlink{libirtemp_8h_afc8852f5805bf5407952dd0cf035446c}{EMS\+\_\+\+MAX}}~128
+\item 
+\#define \mbox{\hyperlink{libirtemp_8h_a89c43e20fa21a41361e1b5cbe122aade}{EMS\+\_\+\+MIN}}~0
+\item 
+\#define \mbox{\hyperlink{libirtemp_8h_ad16f0a65d88bba9d2a2c414b2b38701e}{TAU\+\_\+\+MAX}}~128
+\item 
+\#define \mbox{\hyperlink{libirtemp_8h_a89c876ca27817fe34346537c362647b9}{TAU\+\_\+\+MIN}}~0
+\item 
+\#define \mbox{\hyperlink{libirtemp_8h_ad78a317023c244acb49ba3922d4ed693}{HIGH\+\_\+\+GAIN\+\_\+\+TA\+\_\+\+MAX}}~430
+\item 
+\#define \mbox{\hyperlink{libirtemp_8h_a9a53d3166d1f312856ebeeb353b31490}{HIGH\+\_\+\+GAIN\+\_\+\+TU\+\_\+\+MAX}}~430
+\item 
+\#define \mbox{\hyperlink{libirtemp_8h_aa06e2f5710f6231d3935d4781934f147}{HIGH\+\_\+\+GAIN\+\_\+\+TA\+\_\+\+MIN}}~230
+\item 
+\#define \mbox{\hyperlink{libirtemp_8h_a3283d05f301850cd15f901b7c364f7c1}{HIGH\+\_\+\+GAIN\+\_\+\+TU\+\_\+\+MIN}}~230
+\item 
+\#define \mbox{\hyperlink{libirtemp_8h_a1b639e87c6de4d8650cb6272fc6df45e}{LOW\+\_\+\+GAIN\+\_\+\+TA\+\_\+\+MAX}}~873
+\item 
+\#define \mbox{\hyperlink{libirtemp_8h_a8c553c7cf7db3a07d7928882924be912}{LOW\+\_\+\+GAIN\+\_\+\+TU\+\_\+\+MAX}}~873
+\item 
+\#define \mbox{\hyperlink{libirtemp_8h_a744e954cd422d99e06b0331842e836ec}{LOW\+\_\+\+GAIN\+\_\+\+TA\+\_\+\+MIN}}~230
+\item 
+\#define \mbox{\hyperlink{libirtemp_8h_a13d8180833f2ffeeedc61ae2aa030860}{LOW\+\_\+\+GAIN\+\_\+\+TU\+\_\+\+MIN}}~230
+\item 
+\#define \mbox{\hyperlink{libirtemp_8h_aad24d56a57a5fb57bcec73fc41848a54}{TAU\+\_\+\+TEMP\+\_\+\+MIN}}~-\/5
+\item 
+\#define \mbox{\hyperlink{libirtemp_8h_aaf14414858c5804d386095f46672ebcb}{TAU\+\_\+\+TEMP\+\_\+\+MAX}}~55
+\item 
+\#define \mbox{\hyperlink{libirtemp_8h_a49f9a99032725da2d9ea7315af98f97e}{TAU\+\_\+\+DIST\+\_\+\+MAX}}~50
+\item 
+\#define \mbox{\hyperlink{libirtemp_8h_a40164f690412f9c930532ecda439d8d0}{TAU\+\_\+\+DIST\+\_\+\+MIN}}~0.\+25
+\item 
+\#define \mbox{\hyperlink{libirtemp_8h_ab78f39f7007e26f63b5c9873559aa7f6}{TARGET\+\_\+\+TEMP\+\_\+\+MIN}}~248.\+15
+\item 
+\#define \mbox{\hyperlink{libirtemp_8h_ae8e1212b45e8f29fc3b0f8fb4b1d09fd}{TARGET\+\_\+\+TEMP\+\_\+\+MAX}}~1623.\+15
+\item 
+\#define \mbox{\hyperlink{libirtemp_8h_ae07f3f6043ac42d5085ac5e2f4612a88}{NUC\+\_\+\+T\+\_\+\+SIZE}}~8192
+\item 
+\#define \mbox{\hyperlink{libirtemp_8h_a2bd792bf5023b94b13db66eb5386ad84}{KT\+\_\+\+SIZE}}~1201
+\item 
+\#define \mbox{\hyperlink{libirtemp_8h_ad92e5a361600001505e57ae60af38ce7}{BT\+\_\+\+SIZE}}~1201
+\item 
+\#define \mbox{\hyperlink{libirtemp_8h_a559af0e5a7ad6c1693c0387eefde89bf}{HEAD\+\_\+\+SIZE}}~128
+\item 
+\#define \mbox{\hyperlink{libirtemp_8h_affe776513b24d84b39af8ab0930fef7f}{max}}(a,  b)~(((a) $>$ (b)) ? (a) \+: (b))
+\item 
+\#define \mbox{\hyperlink{libirtemp_8h_ac6afabdc09a49a433ee19d8a9486056d}{min}}(a,  b)~(((a) $<$ (b)) ? (a) \+: (b))
+\item 
+\#define \mbox{\hyperlink{libirtemp_8h_aa7a3f5d63605e03ab3defd80938d3408}{ERROR\+\_\+\+LOG\+\_\+\+TO\+\_\+\+FILE}}(format, ...)
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{libirtemp_8h_a4413aa72a29f678f5c38a4e41096e80a}{Product\+Type\+\_\+t}} \{ \newline
+\mbox{\hyperlink{libirtemp_8h_a4413aa72a29f678f5c38a4e41096e80aa32badd3c34e8826813efd36dbfd27893}{TINY1B}} = 0
+, \mbox{\hyperlink{libirtemp_8h_a4413aa72a29f678f5c38a4e41096e80aa4f91372c87192fdfeacbcd14f8d5a9ca}{TINY1C}}
+, \mbox{\hyperlink{libirtemp_8h_a4413aa72a29f678f5c38a4e41096e80aa9d7d88bb4691f0dc9a32e144f3ed9738}{TINY1\+BE}}
+, \mbox{\hyperlink{libirtemp_8h_a4413aa72a29f678f5c38a4e41096e80aa3d4cef855087c40d15d9e6fa6212d588}{MINI256}}
+, \newline
+\mbox{\hyperlink{libirtemp_8h_a4413aa72a29f678f5c38a4e41096e80aae6fed73e34c644fafb3ad4a1fb81711f}{MINI384}}
+, \mbox{\hyperlink{libirtemp_8h_a4413aa72a29f678f5c38a4e41096e80aa027532e7d665ef1a9bc3d6959bbddf26}{MINI640}}
+, \mbox{\hyperlink{libirtemp_8h_a4413aa72a29f678f5c38a4e41096e80aa8b57afdf165e597991c29f09afcf71f9}{P2}}
+ \}
+\item 
+enum \mbox{\hyperlink{libirtemp_8h_a29c1c3eb10fc106b359b90a438c69011}{Re\+Cali\+Type\+\_\+t}} \{ \mbox{\hyperlink{libirtemp_8h_a29c1c3eb10fc106b359b90a438c69011ac7c4a9a242de572e3c0d59127faef0f8}{SINGLE\+\_\+\+POINT}} = 0
+, \mbox{\hyperlink{libirtemp_8h_a29c1c3eb10fc106b359b90a438c69011a967506c04621dedf2fe10ac322fb50cd}{DOUBLE\+\_\+\+POINT}}
+ \}
+\begin{DoxyCompactList}\small\item\em Recalibration type. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{libirtemp_8h_a8752b7bca77d1d46d5c370eb2cdb6038}{Alarm\+Type\+\_\+t}} \{ \mbox{\hyperlink{libirtemp_8h_a8752b7bca77d1d46d5c370eb2cdb6038a1c0c1c880058ab81dac39f56cedc8a79}{TEMP\+\_\+\+NORMAL}} = 0
+, \mbox{\hyperlink{libirtemp_8h_a8752b7bca77d1d46d5c370eb2cdb6038afa4d1408df15d896861c8c8ea9d1bf16}{OVER\+\_\+\+HEAT}} = 1
+, \mbox{\hyperlink{libirtemp_8h_a8752b7bca77d1d46d5c370eb2cdb6038ac8316201e4ff8c1f255d1d1084866979}{OVER\+\_\+\+COLD}} = 2
+, \mbox{\hyperlink{libirtemp_8h_a8752b7bca77d1d46d5c370eb2cdb6038a0ee8b5ebe2bca1d366ebeeacc48a5ac9}{WRONG\+\_\+\+TYPE}} = 3
+ \}
+\begin{DoxyCompactList}\small\item\em Alarm type in libirtemp library. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{libirtemp_8h_a783499c3db571cad6500e623d52e5cec}{irtemp\+\_\+log\+\_\+level\+\_\+t}} \{ \mbox{\hyperlink{libirtemp_8h_a783499c3db571cad6500e623d52e5ceca10db40443b759d7651b745b1f3d96aab}{IRTEMP\+\_\+\+LOG\+\_\+\+DEBUG}} = 0
+, \mbox{\hyperlink{libirtemp_8h_a783499c3db571cad6500e623d52e5ceca6ddba59e32e2439aaab22311730072cd}{IRTEMP\+\_\+\+LOG\+\_\+\+ERROR}} = 1
+, \mbox{\hyperlink{libirtemp_8h_a783499c3db571cad6500e623d52e5cecaad6e4fd4914a1976df5f4a0ce466bef3}{IRTEMP\+\_\+\+LOG\+\_\+\+NO\+\_\+\+PRINT}} = 2
+ \}
+\begin{DoxyCompactList}\small\item\em Log level definition in libirtemp library. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} \{ \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61ba06458e0148c2873ea6716362d9400394}{IRTEMP\+\_\+\+SUCCESS}} = 0
+, \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61ba96459ce81d3121ca2823368a83b52e07}{IRTEMP\+\_\+\+ERROR\+\_\+\+PARAM}} = -\/1
+, \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61baa8906059c9dec2a3b7f25a78ad92cd3f}{MEMORY\+\_\+\+ALLOC\+\_\+\+FAIL}} = -\/2
+, \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61bad4703ff858b99d0ab254bc020ec29d01}{FILE\+\_\+\+OPERATION\+\_\+\+FAIL}} = -\/3
+ \}
+\begin{DoxyCompactList}\small\item\em Error type in libirtemp library. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+DLLEXPORT char $\ast$ \mbox{\hyperlink{libirtemp_8h_ae408f86f0efcb9be56ef8714eb4cbb94}{irtemp\+\_\+version}} (void)
+\begin{DoxyCompactList}\small\item\em Get current libirtemp library version. \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirtemp_8h_a0e0c20fa286dcb4d61e587701907ad56}{get\+\_\+point\+\_\+temp}} (uint16\+\_\+t $\ast$src, \mbox{\hyperlink{struct_temp_data_res__t}{Temp\+Data\+Res\+\_\+t}} temp\+\_\+res, \mbox{\hyperlink{struct_dot__t}{Dot\+\_\+t}} point, uint16\+\_\+t $\ast$dst)
+\begin{DoxyCompactList}\small\item\em Get point\textquotesingle{}s temperature,axis start from 0. \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirtemp_8h_a0f201386a3403266f7e6fa4b5268de6a}{get\+\_\+line\+\_\+temp}} (uint16\+\_\+t $\ast$src, \mbox{\hyperlink{struct_temp_data_res__t}{Temp\+Data\+Res\+\_\+t}} temp\+\_\+res, \mbox{\hyperlink{struct_line__t}{Line\+\_\+t}} line, \mbox{\hyperlink{struct_temp_info__t}{Temp\+Info\+\_\+t}} $\ast$temp\+\_\+info)
+\begin{DoxyCompactList}\small\item\em Get line\textquotesingle{}s temperautre,axis start from 0,and contains the line\textquotesingle{}s boundary. \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirtemp_8h_a69df2604c49e5e45881e45e46c05a395}{get\+\_\+rect\+\_\+temp}} (uint16\+\_\+t $\ast$src, \mbox{\hyperlink{struct_temp_data_res__t}{Temp\+Data\+Res\+\_\+t}} temp\+\_\+res, \mbox{\hyperlink{struct_area__t}{Area\+\_\+t}} rect, \mbox{\hyperlink{struct_temp_info__t}{Temp\+Info\+\_\+t}} $\ast$temp\+\_\+info)
+\begin{DoxyCompactList}\small\item\em Get rectangle\textquotesingle{}s temperature,axis start from 0,and contains the rectangle\textquotesingle{}s boundary. \end{DoxyCompactList}\item 
+DLLEXPORT void \mbox{\hyperlink{libirtemp_8h_ad4d35b7bb2e4e140509b4aaf5f77f872}{irtemp\+\_\+log\+\_\+register}} (\mbox{\hyperlink{libirtemp_8h_a783499c3db571cad6500e623d52e5cec}{irtemp\+\_\+log\+\_\+level\+\_\+t}} log\+\_\+level)
+\begin{DoxyCompactList}\small\item\em Register log function depend on log level. \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirtemp_8h_a8752b7bca77d1d46d5c370eb2cdb6038}{Alarm\+Type\+\_\+t}} \mbox{\hyperlink{libirtemp_8h_a9acaab0c1b48b7cc047a1a4520b69904}{point\+\_\+over\+\_\+threshold\+\_\+alarm}} (\mbox{\hyperlink{struct_temp_threshold__t}{Temp\+Threshold\+\_\+t}} temp\+\_\+threshold, uint16\+\_\+t cur\+\_\+temp)
+\begin{DoxyCompactList}\small\item\em Point temperature over threshold alarm. \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirtemp_8h_a8752b7bca77d1d46d5c370eb2cdb6038}{Alarm\+Type\+\_\+t}} \mbox{\hyperlink{libirtemp_8h_a66f406bd234f8f2906a70d57a1e6c733}{line\+\_\+rect\+\_\+over\+\_\+threshold\+\_\+alarm}} (\mbox{\hyperlink{struct_temp_threshold__t}{Temp\+Threshold\+\_\+t}} temp\+\_\+threshold, \mbox{\hyperlink{struct_temp_info__t}{Temp\+Info\+\_\+t}} $\ast$temp\+\_\+info)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{struct_line__t}{Line\+\_\+t}} or rectangle temperature over threshold alarm. \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirtemp_8h_ab9f360dabf6cdf2a52c9d03dbdb549c4}{find\+\_\+start\+\_\+and\+\_\+end\+\_\+addr}} (const uint16\+\_\+t $\ast$kt\+\_\+array, const \mbox{\hyperlink{struct_search_info__t}{Search\+Info\+\_\+t}} $\ast$search\+\_\+info, uint16\+\_\+t len, \mbox{\hyperlink{struct_kt_info__t}{Kt\+Info\+\_\+t}} $\ast$kt\+\_\+info)
+\begin{DoxyCompactList}\small\item\em Find start and end turning point of KT curve. \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirtemp_8h_a20d181cf46c2ae2d8fc2265e3f51e54a}{calculate\+\_\+\+Kn\+\_\+and\+\_\+\+Bn}} (const \mbox{\hyperlink{struct_vtemp_info__t}{Vtemp\+Info\+\_\+t}} $\ast$vtemp\+\_\+info, const \mbox{\hyperlink{struct_kt_info__t}{Kt\+Info\+\_\+t}} $\ast$kt\+\_\+info, const \mbox{\hyperlink{struct_cali_point__t}{Cali\+Point\+\_\+t}} $\ast$cali\+\_\+point, \mbox{\hyperlink{struct_cali_factor__t}{Cali\+Factor\+\_\+t}} $\ast$cali\+\_\+factor)
+\begin{DoxyCompactList}\small\item\em Calculate normalization cofficient Kn and Bn of KT curve. \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirtemp_8h_ae75c040df80fe787cd4233d13257bdf6}{single\+\_\+point\+\_\+recalibrate\+\_\+\+KB}} (const \mbox{\hyperlink{struct_cali_factor__t}{Cali\+Factor\+\_\+t}} $\ast$cali\+\_\+factor, int cur\+\_\+vtemp, double t\+\_\+env, \mbox{\hyperlink{struct_re_cali_factor__t}{Re\+Cali\+Factor\+\_\+t}} $\ast$recali\+\_\+factor)
+\begin{DoxyCompactList}\small\item\em calibrate K and B value with single point calibration process \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirtemp_8h_a605bc0c77735c483b167d88b78d73d87}{double\+\_\+point\+\_\+recalibrate\+\_\+\+KB}} (const \mbox{\hyperlink{struct_cali_factor__t}{Cali\+Factor\+\_\+t}} $\ast$cali\+\_\+factor, const \mbox{\hyperlink{struct_v_temp_set__t}{VTemp\+Set\+\_\+t}} $\ast$vtemp\+\_\+set, const \mbox{\hyperlink{struct_env_temp__t}{Env\+Temp\+\_\+t}} $\ast$env\+\_\+temp, \mbox{\hyperlink{struct_re_cali_factor__t}{Re\+Cali\+Factor\+\_\+t}} $\ast$recali\+\_\+factor)
+\begin{DoxyCompactList}\small\item\em calibrate K and B value with double point calibration process \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirtemp_8h_a4333265bbd7c3d87ea45c4ee7df51012}{env\+\_\+temp\+\_\+calculate}} (const \mbox{\hyperlink{struct_cali_factor__t}{Cali\+Factor\+\_\+t}} $\ast$cali\+\_\+factor, const \mbox{\hyperlink{struct_re_cali_factor__t}{Re\+Cali\+Factor\+\_\+t}} $\ast$recali\+\_\+factor, uint16\+\_\+t cur\+\_\+vtemp, double $\ast$t\+\_\+env)
+\begin{DoxyCompactList}\small\item\em estimate current environment temperature \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirtemp_8h_a9d716cb195173452cebc1182a78daf7d}{calculate\+\_\+\+KE\+\_\+and\+\_\+\+BE}} (const \mbox{\hyperlink{struct_env_param__t}{Env\+Param\+\_\+t}} $\ast$env\+\_\+param, const \mbox{\hyperlink{struct_nuc_factor__t}{Nuc\+Factor\+\_\+t}} $\ast$nuc\+\_\+factor, uint8\+\_\+t gain\+\_\+flag, \mbox{\hyperlink{struct_env_factor__t}{Env\+Factor\+\_\+t}} $\ast$env\+\_\+factor)
+\begin{DoxyCompactList}\small\item\em calculate KE and BE which run in firmware \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirtemp_8h_a369574e3ec0268b1869305233f6817c4}{reverse\+\_\+calc\+\_\+\+NUC\+\_\+with\+\_\+env\+\_\+correct}} (const \mbox{\hyperlink{struct_nuc_factor__t}{Nuc\+Factor\+\_\+t}} $\ast$nuc\+\_\+factor, double kelvin\+\_\+temp, uint16\+\_\+t $\ast$nuc\+\_\+cal)
+\begin{DoxyCompactList}\small\item\em reverse calculate NUC value with environment correction \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirtemp_8h_a8a56df866e197eee6d2197ab48e8233c}{reverse\+\_\+calc\+\_\+\+NUC\+\_\+without\+\_\+env\+\_\+correct}} (const \mbox{\hyperlink{struct_env_factor__t}{Env\+Factor\+\_\+t}} $\ast$env\+\_\+factor, uint16\+\_\+t nuc\+\_\+cal, uint16\+\_\+t $\ast$nuc\+\_\+org)
+\begin{DoxyCompactList}\small\item\em reverse calculate NUC value without environment correction \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirtemp_8h_a6dae1d5aea2040ff1e051a81ffbc6f96}{calculate\+\_\+new\+\_\+\+KE\+\_\+and\+\_\+\+BE}} (const \mbox{\hyperlink{struct_env_param__t}{Env\+Param\+\_\+t}} $\ast$env\+\_\+param, const \mbox{\hyperlink{struct_nuc_factor__t}{Nuc\+Factor\+\_\+t}} $\ast$nuc\+\_\+factor, uint8\+\_\+t gain\+\_\+flag, \mbox{\hyperlink{struct_env_factor__t}{Env\+Factor\+\_\+t}} $\ast$env\+\_\+factor)
+\begin{DoxyCompactList}\small\item\em calculate new KE and BE with higher precision \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirtemp_8h_a3e6007e6cfd2b6df9b9119a21be3e204}{recalc\+\_\+\+NUC\+\_\+with\+\_\+env\+\_\+correct}} (const \mbox{\hyperlink{struct_env_factor__t}{Env\+Factor\+\_\+t}} $\ast$env\+\_\+factor, uint16\+\_\+t nuc\+\_\+org, uint16\+\_\+t $\ast$nuc\+\_\+cal)
+\begin{DoxyCompactList}\small\item\em recalculate new NUC value with environment correction \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirtemp_8h_a4f0c8804a67a8ee30fc7cf608e802731}{remap\+\_\+temp}} (const uint16\+\_\+t $\ast$nuc\+\_\+table, uint16\+\_\+t nuc\+\_\+cal, uint16\+\_\+t $\ast$temp\+\_\+data)
+\begin{DoxyCompactList}\small\item\em remap tempertature with nuc\+\_\+table \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirtemp_8h_afccddd28d2eeea490f73ac6162ed8b7f}{get\+\_\+\+NUC\+\_\+value}} (uint16\+\_\+t $\ast$src, \mbox{\hyperlink{struct_temp_data_res__t}{Temp\+Data\+Res\+\_\+t}} temp\+\_\+res, \mbox{\hyperlink{struct_dot__t}{Dot\+\_\+t}} point, uint16\+\_\+t $\ast$nuc\+\_\+value)
+\begin{DoxyCompactList}\small\item\em get NUC value of specific point from NUC frame \end{DoxyCompactList}\item 
+DLLEXPORT uint16\+\_\+t \mbox{\hyperlink{libirtemp_8h_ac36ecb9e62b6d1d4f8ba9982fcff8ec5}{calculate\+\_\+tau}} (uint16\+\_\+t nuc\+\_\+dist\+\_\+high, uint16\+\_\+t nuc\+\_\+dist\+\_\+low, uint16\+\_\+t nuc\+\_\+25\+\_\+high, uint16\+\_\+t nuc\+\_\+25\+\_\+low)
+\begin{DoxyCompactList}\small\item\em calculate Tau depend on nuc\+\_\+dist\+\_\+high,nuc\+\_\+dist\+\_\+low,nuc\+\_\+25\+\_\+high,nuc\+\_\+25\+\_\+low \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirtemp_8h_af397bc7f4452addb87d994b4f37e9674}{read\+\_\+tau}} (const uint16\+\_\+t $\ast$correct\+\_\+table, float hum, float t\+\_\+env, float dist, uint16\+\_\+t $\ast$tau)
+\begin{DoxyCompactList}\small\item\em read tau from correct table \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirtemp_8h_abd2d839a9d942a81c7af637e6f333cc9}{write\+\_\+tau}} (uint16\+\_\+t $\ast$correct\+\_\+table, float hum, float t\+\_\+env, float dist, uint16\+\_\+t tau)
+\begin{DoxyCompactList}\small\item\em write specific tau to correct table \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirtemp_8h_a0654ec7e85095434ecf5df6fd8642250}{read\+\_\+tau\+\_\+with\+\_\+target\+\_\+temp\+\_\+and\+\_\+dist}} (const uint16\+\_\+t $\ast$correct\+\_\+table, float target\+\_\+temp, float dist, uint16\+\_\+t $\ast$tau)
+\begin{DoxyCompactList}\small\item\em read tau from correct table \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirtemp_8h_a24396ee05ca1cbb584e66bb6585d8c56}{write\+\_\+tau\+\_\+with\+\_\+target\+\_\+temp\+\_\+and\+\_\+dist}} (uint16\+\_\+t $\ast$correct\+\_\+table, float target\+\_\+temp, float dist, uint16\+\_\+t tau)
+\begin{DoxyCompactList}\small\item\em write tau to correct table \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirtemp_8h_aa752f9f1478bbb97e5eaef3f1f3431e9}{temp\+\_\+correct}} (float ems, uint16\+\_\+t tau, float ta, float org\+\_\+temp, float $\ast$new\+\_\+temp)
+\begin{DoxyCompactList}\small\item\em temperature correction with new method \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirtemp_8h_a7b74fe6e7ce751e9663955fdf322c39b}{reverse\+\_\+temp\+\_\+correct}} (float ems, uint16\+\_\+t tau, float ta, float new\+\_\+temp, float $\ast$org\+\_\+temp)
+\begin{DoxyCompactList}\small\item\em reverse calculate temperature correction with new method \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirtemp_8h_a8935403bf91f53f480e5ff93104b3f56}{calculate\+\_\+nuc\+\_\+with\+\_\+nuc\+\_\+factor}} (\mbox{\hyperlink{struct_nuc_factor__t}{Nuc\+Factor\+\_\+t}} $\ast$nuc\+\_\+factor, float temp, uint16\+\_\+t $\ast$nuc\+\_\+value)
+\begin{DoxyCompactList}\small\item\em calculate nuc with nuc factor(\+P0,\+P1,\+P2) \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirtemp_8h_a5c48c86e8b6b90fd6e5c8bb3e4ff4347}{generate\+\_\+high\+\_\+gain\+\_\+nuc\+\_\+t}} (\mbox{\hyperlink{struct_nuc_factor__t}{Nuc\+Factor\+\_\+t}} $\ast$nuc\+\_\+factor, uint16\+\_\+t $\ast$nuc\+\_\+table)
+\begin{DoxyCompactList}\small\item\em generate NUC\+\_\+T table in high gain mode with nuc factor(\+P0,\+P1,\+P2) \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirtemp_8h_a00cf048c7e92bfff95b5b47581080ab0}{generate\+\_\+low\+\_\+gain\+\_\+nuc\+\_\+t}} (\mbox{\hyperlink{struct_nuc_factor__t}{Nuc\+Factor\+\_\+t}} $\ast$nuc\+\_\+factor, uint16\+\_\+t $\ast$nuc\+\_\+table)
+\begin{DoxyCompactList}\small\item\em generate NUC\+\_\+T table in low gain mode with nuc factor(\+P0,\+P1,\+P2) \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirtemp_8h_ada2ad373d7550e4b554311c2c3f8b980}{reverse\+\_\+calc\+\_\+\+NUC\+\_\+with\+\_\+nuc\+\_\+t}} (uint16\+\_\+t $\ast$nuc\+\_\+table, float temp, uint16\+\_\+t $\ast$nuc\+\_\+value)
+\begin{DoxyCompactList}\small\item\em reverse calculate NUC value with nuc\+\_\+t table \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirtemp_8h_a8473408b8f4229866200c165dd62efef}{calculate\+\_\+org\+\_\+\+KE\+\_\+and\+\_\+\+BE\+\_\+with\+\_\+nuc\+\_\+t}} (const \mbox{\hyperlink{struct_env_param__t}{Env\+Param\+\_\+t}} $\ast$env\+\_\+param, const uint16\+\_\+t $\ast$nuc\+\_\+table, uint8\+\_\+t gain\+\_\+flag, \mbox{\hyperlink{struct_env_factor__t}{Env\+Factor\+\_\+t}} $\ast$env\+\_\+factor)
+\begin{DoxyCompactList}\small\item\em calculate origin KE and BE with NUC-\/T table. \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirtemp_8h_abc01100292868522a494fd717248e819}{calculate\+\_\+new\+\_\+\+KE\+\_\+and\+\_\+\+BE\+\_\+with\+\_\+nuc\+\_\+t}} (const \mbox{\hyperlink{struct_env_param__t}{Env\+Param\+\_\+t}} $\ast$env\+\_\+param, const uint16\+\_\+t $\ast$nuc\+\_\+table, uint8\+\_\+t gain\+\_\+flag, \mbox{\hyperlink{struct_env_factor__t}{Env\+Factor\+\_\+t}} $\ast$env\+\_\+factor)
+\begin{DoxyCompactList}\small\item\em calculate new KE and BE with higher precision. \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirtemp_8h_a9c882b4c96bba96a3d646708ac0280a7}{enhance\+\_\+distance\+\_\+temp\+\_\+correct}} (\mbox{\hyperlink{struct_env_correct_param}{Env\+Correct\+Param}} $\ast$env\+\_\+correct\+\_\+param, uint16\+\_\+t $\ast$correct\+\_\+table, uint32\+\_\+t table\+\_\+len, float org\+\_\+temp, float $\ast$new\+\_\+temp)
+\begin{DoxyCompactList}\small\item\em new temp correct method in MINI640/384 compatible old and new correct table \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirtemp_8h_aa9764ed95df2df594d745ee344a2d0ce}{new\+\_\+ktbt\+\_\+recal\+\_\+double\+\_\+point\+\_\+calculate}} (\mbox{\hyperlink{struct_multi_point_calib_param__t}{Multi\+Point\+Calib\+Param\+\_\+t}} $\ast$multi\+\_\+point\+\_\+param, int \mbox{\hyperlink{libiruvc_8h_a3a1aeff9b3821c3f83af5438f2b283f7}{product\+\_\+type}}, \mbox{\hyperlink{struct_multi_point_calib_array__t}{Multi\+Point\+Calib\+Array\+\_\+t}} $\ast$multi\+\_\+point\+\_\+calib\+\_\+array, \mbox{\hyperlink{struct_two_point_calib_result__t}{Two\+Point\+Calib\+Result\+\_\+t}} $\ast$two\+\_\+point\+\_\+calib\+\_\+result)
+\begin{DoxyCompactList}\small\item\em calculate new nuc-\/t table \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirtemp_8h_acea44b7140689c2e7ed8532891d5c0ac}{multi\+\_\+point\+\_\+calc\+\_\+user\+\_\+defined\+\_\+nuc}} (\mbox{\hyperlink{struct_multi_point_calib_param__t}{Multi\+Point\+Calib\+Param\+\_\+t}} $\ast$multi\+\_\+point\+\_\+param, int \mbox{\hyperlink{libiruvc_8h_a3a1aeff9b3821c3f83af5438f2b283f7}{product\+\_\+type}}, \mbox{\hyperlink{struct_multi_point_calib_array__t}{Multi\+Point\+Calib\+Array\+\_\+t}} $\ast$multi\+\_\+point\+\_\+calib\+\_\+array, \mbox{\hyperlink{struct_two_point_calib_result__t}{Two\+Point\+Calib\+Result\+\_\+t}} $\ast$two\+\_\+point\+\_\+calib\+\_\+result, \mbox{\hyperlink{struct_multi_point_calib_temp__t}{Multi\+Point\+Calib\+Temp\+\_\+t}} $\ast$multi\+\_\+point\+\_\+temp, \mbox{\hyperlink{struct_multi_point_calib_nuc__t}{Multi\+Point\+Calib\+Nuc\+\_\+t}} $\ast$multi\+\_\+point\+\_\+nuc)
+\begin{DoxyCompactList}\small\item\em calculate user defined environment correct coefficient \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirtemp_8h_aa8dac8415df5389bd3eb35f40335581e}{multi\+\_\+point\+\_\+calc\+\_\+new\+\_\+nuc\+\_\+table}} (uint16\+\_\+t $\ast$nuc\+\_\+table, \mbox{\hyperlink{struct_multi_point_calib_nuc__t}{Multi\+Point\+Calib\+Nuc\+\_\+t}} $\ast$multi\+\_\+point\+\_\+nuc, uint16\+\_\+t multi\+\_\+point\+\_\+num, uint16\+\_\+t $\ast$new\+\_\+nuc\+\_\+table)
+\begin{DoxyCompactList}\small\item\em calculate new nuc-\/t table \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirtemp_8h_a7f72abdea657a13a2eb93c2c7fd894dd}{multi\+\_\+point\+\_\+calc\+\_\+one\+\_\+point\+\_\+correct}} (uint16\+\_\+t $\ast$nuc\+\_\+table, \mbox{\hyperlink{struct_multi_point_calib_nuc__t}{Multi\+Point\+Calib\+Nuc\+\_\+t}} $\ast$multi\+\_\+point\+\_\+nuc, uint16\+\_\+t multi\+\_\+point\+\_\+num, uint16\+\_\+t $\ast$new\+\_\+nuc\+\_\+table)
+\begin{DoxyCompactList}\small\item\em calculate new nuc-\/t table for one point correct \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+void($\ast$ \mbox{\hyperlink{libirtemp_8h_a03b02af31fc3eb58dec90a2b11267ca7}{irtemp\+\_\+debug\+\_\+print}} )(const char $\ast$fmt,...)
+\item 
+void($\ast$ \mbox{\hyperlink{libirtemp_8h_ae2a982ed47cd76d03d6b1785a27c0c36}{irtemp\+\_\+error\+\_\+print}} )(const char $\ast$fmt,...)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{libirtemp_8h_ad92e5a361600001505e57ae60af38ce7}\label{libirtemp_8h_ad92e5a361600001505e57ae60af38ce7}} 
+\index{libirtemp.h@{libirtemp.h}!BT\_SIZE@{BT\_SIZE}}
+\index{BT\_SIZE@{BT\_SIZE}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{BT\_SIZE}{BT\_SIZE}}
+{\footnotesize\ttfamily \#define BT\+\_\+\+SIZE~1201}
+
+\mbox{\Hypertarget{libirtemp_8h_a94160ba384bc9ecae84fd9ee4100be83}\label{libirtemp_8h_a94160ba384bc9ecae84fd9ee4100be83}} 
+\index{libirtemp.h@{libirtemp.h}!DIST\_NUM@{DIST\_NUM}}
+\index{DIST\_NUM@{DIST\_NUM}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{DIST\_NUM}{DIST\_NUM}}
+{\footnotesize\ttfamily \#define DIST\+\_\+\+NUM~64}
+
+\mbox{\Hypertarget{libirtemp_8h_a85f08643095a9a9963291a892d1fbb72}\label{libirtemp_8h_a85f08643095a9a9963291a892d1fbb72}} 
+\index{libirtemp.h@{libirtemp.h}!DIST\_NUM\_V3@{DIST\_NUM\_V3}}
+\index{DIST\_NUM\_V3@{DIST\_NUM\_V3}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{DIST\_NUM\_V3}{DIST\_NUM\_V3}}
+{\footnotesize\ttfamily \#define DIST\+\_\+\+NUM\+\_\+\+V3~88}
+
+\mbox{\Hypertarget{libirtemp_8h_afc8852f5805bf5407952dd0cf035446c}\label{libirtemp_8h_afc8852f5805bf5407952dd0cf035446c}} 
+\index{libirtemp.h@{libirtemp.h}!EMS\_MAX@{EMS\_MAX}}
+\index{EMS\_MAX@{EMS\_MAX}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{EMS\_MAX}{EMS\_MAX}}
+{\footnotesize\ttfamily \#define EMS\+\_\+\+MAX~128}
+
+\mbox{\Hypertarget{libirtemp_8h_a89c43e20fa21a41361e1b5cbe122aade}\label{libirtemp_8h_a89c43e20fa21a41361e1b5cbe122aade}} 
+\index{libirtemp.h@{libirtemp.h}!EMS\_MIN@{EMS\_MIN}}
+\index{EMS\_MIN@{EMS\_MIN}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{EMS\_MIN}{EMS\_MIN}}
+{\footnotesize\ttfamily \#define EMS\+\_\+\+MIN~0}
+
+\mbox{\Hypertarget{libirtemp_8h_a002b2f4894492820fe708b1b7e7c5e70}\label{libirtemp_8h_a002b2f4894492820fe708b1b7e7c5e70}} 
+\index{libirtemp.h@{libirtemp.h}!EPSILON@{EPSILON}}
+\index{EPSILON@{EPSILON}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{EPSILON}{EPSILON}}
+{\footnotesize\ttfamily \#define EPSILON~0.\+001}
+
+\mbox{\Hypertarget{libirtemp_8h_aa7a3f5d63605e03ab3defd80938d3408}\label{libirtemp_8h_aa7a3f5d63605e03ab3defd80938d3408}} 
+\index{libirtemp.h@{libirtemp.h}!ERROR\_LOG\_TO\_FILE@{ERROR\_LOG\_TO\_FILE}}
+\index{ERROR\_LOG\_TO\_FILE@{ERROR\_LOG\_TO\_FILE}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{ERROR\_LOG\_TO\_FILE}{ERROR\_LOG\_TO\_FILE}}
+{\footnotesize\ttfamily \#define ERROR\+\_\+\+LOG\+\_\+\+TO\+\_\+\+FILE(\begin{DoxyParamCaption}\item[{}]{format,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                            \textcolor{keywordflow}{do}\{ FILE* fp = NULL;\(\backslash\)}
+\DoxyCodeLine{                                            fp = fopen(\textcolor{stringliteral}{"{}err\_log.txt"{}}, \textcolor{stringliteral}{"{}a+"{}});\(\backslash\)}
+\DoxyCodeLine{                                            fprintf(fp, format\textcolor{stringliteral}{"{}\(\backslash\)n"{}}, \_\_VA\_ARGS\_\_);\(\backslash\)}
+\DoxyCodeLine{                                            fclose(fp); \}\textcolor{keywordflow}{while}(0);}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{libirtemp_8h_a559af0e5a7ad6c1693c0387eefde89bf}\label{libirtemp_8h_a559af0e5a7ad6c1693c0387eefde89bf}} 
+\index{libirtemp.h@{libirtemp.h}!HEAD\_SIZE@{HEAD\_SIZE}}
+\index{HEAD\_SIZE@{HEAD\_SIZE}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{HEAD\_SIZE}{HEAD\_SIZE}}
+{\footnotesize\ttfamily \#define HEAD\+\_\+\+SIZE~128}
+
+\mbox{\Hypertarget{libirtemp_8h_a8d41e68295232e5aef15a7ee7a547acb}\label{libirtemp_8h_a8d41e68295232e5aef15a7ee7a547acb}} 
+\index{libirtemp.h@{libirtemp.h}!HIGH\_GAIN@{HIGH\_GAIN}}
+\index{HIGH\_GAIN@{HIGH\_GAIN}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{HIGH\_GAIN}{HIGH\_GAIN}}
+{\footnotesize\ttfamily \#define HIGH\+\_\+\+GAIN~1}
+
+\mbox{\Hypertarget{libirtemp_8h_ad78a317023c244acb49ba3922d4ed693}\label{libirtemp_8h_ad78a317023c244acb49ba3922d4ed693}} 
+\index{libirtemp.h@{libirtemp.h}!HIGH\_GAIN\_TA\_MAX@{HIGH\_GAIN\_TA\_MAX}}
+\index{HIGH\_GAIN\_TA\_MAX@{HIGH\_GAIN\_TA\_MAX}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{HIGH\_GAIN\_TA\_MAX}{HIGH\_GAIN\_TA\_MAX}}
+{\footnotesize\ttfamily \#define HIGH\+\_\+\+GAIN\+\_\+\+TA\+\_\+\+MAX~430}
+
+\mbox{\Hypertarget{libirtemp_8h_aa06e2f5710f6231d3935d4781934f147}\label{libirtemp_8h_aa06e2f5710f6231d3935d4781934f147}} 
+\index{libirtemp.h@{libirtemp.h}!HIGH\_GAIN\_TA\_MIN@{HIGH\_GAIN\_TA\_MIN}}
+\index{HIGH\_GAIN\_TA\_MIN@{HIGH\_GAIN\_TA\_MIN}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{HIGH\_GAIN\_TA\_MIN}{HIGH\_GAIN\_TA\_MIN}}
+{\footnotesize\ttfamily \#define HIGH\+\_\+\+GAIN\+\_\+\+TA\+\_\+\+MIN~230}
+
+\mbox{\Hypertarget{libirtemp_8h_a9a53d3166d1f312856ebeeb353b31490}\label{libirtemp_8h_a9a53d3166d1f312856ebeeb353b31490}} 
+\index{libirtemp.h@{libirtemp.h}!HIGH\_GAIN\_TU\_MAX@{HIGH\_GAIN\_TU\_MAX}}
+\index{HIGH\_GAIN\_TU\_MAX@{HIGH\_GAIN\_TU\_MAX}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{HIGH\_GAIN\_TU\_MAX}{HIGH\_GAIN\_TU\_MAX}}
+{\footnotesize\ttfamily \#define HIGH\+\_\+\+GAIN\+\_\+\+TU\+\_\+\+MAX~430}
+
+\mbox{\Hypertarget{libirtemp_8h_a3283d05f301850cd15f901b7c364f7c1}\label{libirtemp_8h_a3283d05f301850cd15f901b7c364f7c1}} 
+\index{libirtemp.h@{libirtemp.h}!HIGH\_GAIN\_TU\_MIN@{HIGH\_GAIN\_TU\_MIN}}
+\index{HIGH\_GAIN\_TU\_MIN@{HIGH\_GAIN\_TU\_MIN}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{HIGH\_GAIN\_TU\_MIN}{HIGH\_GAIN\_TU\_MIN}}
+{\footnotesize\ttfamily \#define HIGH\+\_\+\+GAIN\+\_\+\+TU\+\_\+\+MIN~230}
+
+\mbox{\Hypertarget{libirtemp_8h_a2bd792bf5023b94b13db66eb5386ad84}\label{libirtemp_8h_a2bd792bf5023b94b13db66eb5386ad84}} 
+\index{libirtemp.h@{libirtemp.h}!KT\_SIZE@{KT\_SIZE}}
+\index{KT\_SIZE@{KT\_SIZE}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{KT\_SIZE}{KT\_SIZE}}
+{\footnotesize\ttfamily \#define KT\+\_\+\+SIZE~1201}
+
+\mbox{\Hypertarget{libirtemp_8h_ac2835ff11283952aa24b4e0a27bc4df8}\label{libirtemp_8h_ac2835ff11283952aa24b4e0a27bc4df8}} 
+\index{libirtemp.h@{libirtemp.h}!LOW\_GAIN@{LOW\_GAIN}}
+\index{LOW\_GAIN@{LOW\_GAIN}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{LOW\_GAIN}{LOW\_GAIN}}
+{\footnotesize\ttfamily \#define LOW\+\_\+\+GAIN~0}
+
+\mbox{\Hypertarget{libirtemp_8h_a1b639e87c6de4d8650cb6272fc6df45e}\label{libirtemp_8h_a1b639e87c6de4d8650cb6272fc6df45e}} 
+\index{libirtemp.h@{libirtemp.h}!LOW\_GAIN\_TA\_MAX@{LOW\_GAIN\_TA\_MAX}}
+\index{LOW\_GAIN\_TA\_MAX@{LOW\_GAIN\_TA\_MAX}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{LOW\_GAIN\_TA\_MAX}{LOW\_GAIN\_TA\_MAX}}
+{\footnotesize\ttfamily \#define LOW\+\_\+\+GAIN\+\_\+\+TA\+\_\+\+MAX~873}
+
+\mbox{\Hypertarget{libirtemp_8h_a744e954cd422d99e06b0331842e836ec}\label{libirtemp_8h_a744e954cd422d99e06b0331842e836ec}} 
+\index{libirtemp.h@{libirtemp.h}!LOW\_GAIN\_TA\_MIN@{LOW\_GAIN\_TA\_MIN}}
+\index{LOW\_GAIN\_TA\_MIN@{LOW\_GAIN\_TA\_MIN}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{LOW\_GAIN\_TA\_MIN}{LOW\_GAIN\_TA\_MIN}}
+{\footnotesize\ttfamily \#define LOW\+\_\+\+GAIN\+\_\+\+TA\+\_\+\+MIN~230}
+
+\mbox{\Hypertarget{libirtemp_8h_a8c553c7cf7db3a07d7928882924be912}\label{libirtemp_8h_a8c553c7cf7db3a07d7928882924be912}} 
+\index{libirtemp.h@{libirtemp.h}!LOW\_GAIN\_TU\_MAX@{LOW\_GAIN\_TU\_MAX}}
+\index{LOW\_GAIN\_TU\_MAX@{LOW\_GAIN\_TU\_MAX}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{LOW\_GAIN\_TU\_MAX}{LOW\_GAIN\_TU\_MAX}}
+{\footnotesize\ttfamily \#define LOW\+\_\+\+GAIN\+\_\+\+TU\+\_\+\+MAX~873}
+
+\mbox{\Hypertarget{libirtemp_8h_a13d8180833f2ffeeedc61ae2aa030860}\label{libirtemp_8h_a13d8180833f2ffeeedc61ae2aa030860}} 
+\index{libirtemp.h@{libirtemp.h}!LOW\_GAIN\_TU\_MIN@{LOW\_GAIN\_TU\_MIN}}
+\index{LOW\_GAIN\_TU\_MIN@{LOW\_GAIN\_TU\_MIN}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{LOW\_GAIN\_TU\_MIN}{LOW\_GAIN\_TU\_MIN}}
+{\footnotesize\ttfamily \#define LOW\+\_\+\+GAIN\+\_\+\+TU\+\_\+\+MIN~230}
+
+\mbox{\Hypertarget{libirtemp_8h_affe776513b24d84b39af8ab0930fef7f}\label{libirtemp_8h_affe776513b24d84b39af8ab0930fef7f}} 
+\index{libirtemp.h@{libirtemp.h}!max@{max}}
+\index{max@{max}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{max}{max}}
+{\footnotesize\ttfamily \#define max(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})~(((a) $>$ (b)) ? (a) \+: (b))}
+
+\mbox{\Hypertarget{libirtemp_8h_ac6afabdc09a49a433ee19d8a9486056d}\label{libirtemp_8h_ac6afabdc09a49a433ee19d8a9486056d}} 
+\index{libirtemp.h@{libirtemp.h}!min@{min}}
+\index{min@{min}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{min}{min}}
+{\footnotesize\ttfamily \#define min(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})~(((a) $<$ (b)) ? (a) \+: (b))}
+
+\mbox{\Hypertarget{libirtemp_8h_a1e142b68b640bb18d25c27aebb70cf0c}\label{libirtemp_8h_a1e142b68b640bb18d25c27aebb70cf0c}} 
+\index{libirtemp.h@{libirtemp.h}!NEW\_DIST\_NUM@{NEW\_DIST\_NUM}}
+\index{NEW\_DIST\_NUM@{NEW\_DIST\_NUM}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{NEW\_DIST\_NUM}{NEW\_DIST\_NUM}}
+{\footnotesize\ttfamily \#define NEW\+\_\+\+DIST\+\_\+\+NUM~88}
+
+\mbox{\Hypertarget{libirtemp_8h_afc03dc9c21066025236f560f4dd67efb}\label{libirtemp_8h_afc03dc9c21066025236f560f4dd67efb}} 
+\index{libirtemp.h@{libirtemp.h}!NEW\_TARGET\_TEMP\_NUM@{NEW\_TARGET\_TEMP\_NUM}}
+\index{NEW\_TARGET\_TEMP\_NUM@{NEW\_TARGET\_TEMP\_NUM}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{NEW\_TARGET\_TEMP\_NUM}{NEW\_TARGET\_TEMP\_NUM}}
+{\footnotesize\ttfamily \#define NEW\+\_\+\+TARGET\+\_\+\+TEMP\+\_\+\+NUM~42}
+
+\mbox{\Hypertarget{libirtemp_8h_ae07f3f6043ac42d5085ac5e2f4612a88}\label{libirtemp_8h_ae07f3f6043ac42d5085ac5e2f4612a88}} 
+\index{libirtemp.h@{libirtemp.h}!NUC\_T\_SIZE@{NUC\_T\_SIZE}}
+\index{NUC\_T\_SIZE@{NUC\_T\_SIZE}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{NUC\_T\_SIZE}{NUC\_T\_SIZE}}
+{\footnotesize\ttfamily \#define NUC\+\_\+\+T\+\_\+\+SIZE~8192}
+
+\mbox{\Hypertarget{libirtemp_8h_ae8e1212b45e8f29fc3b0f8fb4b1d09fd}\label{libirtemp_8h_ae8e1212b45e8f29fc3b0f8fb4b1d09fd}} 
+\index{libirtemp.h@{libirtemp.h}!TARGET\_TEMP\_MAX@{TARGET\_TEMP\_MAX}}
+\index{TARGET\_TEMP\_MAX@{TARGET\_TEMP\_MAX}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{TARGET\_TEMP\_MAX}{TARGET\_TEMP\_MAX}}
+{\footnotesize\ttfamily \#define TARGET\+\_\+\+TEMP\+\_\+\+MAX~1623.\+15}
+
+\mbox{\Hypertarget{libirtemp_8h_ab78f39f7007e26f63b5c9873559aa7f6}\label{libirtemp_8h_ab78f39f7007e26f63b5c9873559aa7f6}} 
+\index{libirtemp.h@{libirtemp.h}!TARGET\_TEMP\_MIN@{TARGET\_TEMP\_MIN}}
+\index{TARGET\_TEMP\_MIN@{TARGET\_TEMP\_MIN}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{TARGET\_TEMP\_MIN}{TARGET\_TEMP\_MIN}}
+{\footnotesize\ttfamily \#define TARGET\+\_\+\+TEMP\+\_\+\+MIN~248.\+15}
+
+\mbox{\Hypertarget{libirtemp_8h_a2ee137732d8ceb8faa1b38acd1a79c85}\label{libirtemp_8h_a2ee137732d8ceb8faa1b38acd1a79c85}} 
+\index{libirtemp.h@{libirtemp.h}!TARGET\_TEMP\_NUM@{TARGET\_TEMP\_NUM}}
+\index{TARGET\_TEMP\_NUM@{TARGET\_TEMP\_NUM}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{TARGET\_TEMP\_NUM}{TARGET\_TEMP\_NUM}}
+{\footnotesize\ttfamily \#define TARGET\+\_\+\+TEMP\+\_\+\+NUM~56}
+
+\mbox{\Hypertarget{libirtemp_8h_ae49ac645adb0e1a0430769c22daccbeb}\label{libirtemp_8h_ae49ac645adb0e1a0430769c22daccbeb}} 
+\index{libirtemp.h@{libirtemp.h}!TARGET\_TEMP\_NUM\_V3@{TARGET\_TEMP\_NUM\_V3}}
+\index{TARGET\_TEMP\_NUM\_V3@{TARGET\_TEMP\_NUM\_V3}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{TARGET\_TEMP\_NUM\_V3}{TARGET\_TEMP\_NUM\_V3}}
+{\footnotesize\ttfamily \#define TARGET\+\_\+\+TEMP\+\_\+\+NUM\+\_\+\+V3~45}
+
+\mbox{\Hypertarget{libirtemp_8h_a49f9a99032725da2d9ea7315af98f97e}\label{libirtemp_8h_a49f9a99032725da2d9ea7315af98f97e}} 
+\index{libirtemp.h@{libirtemp.h}!TAU\_DIST\_MAX@{TAU\_DIST\_MAX}}
+\index{TAU\_DIST\_MAX@{TAU\_DIST\_MAX}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{TAU\_DIST\_MAX}{TAU\_DIST\_MAX}}
+{\footnotesize\ttfamily \#define TAU\+\_\+\+DIST\+\_\+\+MAX~50}
+
+\mbox{\Hypertarget{libirtemp_8h_a40164f690412f9c930532ecda439d8d0}\label{libirtemp_8h_a40164f690412f9c930532ecda439d8d0}} 
+\index{libirtemp.h@{libirtemp.h}!TAU\_DIST\_MIN@{TAU\_DIST\_MIN}}
+\index{TAU\_DIST\_MIN@{TAU\_DIST\_MIN}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{TAU\_DIST\_MIN}{TAU\_DIST\_MIN}}
+{\footnotesize\ttfamily \#define TAU\+\_\+\+DIST\+\_\+\+MIN~0.\+25}
+
+\mbox{\Hypertarget{libirtemp_8h_ad16f0a65d88bba9d2a2c414b2b38701e}\label{libirtemp_8h_ad16f0a65d88bba9d2a2c414b2b38701e}} 
+\index{libirtemp.h@{libirtemp.h}!TAU\_MAX@{TAU\_MAX}}
+\index{TAU\_MAX@{TAU\_MAX}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{TAU\_MAX}{TAU\_MAX}}
+{\footnotesize\ttfamily \#define TAU\+\_\+\+MAX~128}
+
+\mbox{\Hypertarget{libirtemp_8h_a89c876ca27817fe34346537c362647b9}\label{libirtemp_8h_a89c876ca27817fe34346537c362647b9}} 
+\index{libirtemp.h@{libirtemp.h}!TAU\_MIN@{TAU\_MIN}}
+\index{TAU\_MIN@{TAU\_MIN}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{TAU\_MIN}{TAU\_MIN}}
+{\footnotesize\ttfamily \#define TAU\+\_\+\+MIN~0}
+
+\mbox{\Hypertarget{libirtemp_8h_aaf14414858c5804d386095f46672ebcb}\label{libirtemp_8h_aaf14414858c5804d386095f46672ebcb}} 
+\index{libirtemp.h@{libirtemp.h}!TAU\_TEMP\_MAX@{TAU\_TEMP\_MAX}}
+\index{TAU\_TEMP\_MAX@{TAU\_TEMP\_MAX}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{TAU\_TEMP\_MAX}{TAU\_TEMP\_MAX}}
+{\footnotesize\ttfamily \#define TAU\+\_\+\+TEMP\+\_\+\+MAX~55}
+
+\mbox{\Hypertarget{libirtemp_8h_aad24d56a57a5fb57bcec73fc41848a54}\label{libirtemp_8h_aad24d56a57a5fb57bcec73fc41848a54}} 
+\index{libirtemp.h@{libirtemp.h}!TAU\_TEMP\_MIN@{TAU\_TEMP\_MIN}}
+\index{TAU\_TEMP\_MIN@{TAU\_TEMP\_MIN}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{TAU\_TEMP\_MIN}{TAU\_TEMP\_MIN}}
+{\footnotesize\ttfamily \#define TAU\+\_\+\+TEMP\+\_\+\+MIN~-\/5}
+
+\mbox{\Hypertarget{libirtemp_8h_a87e5826d0a5f1d9ec9b1ca0eb296c404}\label{libirtemp_8h_a87e5826d0a5f1d9ec9b1ca0eb296c404}} 
+\index{libirtemp.h@{libirtemp.h}!TEMP\_NUM@{TEMP\_NUM}}
+\index{TEMP\_NUM@{TEMP\_NUM}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{TEMP\_NUM}{TEMP\_NUM}}
+{\footnotesize\ttfamily \#define TEMP\+\_\+\+NUM~14}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{libirtemp_8h_a8752b7bca77d1d46d5c370eb2cdb6038}\label{libirtemp_8h_a8752b7bca77d1d46d5c370eb2cdb6038}} 
+\index{libirtemp.h@{libirtemp.h}!AlarmType\_t@{AlarmType\_t}}
+\index{AlarmType\_t@{AlarmType\_t}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{AlarmType\_t}{AlarmType\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{libirtemp_8h_a8752b7bca77d1d46d5c370eb2cdb6038}{Alarm\+Type\+\_\+t}}}
+
+
+
+Alarm type in libirtemp library. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEMP\_NORMAL@{TEMP\_NORMAL}!libirtemp.h@{libirtemp.h}}\index{libirtemp.h@{libirtemp.h}!TEMP\_NORMAL@{TEMP\_NORMAL}}}\mbox{\Hypertarget{libirtemp_8h_a8752b7bca77d1d46d5c370eb2cdb6038a1c0c1c880058ab81dac39f56cedc8a79}\label{libirtemp_8h_a8752b7bca77d1d46d5c370eb2cdb6038a1c0c1c880058ab81dac39f56cedc8a79}} 
+TEMP\+\_\+\+NORMAL&normal temperature \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OVER\_HEAT@{OVER\_HEAT}!libirtemp.h@{libirtemp.h}}\index{libirtemp.h@{libirtemp.h}!OVER\_HEAT@{OVER\_HEAT}}}\mbox{\Hypertarget{libirtemp_8h_a8752b7bca77d1d46d5c370eb2cdb6038afa4d1408df15d896861c8c8ea9d1bf16}\label{libirtemp_8h_a8752b7bca77d1d46d5c370eb2cdb6038afa4d1408df15d896861c8c8ea9d1bf16}} 
+OVER\+\_\+\+HEAT&over heat \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OVER\_COLD@{OVER\_COLD}!libirtemp.h@{libirtemp.h}}\index{libirtemp.h@{libirtemp.h}!OVER\_COLD@{OVER\_COLD}}}\mbox{\Hypertarget{libirtemp_8h_a8752b7bca77d1d46d5c370eb2cdb6038ac8316201e4ff8c1f255d1d1084866979}\label{libirtemp_8h_a8752b7bca77d1d46d5c370eb2cdb6038ac8316201e4ff8c1f255d1d1084866979}} 
+OVER\+\_\+\+COLD&over cold \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WRONG\_TYPE@{WRONG\_TYPE}!libirtemp.h@{libirtemp.h}}\index{libirtemp.h@{libirtemp.h}!WRONG\_TYPE@{WRONG\_TYPE}}}\mbox{\Hypertarget{libirtemp_8h_a8752b7bca77d1d46d5c370eb2cdb6038a0ee8b5ebe2bca1d366ebeeacc48a5ac9}\label{libirtemp_8h_a8752b7bca77d1d46d5c370eb2cdb6038a0ee8b5ebe2bca1d366ebeeacc48a5ac9}} 
+WRONG\+\_\+\+TYPE&wrong type \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}\label{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}} 
+\index{libirtemp.h@{libirtemp.h}!irtemp\_error\_t@{irtemp\_error\_t}}
+\index{irtemp\_error\_t@{irtemp\_error\_t}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{irtemp\_error\_t}{irtemp\_error\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}}}
+
+
+
+Error type in libirtemp library. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRTEMP\_SUCCESS@{IRTEMP\_SUCCESS}!libirtemp.h@{libirtemp.h}}\index{libirtemp.h@{libirtemp.h}!IRTEMP\_SUCCESS@{IRTEMP\_SUCCESS}}}\mbox{\Hypertarget{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61ba06458e0148c2873ea6716362d9400394}\label{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61ba06458e0148c2873ea6716362d9400394}} 
+IRTEMP\+\_\+\+SUCCESS&function excute success \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRTEMP\_ERROR\_PARAM@{IRTEMP\_ERROR\_PARAM}!libirtemp.h@{libirtemp.h}}\index{libirtemp.h@{libirtemp.h}!IRTEMP\_ERROR\_PARAM@{IRTEMP\_ERROR\_PARAM}}}\mbox{\Hypertarget{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61ba96459ce81d3121ca2823368a83b52e07}\label{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61ba96459ce81d3121ca2823368a83b52e07}} 
+IRTEMP\+\_\+\+ERROR\+\_\+\+PARAM&invalid parameter \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MEMORY\_ALLOC\_FAIL@{MEMORY\_ALLOC\_FAIL}!libirtemp.h@{libirtemp.h}}\index{libirtemp.h@{libirtemp.h}!MEMORY\_ALLOC\_FAIL@{MEMORY\_ALLOC\_FAIL}}}\mbox{\Hypertarget{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61baa8906059c9dec2a3b7f25a78ad92cd3f}\label{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61baa8906059c9dec2a3b7f25a78ad92cd3f}} 
+MEMORY\+\_\+\+ALLOC\+\_\+\+FAIL&dynamic alloc memory fail \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FILE\_OPERATION\_FAIL@{FILE\_OPERATION\_FAIL}!libirtemp.h@{libirtemp.h}}\index{libirtemp.h@{libirtemp.h}!FILE\_OPERATION\_FAIL@{FILE\_OPERATION\_FAIL}}}\mbox{\Hypertarget{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61bad4703ff858b99d0ab254bc020ec29d01}\label{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61bad4703ff858b99d0ab254bc020ec29d01}} 
+FILE\+\_\+\+OPERATION\+\_\+\+FAIL&file operation fail \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{libirtemp_8h_a783499c3db571cad6500e623d52e5cec}\label{libirtemp_8h_a783499c3db571cad6500e623d52e5cec}} 
+\index{libirtemp.h@{libirtemp.h}!irtemp\_log\_level\_t@{irtemp\_log\_level\_t}}
+\index{irtemp\_log\_level\_t@{irtemp\_log\_level\_t}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{irtemp\_log\_level\_t}{irtemp\_log\_level\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{libirtemp_8h_a783499c3db571cad6500e623d52e5cec}{irtemp\+\_\+log\+\_\+level\+\_\+t}}}
+
+
+
+Log level definition in libirtemp library. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRTEMP\_LOG\_DEBUG@{IRTEMP\_LOG\_DEBUG}!libirtemp.h@{libirtemp.h}}\index{libirtemp.h@{libirtemp.h}!IRTEMP\_LOG\_DEBUG@{IRTEMP\_LOG\_DEBUG}}}\mbox{\Hypertarget{libirtemp_8h_a783499c3db571cad6500e623d52e5ceca10db40443b759d7651b745b1f3d96aab}\label{libirtemp_8h_a783499c3db571cad6500e623d52e5ceca10db40443b759d7651b745b1f3d96aab}} 
+IRTEMP\+\_\+\+LOG\+\_\+\+DEBUG&print debug and error infomation \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRTEMP\_LOG\_ERROR@{IRTEMP\_LOG\_ERROR}!libirtemp.h@{libirtemp.h}}\index{libirtemp.h@{libirtemp.h}!IRTEMP\_LOG\_ERROR@{IRTEMP\_LOG\_ERROR}}}\mbox{\Hypertarget{libirtemp_8h_a783499c3db571cad6500e623d52e5ceca6ddba59e32e2439aaab22311730072cd}\label{libirtemp_8h_a783499c3db571cad6500e623d52e5ceca6ddba59e32e2439aaab22311730072cd}} 
+IRTEMP\+\_\+\+LOG\+\_\+\+ERROR&only print error infomation \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRTEMP\_LOG\_NO\_PRINT@{IRTEMP\_LOG\_NO\_PRINT}!libirtemp.h@{libirtemp.h}}\index{libirtemp.h@{libirtemp.h}!IRTEMP\_LOG\_NO\_PRINT@{IRTEMP\_LOG\_NO\_PRINT}}}\mbox{\Hypertarget{libirtemp_8h_a783499c3db571cad6500e623d52e5cecaad6e4fd4914a1976df5f4a0ce466bef3}\label{libirtemp_8h_a783499c3db571cad6500e623d52e5cecaad6e4fd4914a1976df5f4a0ce466bef3}} 
+IRTEMP\+\_\+\+LOG\+\_\+\+NO\+\_\+\+PRINT&don\textquotesingle{}t print debug and error infomation \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{libirtemp_8h_a4413aa72a29f678f5c38a4e41096e80a}\label{libirtemp_8h_a4413aa72a29f678f5c38a4e41096e80a}} 
+\index{libirtemp.h@{libirtemp.h}!ProductType\_t@{ProductType\_t}}
+\index{ProductType\_t@{ProductType\_t}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{ProductType\_t}{ProductType\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{libirtemp_8h_a4413aa72a29f678f5c38a4e41096e80a}{Product\+Type\+\_\+t}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TINY1B@{TINY1B}!libirtemp.h@{libirtemp.h}}\index{libirtemp.h@{libirtemp.h}!TINY1B@{TINY1B}}}\mbox{\Hypertarget{libirtemp_8h_a4413aa72a29f678f5c38a4e41096e80aa32badd3c34e8826813efd36dbfd27893}\label{libirtemp_8h_a4413aa72a29f678f5c38a4e41096e80aa32badd3c34e8826813efd36dbfd27893}} 
+TINY1B&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TINY1C@{TINY1C}!libirtemp.h@{libirtemp.h}}\index{libirtemp.h@{libirtemp.h}!TINY1C@{TINY1C}}}\mbox{\Hypertarget{libirtemp_8h_a4413aa72a29f678f5c38a4e41096e80aa4f91372c87192fdfeacbcd14f8d5a9ca}\label{libirtemp_8h_a4413aa72a29f678f5c38a4e41096e80aa4f91372c87192fdfeacbcd14f8d5a9ca}} 
+TINY1C&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TINY1BE@{TINY1BE}!libirtemp.h@{libirtemp.h}}\index{libirtemp.h@{libirtemp.h}!TINY1BE@{TINY1BE}}}\mbox{\Hypertarget{libirtemp_8h_a4413aa72a29f678f5c38a4e41096e80aa9d7d88bb4691f0dc9a32e144f3ed9738}\label{libirtemp_8h_a4413aa72a29f678f5c38a4e41096e80aa9d7d88bb4691f0dc9a32e144f3ed9738}} 
+TINY1\+BE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MINI256@{MINI256}!libirtemp.h@{libirtemp.h}}\index{libirtemp.h@{libirtemp.h}!MINI256@{MINI256}}}\mbox{\Hypertarget{libirtemp_8h_a4413aa72a29f678f5c38a4e41096e80aa3d4cef855087c40d15d9e6fa6212d588}\label{libirtemp_8h_a4413aa72a29f678f5c38a4e41096e80aa3d4cef855087c40d15d9e6fa6212d588}} 
+MINI256&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MINI384@{MINI384}!libirtemp.h@{libirtemp.h}}\index{libirtemp.h@{libirtemp.h}!MINI384@{MINI384}}}\mbox{\Hypertarget{libirtemp_8h_a4413aa72a29f678f5c38a4e41096e80aae6fed73e34c644fafb3ad4a1fb81711f}\label{libirtemp_8h_a4413aa72a29f678f5c38a4e41096e80aae6fed73e34c644fafb3ad4a1fb81711f}} 
+MINI384&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MINI640@{MINI640}!libirtemp.h@{libirtemp.h}}\index{libirtemp.h@{libirtemp.h}!MINI640@{MINI640}}}\mbox{\Hypertarget{libirtemp_8h_a4413aa72a29f678f5c38a4e41096e80aa027532e7d665ef1a9bc3d6959bbddf26}\label{libirtemp_8h_a4413aa72a29f678f5c38a4e41096e80aa027532e7d665ef1a9bc3d6959bbddf26}} 
+MINI640&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P2@{P2}!libirtemp.h@{libirtemp.h}}\index{libirtemp.h@{libirtemp.h}!P2@{P2}}}\mbox{\Hypertarget{libirtemp_8h_a4413aa72a29f678f5c38a4e41096e80aa8b57afdf165e597991c29f09afcf71f9}\label{libirtemp_8h_a4413aa72a29f678f5c38a4e41096e80aa8b57afdf165e597991c29f09afcf71f9}} 
+P2&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{libirtemp_8h_a29c1c3eb10fc106b359b90a438c69011}\label{libirtemp_8h_a29c1c3eb10fc106b359b90a438c69011}} 
+\index{libirtemp.h@{libirtemp.h}!ReCaliType\_t@{ReCaliType\_t}}
+\index{ReCaliType\_t@{ReCaliType\_t}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{ReCaliType\_t}{ReCaliType\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{libirtemp_8h_a29c1c3eb10fc106b359b90a438c69011}{Re\+Cali\+Type\+\_\+t}}}
+
+
+
+Recalibration type. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SINGLE\_POINT@{SINGLE\_POINT}!libirtemp.h@{libirtemp.h}}\index{libirtemp.h@{libirtemp.h}!SINGLE\_POINT@{SINGLE\_POINT}}}\mbox{\Hypertarget{libirtemp_8h_a29c1c3eb10fc106b359b90a438c69011ac7c4a9a242de572e3c0d59127faef0f8}\label{libirtemp_8h_a29c1c3eb10fc106b359b90a438c69011ac7c4a9a242de572e3c0d59127faef0f8}} 
+SINGLE\+\_\+\+POINT&The flag represent single point calibration process. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DOUBLE\_POINT@{DOUBLE\_POINT}!libirtemp.h@{libirtemp.h}}\index{libirtemp.h@{libirtemp.h}!DOUBLE\_POINT@{DOUBLE\_POINT}}}\mbox{\Hypertarget{libirtemp_8h_a29c1c3eb10fc106b359b90a438c69011a967506c04621dedf2fe10ac322fb50cd}\label{libirtemp_8h_a29c1c3eb10fc106b359b90a438c69011a967506c04621dedf2fe10ac322fb50cd}} 
+DOUBLE\+\_\+\+POINT&The flag represent double point calibration process. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{libirtemp_8h_a9d716cb195173452cebc1182a78daf7d}\label{libirtemp_8h_a9d716cb195173452cebc1182a78daf7d}} 
+\index{libirtemp.h@{libirtemp.h}!calculate\_KE\_and\_BE@{calculate\_KE\_and\_BE}}
+\index{calculate\_KE\_and\_BE@{calculate\_KE\_and\_BE}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{calculate\_KE\_and\_BE()}{calculate\_KE\_and\_BE()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} calculate\+\_\+\+KE\+\_\+and\+\_\+\+BE (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_env_param__t}{Env\+Param\+\_\+t}} $\ast$}]{env\+\_\+param,  }\item[{const \mbox{\hyperlink{struct_nuc_factor__t}{Nuc\+Factor\+\_\+t}} $\ast$}]{nuc\+\_\+factor,  }\item[{uint8\+\_\+t}]{gain\+\_\+flag,  }\item[{\mbox{\hyperlink{struct_env_factor__t}{Env\+Factor\+\_\+t}} $\ast$}]{env\+\_\+factor }\end{DoxyParamCaption})}
+
+
+
+calculate KE and BE which run in firmware 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em env\+\_\+param} & The environment factor correction parameter read from device \\
+\hline
+\mbox{\texttt{ in}}  & {\em nuc\+\_\+factor} & The NUC map factor read from device \\
+\hline
+\mbox{\texttt{ in}}  & {\em gain\+\_\+flag} & Gain flag for environment factor validity check \\
+\hline
+\mbox{\texttt{ out}}  & {\em env\+\_\+factor} & Environment factor correction coefficient contains K\+\_\+E and B\+\_\+E\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irtemp\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirtemp_8h_a20d181cf46c2ae2d8fc2265e3f51e54a}\label{libirtemp_8h_a20d181cf46c2ae2d8fc2265e3f51e54a}} 
+\index{libirtemp.h@{libirtemp.h}!calculate\_Kn\_and\_Bn@{calculate\_Kn\_and\_Bn}}
+\index{calculate\_Kn\_and\_Bn@{calculate\_Kn\_and\_Bn}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{calculate\_Kn\_and\_Bn()}{calculate\_Kn\_and\_Bn()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} calculate\+\_\+\+Kn\+\_\+and\+\_\+\+Bn (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_vtemp_info__t}{Vtemp\+Info\+\_\+t}} $\ast$}]{vtemp\+\_\+info,  }\item[{const \mbox{\hyperlink{struct_kt_info__t}{Kt\+Info\+\_\+t}} $\ast$}]{kt\+\_\+info,  }\item[{const \mbox{\hyperlink{struct_cali_point__t}{Cali\+Point\+\_\+t}} $\ast$}]{cali\+\_\+point,  }\item[{\mbox{\hyperlink{struct_cali_factor__t}{Cali\+Factor\+\_\+t}} $\ast$}]{cali\+\_\+factor }\end{DoxyParamCaption})}
+
+
+
+Calculate normalization cofficient Kn and Bn of KT curve. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em vtemp\+\_\+info} & Vtemp Infomation contains Ktemp, Btemp, Address\+\_\+\+CA \\
+\hline
+\mbox{\texttt{ in}}  & {\em kt\+\_\+info} & KT Infomation contains start and end turning address \\
+\hline
+\mbox{\texttt{ in}}  & {\em cali\+\_\+point} & \mbox{\hyperlink{struct_cali_point__t}{Cali\+Point\+\_\+t}} contains high and low environment temperature point of primary calibration \\
+\hline
+\mbox{\texttt{ out}}  & {\em cali\+\_\+factor} & The normalization coefficient of KT curve contains Kn and Bn\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irtemp\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirtemp_8h_a6dae1d5aea2040ff1e051a81ffbc6f96}\label{libirtemp_8h_a6dae1d5aea2040ff1e051a81ffbc6f96}} 
+\index{libirtemp.h@{libirtemp.h}!calculate\_new\_KE\_and\_BE@{calculate\_new\_KE\_and\_BE}}
+\index{calculate\_new\_KE\_and\_BE@{calculate\_new\_KE\_and\_BE}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{calculate\_new\_KE\_and\_BE()}{calculate\_new\_KE\_and\_BE()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} calculate\+\_\+new\+\_\+\+KE\+\_\+and\+\_\+\+BE (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_env_param__t}{Env\+Param\+\_\+t}} $\ast$}]{env\+\_\+param,  }\item[{const \mbox{\hyperlink{struct_nuc_factor__t}{Nuc\+Factor\+\_\+t}} $\ast$}]{nuc\+\_\+factor,  }\item[{uint8\+\_\+t}]{gain\+\_\+flag,  }\item[{\mbox{\hyperlink{struct_env_factor__t}{Env\+Factor\+\_\+t}} $\ast$}]{env\+\_\+factor }\end{DoxyParamCaption})}
+
+
+
+calculate new KE and BE with higher precision 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em env\+\_\+param} & The new environment factor correction parameter(\+EMS,\+TAU,\+Ta,\+Tu) \\
+\hline
+\mbox{\texttt{ in}}  & {\em nuc\+\_\+factor} & The NUC map factor read from device \\
+\hline
+\mbox{\texttt{ in}}  & {\em gain\+\_\+flag} & Gain flag for for environment factor validity check \\
+\hline
+\mbox{\texttt{ out}}  & {\em env\+\_\+factor} & Environment factor correction coefficient contains K\+\_\+E and B\+\_\+E\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irtemp\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirtemp_8h_abc01100292868522a494fd717248e819}\label{libirtemp_8h_abc01100292868522a494fd717248e819}} 
+\index{libirtemp.h@{libirtemp.h}!calculate\_new\_KE\_and\_BE\_with\_nuc\_t@{calculate\_new\_KE\_and\_BE\_with\_nuc\_t}}
+\index{calculate\_new\_KE\_and\_BE\_with\_nuc\_t@{calculate\_new\_KE\_and\_BE\_with\_nuc\_t}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{calculate\_new\_KE\_and\_BE\_with\_nuc\_t()}{calculate\_new\_KE\_and\_BE\_with\_nuc\_t()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} calculate\+\_\+new\+\_\+\+KE\+\_\+and\+\_\+\+BE\+\_\+with\+\_\+nuc\+\_\+t (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_env_param__t}{Env\+Param\+\_\+t}} $\ast$}]{env\+\_\+param,  }\item[{const uint16\+\_\+t $\ast$}]{nuc\+\_\+table,  }\item[{uint8\+\_\+t}]{gain\+\_\+flag,  }\item[{\mbox{\hyperlink{struct_env_factor__t}{Env\+Factor\+\_\+t}} $\ast$}]{env\+\_\+factor }\end{DoxyParamCaption})}
+
+
+
+calculate new KE and BE with higher precision. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em env\+\_\+param} & The new environment factor correction parameter(\+EMS,\+TAU,\+Ta,\+Tu) \\
+\hline
+\mbox{\texttt{ in}}  & {\em nuc\+\_\+table} & NUC\+\_\+T table (uin16\+\_\+t$\ast$8192) \\
+\hline
+\mbox{\texttt{ in}}  & {\em gain\+\_\+flag} & Gain flag for for environment factor validity check \\
+\hline
+\mbox{\texttt{ out}}  & {\em env\+\_\+factor} & Environment factor correction coefficient contains K\+\_\+E and B\+\_\+E\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irtemp\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirtemp_8h_a8935403bf91f53f480e5ff93104b3f56}\label{libirtemp_8h_a8935403bf91f53f480e5ff93104b3f56}} 
+\index{libirtemp.h@{libirtemp.h}!calculate\_nuc\_with\_nuc\_factor@{calculate\_nuc\_with\_nuc\_factor}}
+\index{calculate\_nuc\_with\_nuc\_factor@{calculate\_nuc\_with\_nuc\_factor}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{calculate\_nuc\_with\_nuc\_factor()}{calculate\_nuc\_with\_nuc\_factor()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} calculate\+\_\+nuc\+\_\+with\+\_\+nuc\+\_\+factor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_nuc_factor__t}{Nuc\+Factor\+\_\+t}} $\ast$}]{nuc\+\_\+factor,  }\item[{float}]{temp,  }\item[{uint16\+\_\+t $\ast$}]{nuc\+\_\+value }\end{DoxyParamCaption})}
+
+
+
+calculate nuc with nuc factor(\+P0,\+P1,\+P2) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em nuc\+\_\+factor} & nuc factor contain(\+P0,\+P1,\+P2) \\
+\hline
+\mbox{\texttt{ in}}  & {\em temp} & target temperature(unit\+: Celcius) \\
+\hline
+\mbox{\texttt{ out}}  & {\em nuc\+\_\+value} & nuc\+\_\+value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irtemp\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirtemp_8h_a8473408b8f4229866200c165dd62efef}\label{libirtemp_8h_a8473408b8f4229866200c165dd62efef}} 
+\index{libirtemp.h@{libirtemp.h}!calculate\_org\_KE\_and\_BE\_with\_nuc\_t@{calculate\_org\_KE\_and\_BE\_with\_nuc\_t}}
+\index{calculate\_org\_KE\_and\_BE\_with\_nuc\_t@{calculate\_org\_KE\_and\_BE\_with\_nuc\_t}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{calculate\_org\_KE\_and\_BE\_with\_nuc\_t()}{calculate\_org\_KE\_and\_BE\_with\_nuc\_t()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} calculate\+\_\+org\+\_\+\+KE\+\_\+and\+\_\+\+BE\+\_\+with\+\_\+nuc\+\_\+t (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_env_param__t}{Env\+Param\+\_\+t}} $\ast$}]{env\+\_\+param,  }\item[{const uint16\+\_\+t $\ast$}]{nuc\+\_\+table,  }\item[{uint8\+\_\+t}]{gain\+\_\+flag,  }\item[{\mbox{\hyperlink{struct_env_factor__t}{Env\+Factor\+\_\+t}} $\ast$}]{env\+\_\+factor }\end{DoxyParamCaption})}
+
+
+
+calculate origin KE and BE with NUC-\/T table. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em env\+\_\+param} & The origin environment factor correction parameter(\+EMS,\+TAU,\+Ta,\+Tu) \\
+\hline
+\mbox{\texttt{ in}}  & {\em nuc\+\_\+table} & NUC\+\_\+T table (uin16\+\_\+t$\ast$8192) \\
+\hline
+\mbox{\texttt{ in}}  & {\em gain\+\_\+flag} & Gain flag for for environment factor validity check \\
+\hline
+\mbox{\texttt{ out}}  & {\em env\+\_\+factor} & Environment factor correction coefficient contains K\+\_\+E and B\+\_\+E\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irtemp\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirtemp_8h_ac36ecb9e62b6d1d4f8ba9982fcff8ec5}\label{libirtemp_8h_ac36ecb9e62b6d1d4f8ba9982fcff8ec5}} 
+\index{libirtemp.h@{libirtemp.h}!calculate\_tau@{calculate\_tau}}
+\index{calculate\_tau@{calculate\_tau}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{calculate\_tau()}{calculate\_tau()}}
+{\footnotesize\ttfamily DLLEXPORT uint16\+\_\+t calculate\+\_\+tau (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{nuc\+\_\+dist\+\_\+high,  }\item[{uint16\+\_\+t}]{nuc\+\_\+dist\+\_\+low,  }\item[{uint16\+\_\+t}]{nuc\+\_\+25\+\_\+high,  }\item[{uint16\+\_\+t}]{nuc\+\_\+25\+\_\+low }\end{DoxyParamCaption})}
+
+
+
+calculate Tau depend on nuc\+\_\+dist\+\_\+high,nuc\+\_\+dist\+\_\+low,nuc\+\_\+25\+\_\+high,nuc\+\_\+25\+\_\+low 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em nuc\+\_\+dist\+\_\+low} & NUC value at dist(unit\+:m) facing the high temperature blackbody \\
+\hline
+\mbox{\texttt{ in}}  & {\em nuc\+\_\+dist\+\_\+low} & NUC value at dist(unit\+:m) facing the low temperature blackbody \\
+\hline
+\mbox{\texttt{ in}}  & {\em nuc\+\_\+25\+\_\+high} & NUC value at 0.\+25m facing the high temperature blackbody \\
+\hline
+\mbox{\texttt{ in}}  & {\em nuc\+\_\+25\+\_\+low} & NUC value at 0.\+25m facing the low temperature blackbody\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+NUC value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirtemp_8h_a605bc0c77735c483b167d88b78d73d87}\label{libirtemp_8h_a605bc0c77735c483b167d88b78d73d87}} 
+\index{libirtemp.h@{libirtemp.h}!double\_point\_recalibrate\_KB@{double\_point\_recalibrate\_KB}}
+\index{double\_point\_recalibrate\_KB@{double\_point\_recalibrate\_KB}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{double\_point\_recalibrate\_KB()}{double\_point\_recalibrate\_KB()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} double\+\_\+point\+\_\+recalibrate\+\_\+\+KB (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_cali_factor__t}{Cali\+Factor\+\_\+t}} $\ast$}]{cali\+\_\+factor,  }\item[{const \mbox{\hyperlink{struct_v_temp_set__t}{VTemp\+Set\+\_\+t}} $\ast$}]{vtemp\+\_\+set,  }\item[{const \mbox{\hyperlink{struct_env_temp__t}{Env\+Temp\+\_\+t}} $\ast$}]{env\+\_\+temp,  }\item[{\mbox{\hyperlink{struct_re_cali_factor__t}{Re\+Cali\+Factor\+\_\+t}} $\ast$}]{recali\+\_\+factor }\end{DoxyParamCaption})}
+
+
+
+calibrate K and B value with double point calibration process 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em cali\+\_\+factor} & The normalization coefficient of KT curve contains Kn and Bn \\
+\hline
+\mbox{\texttt{ in}}  & {\em vtemp\+\_\+set} & current vtemp from sensor \\
+\hline
+\mbox{\texttt{ in}}  & {\em env\+\_\+temp} & current environment temperature (unit\+:Celcius) \\
+\hline
+\mbox{\texttt{ out}}  & {\em recali\+\_\+factor} & The correction factor after recalibration process contains K and B\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irtemp\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirtemp_8h_a9c882b4c96bba96a3d646708ac0280a7}\label{libirtemp_8h_a9c882b4c96bba96a3d646708ac0280a7}} 
+\index{libirtemp.h@{libirtemp.h}!enhance\_distance\_temp\_correct@{enhance\_distance\_temp\_correct}}
+\index{enhance\_distance\_temp\_correct@{enhance\_distance\_temp\_correct}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{enhance\_distance\_temp\_correct()}{enhance\_distance\_temp\_correct()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} enhance\+\_\+distance\+\_\+temp\+\_\+correct (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_env_correct_param}{Env\+Correct\+Param}} $\ast$}]{env\+\_\+correct\+\_\+param,  }\item[{uint16\+\_\+t $\ast$}]{correct\+\_\+table,  }\item[{uint32\+\_\+t}]{table\+\_\+len,  }\item[{float}]{org\+\_\+temp,  }\item[{float $\ast$}]{new\+\_\+temp }\end{DoxyParamCaption})}
+
+
+
+new temp correct method in MINI640/384 compatible old and new correct table 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em env\+\_\+correct\+\_\+param} & The new environment factor correction parameter \\
+\hline
+\mbox{\texttt{ in}}  & {\em correct\+\_\+table} & The correct table of module \\
+\hline
+\mbox{\texttt{ in}}  & {\em table\+\_\+len} & The length of table \\
+\hline
+\mbox{\texttt{ in}}  & {\em org\+\_\+temp} & The origin temperature of target(celcius temperature, unit\+:{\ucr}{\ucr}) \\
+\hline
+\mbox{\texttt{ out}}  & {\em new\+\_\+temp} & The new temperature after correct(celcius temperature, unit\+:{\ucr}{\ucr})\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irtemp\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirtemp_8h_a4333265bbd7c3d87ea45c4ee7df51012}\label{libirtemp_8h_a4333265bbd7c3d87ea45c4ee7df51012}} 
+\index{libirtemp.h@{libirtemp.h}!env\_temp\_calculate@{env\_temp\_calculate}}
+\index{env\_temp\_calculate@{env\_temp\_calculate}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{env\_temp\_calculate()}{env\_temp\_calculate()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} env\+\_\+temp\+\_\+calculate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_cali_factor__t}{Cali\+Factor\+\_\+t}} $\ast$}]{cali\+\_\+factor,  }\item[{const \mbox{\hyperlink{struct_re_cali_factor__t}{Re\+Cali\+Factor\+\_\+t}} $\ast$}]{recali\+\_\+factor,  }\item[{uint16\+\_\+t}]{cur\+\_\+vtemp,  }\item[{double $\ast$}]{t\+\_\+env }\end{DoxyParamCaption})}
+
+
+
+estimate current environment temperature 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em cali\+\_\+factor} & The normalization coefficient of KT curve contains Kn and Bn \\
+\hline
+\mbox{\texttt{ in}}  & {\em recali\+\_\+factor} & The correction factor after recalibration process contains K and B \\
+\hline
+\mbox{\texttt{ in}}  & {\em cur\+\_\+vtemp} & current vtemp from sensor \\
+\hline
+\mbox{\texttt{ out}}  & {\em t\+\_\+env} & current environment temperature (unit\+:Celcius)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irtemp\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirtemp_8h_ab9f360dabf6cdf2a52c9d03dbdb549c4}\label{libirtemp_8h_ab9f360dabf6cdf2a52c9d03dbdb549c4}} 
+\index{libirtemp.h@{libirtemp.h}!find\_start\_and\_end\_addr@{find\_start\_and\_end\_addr}}
+\index{find\_start\_and\_end\_addr@{find\_start\_and\_end\_addr}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{find\_start\_and\_end\_addr()}{find\_start\_and\_end\_addr()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} find\+\_\+start\+\_\+and\+\_\+end\+\_\+addr (\begin{DoxyParamCaption}\item[{const uint16\+\_\+t $\ast$}]{kt\+\_\+array,  }\item[{const \mbox{\hyperlink{struct_search_info__t}{Search\+Info\+\_\+t}} $\ast$}]{search\+\_\+info,  }\item[{uint16\+\_\+t}]{len,  }\item[{\mbox{\hyperlink{struct_kt_info__t}{Kt\+Info\+\_\+t}} $\ast$}]{kt\+\_\+info }\end{DoxyParamCaption})}
+
+
+
+Find start and end turning point of KT curve. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em KT\+\_\+array} & KT array \\
+\hline
+\mbox{\texttt{ in}}  & {\em search\+\_\+info} & The search information of KT curve contains start\+\_\+point and end\+\_\+point \\
+\hline
+\mbox{\texttt{ in}}  & {\em len} & the length of KT array \\
+\hline
+\mbox{\texttt{ out}}  & {\em kt\+\_\+info} & The turning address of KT curve contains start and end turning address\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irtemp\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirtemp_8h_a5c48c86e8b6b90fd6e5c8bb3e4ff4347}\label{libirtemp_8h_a5c48c86e8b6b90fd6e5c8bb3e4ff4347}} 
+\index{libirtemp.h@{libirtemp.h}!generate\_high\_gain\_nuc\_t@{generate\_high\_gain\_nuc\_t}}
+\index{generate\_high\_gain\_nuc\_t@{generate\_high\_gain\_nuc\_t}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{generate\_high\_gain\_nuc\_t()}{generate\_high\_gain\_nuc\_t()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} generate\+\_\+high\+\_\+gain\+\_\+nuc\+\_\+t (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_nuc_factor__t}{Nuc\+Factor\+\_\+t}} $\ast$}]{nuc\+\_\+factor,  }\item[{uint16\+\_\+t $\ast$}]{nuc\+\_\+table }\end{DoxyParamCaption})}
+
+
+
+generate NUC\+\_\+T table in high gain mode with nuc factor(\+P0,\+P1,\+P2) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em nuc\+\_\+factor} & nuc factor contain(\+P0,\+P1,\+P2) \\
+\hline
+\mbox{\texttt{ out}}  & {\em nuc\+\_\+table} & NUC\+\_\+T table (uin16\+\_\+t$\ast$8192)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irtemp\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirtemp_8h_a00cf048c7e92bfff95b5b47581080ab0}\label{libirtemp_8h_a00cf048c7e92bfff95b5b47581080ab0}} 
+\index{libirtemp.h@{libirtemp.h}!generate\_low\_gain\_nuc\_t@{generate\_low\_gain\_nuc\_t}}
+\index{generate\_low\_gain\_nuc\_t@{generate\_low\_gain\_nuc\_t}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{generate\_low\_gain\_nuc\_t()}{generate\_low\_gain\_nuc\_t()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} generate\+\_\+low\+\_\+gain\+\_\+nuc\+\_\+t (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_nuc_factor__t}{Nuc\+Factor\+\_\+t}} $\ast$}]{nuc\+\_\+factor,  }\item[{uint16\+\_\+t $\ast$}]{nuc\+\_\+table }\end{DoxyParamCaption})}
+
+
+
+generate NUC\+\_\+T table in low gain mode with nuc factor(\+P0,\+P1,\+P2) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em nuc\+\_\+factor} & nuc factor contain(\+P0,\+P1,\+P2) \\
+\hline
+\mbox{\texttt{ out}}  & {\em nuc\+\_\+table} & NUC\+\_\+T table (uin16\+\_\+t$\ast$8192)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irtemp\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirtemp_8h_a0f201386a3403266f7e6fa4b5268de6a}\label{libirtemp_8h_a0f201386a3403266f7e6fa4b5268de6a}} 
+\index{libirtemp.h@{libirtemp.h}!get\_line\_temp@{get\_line\_temp}}
+\index{get\_line\_temp@{get\_line\_temp}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{get\_line\_temp()}{get\_line\_temp()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} get\+\_\+line\+\_\+temp (\begin{DoxyParamCaption}\item[{uint16\+\_\+t $\ast$}]{src,  }\item[{\mbox{\hyperlink{struct_temp_data_res__t}{Temp\+Data\+Res\+\_\+t}}}]{temp\+\_\+res,  }\item[{\mbox{\hyperlink{struct_line__t}{Line\+\_\+t}}}]{line,  }\item[{\mbox{\hyperlink{struct_temp_info__t}{Temp\+Info\+\_\+t}} $\ast$}]{temp\+\_\+info }\end{DoxyParamCaption})}
+
+
+
+Get line\textquotesingle{}s temperautre,axis start from 0,and contains the line\textquotesingle{}s boundary. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em src} & source temperature frame \\
+\hline
+\mbox{\texttt{ in}}  & {\em temp\+\_\+res} & imput temperature frame resulution, detail see \mbox{\hyperlink{struct_temp_data_res__t}{Temp\+Data\+Res\+\_\+t}} \\
+\hline
+\mbox{\texttt{ in}}  & {\em line} & imput line required to get temperature, detail see \mbox{\hyperlink{struct_line__t}{Line\+\_\+t}} \\
+\hline
+\mbox{\texttt{ out}}  & {\em temp\+\_\+info} & Temperature infomation of the input line\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irtemp\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirtemp_8h_afccddd28d2eeea490f73ac6162ed8b7f}\label{libirtemp_8h_afccddd28d2eeea490f73ac6162ed8b7f}} 
+\index{libirtemp.h@{libirtemp.h}!get\_NUC\_value@{get\_NUC\_value}}
+\index{get\_NUC\_value@{get\_NUC\_value}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{get\_NUC\_value()}{get\_NUC\_value()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} get\+\_\+\+NUC\+\_\+value (\begin{DoxyParamCaption}\item[{uint16\+\_\+t $\ast$}]{src,  }\item[{\mbox{\hyperlink{struct_temp_data_res__t}{Temp\+Data\+Res\+\_\+t}}}]{temp\+\_\+res,  }\item[{\mbox{\hyperlink{struct_dot__t}{Dot\+\_\+t}}}]{point,  }\item[{uint16\+\_\+t $\ast$}]{nuc\+\_\+value }\end{DoxyParamCaption})}
+
+
+
+get NUC value of specific point from NUC frame 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em src} & Soure NUC frame \\
+\hline
+\mbox{\texttt{ in}}  & {\em temp\+\_\+res} & Imput temperature frame resulution, detail see \mbox{\hyperlink{struct_temp_data_res__t}{Temp\+Data\+Res\+\_\+t}} \\
+\hline
+\mbox{\texttt{ in}}  & {\em point} & The point required to get NUC value, detail see \mbox{\hyperlink{struct_dot__t}{Dot\+\_\+t}} \\
+\hline
+\mbox{\texttt{ out}}  & {\em nuc\+\_\+value} & The nuc value at specific point\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irtemp\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirtemp_8h_a0e0c20fa286dcb4d61e587701907ad56}\label{libirtemp_8h_a0e0c20fa286dcb4d61e587701907ad56}} 
+\index{libirtemp.h@{libirtemp.h}!get\_point\_temp@{get\_point\_temp}}
+\index{get\_point\_temp@{get\_point\_temp}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{get\_point\_temp()}{get\_point\_temp()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} get\+\_\+point\+\_\+temp (\begin{DoxyParamCaption}\item[{uint16\+\_\+t $\ast$}]{src,  }\item[{\mbox{\hyperlink{struct_temp_data_res__t}{Temp\+Data\+Res\+\_\+t}}}]{temp\+\_\+res,  }\item[{\mbox{\hyperlink{struct_dot__t}{Dot\+\_\+t}}}]{point,  }\item[{uint16\+\_\+t $\ast$}]{dst }\end{DoxyParamCaption})}
+
+
+
+Get point\textquotesingle{}s temperature,axis start from 0. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em src} & source temperature frame \\
+\hline
+\mbox{\texttt{ in}}  & {\em temp\+\_\+res} & imput temperature frame resulution, detail see \mbox{\hyperlink{struct_temp_data_res__t}{Temp\+Data\+Res\+\_\+t}} \\
+\hline
+\mbox{\texttt{ in}}  & {\em point} & imput point required to get temperature, detail see \mbox{\hyperlink{struct_dot__t}{Dot\+\_\+t}} \\
+\hline
+\mbox{\texttt{ out}}  & {\em dst} & object temperature value of the input point(kelvin\+\_\+temp$\ast$16)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irtemp\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirtemp_8h_a69df2604c49e5e45881e45e46c05a395}\label{libirtemp_8h_a69df2604c49e5e45881e45e46c05a395}} 
+\index{libirtemp.h@{libirtemp.h}!get\_rect\_temp@{get\_rect\_temp}}
+\index{get\_rect\_temp@{get\_rect\_temp}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{get\_rect\_temp()}{get\_rect\_temp()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} get\+\_\+rect\+\_\+temp (\begin{DoxyParamCaption}\item[{uint16\+\_\+t $\ast$}]{src,  }\item[{\mbox{\hyperlink{struct_temp_data_res__t}{Temp\+Data\+Res\+\_\+t}}}]{temp\+\_\+res,  }\item[{\mbox{\hyperlink{struct_area__t}{Area\+\_\+t}}}]{rect,  }\item[{\mbox{\hyperlink{struct_temp_info__t}{Temp\+Info\+\_\+t}} $\ast$}]{temp\+\_\+info }\end{DoxyParamCaption})}
+
+
+
+Get rectangle\textquotesingle{}s temperature,axis start from 0,and contains the rectangle\textquotesingle{}s boundary. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em src} & source temperature frame \\
+\hline
+\mbox{\texttt{ in}}  & {\em temp\+\_\+res} & imput temperature frame resulution, detail see \mbox{\hyperlink{struct_temp_data_res__t}{Temp\+Data\+Res\+\_\+t}} \\
+\hline
+\mbox{\texttt{ in}}  & {\em rect} & input area required to get temperature, detail see \mbox{\hyperlink{struct_area__t}{Area\+\_\+t}} \\
+\hline
+\mbox{\texttt{ out}}  & {\em temp\+\_\+info} & Temperature infomation of the input area\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irtemp\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirtemp_8h_ad4d35b7bb2e4e140509b4aaf5f77f872}\label{libirtemp_8h_ad4d35b7bb2e4e140509b4aaf5f77f872}} 
+\index{libirtemp.h@{libirtemp.h}!irtemp\_log\_register@{irtemp\_log\_register}}
+\index{irtemp\_log\_register@{irtemp\_log\_register}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{irtemp\_log\_register()}{irtemp\_log\_register()}}
+{\footnotesize\ttfamily DLLEXPORT void irtemp\+\_\+log\+\_\+register (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{libirtemp_8h_a783499c3db571cad6500e623d52e5cec}{irtemp\+\_\+log\+\_\+level\+\_\+t}}}]{log\+\_\+level }\end{DoxyParamCaption})}
+
+
+
+Register log function depend on log level. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em log\+\_\+level,detail} & see irtemp\+\_\+log\+\_\+level\+\_\+t \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{libirtemp_8h_ae408f86f0efcb9be56ef8714eb4cbb94}\label{libirtemp_8h_ae408f86f0efcb9be56ef8714eb4cbb94}} 
+\index{libirtemp.h@{libirtemp.h}!irtemp\_version@{irtemp\_version}}
+\index{irtemp\_version@{irtemp\_version}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{irtemp\_version()}{irtemp\_version()}}
+{\footnotesize\ttfamily DLLEXPORT char $\ast$ irtemp\+\_\+version (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get current libirtemp library version. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em NULL} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+current libirtemp library version 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirtemp_8h_a66f406bd234f8f2906a70d57a1e6c733}\label{libirtemp_8h_a66f406bd234f8f2906a70d57a1e6c733}} 
+\index{libirtemp.h@{libirtemp.h}!line\_rect\_over\_threshold\_alarm@{line\_rect\_over\_threshold\_alarm}}
+\index{line\_rect\_over\_threshold\_alarm@{line\_rect\_over\_threshold\_alarm}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{line\_rect\_over\_threshold\_alarm()}{line\_rect\_over\_threshold\_alarm()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirtemp_8h_a8752b7bca77d1d46d5c370eb2cdb6038}{Alarm\+Type\+\_\+t}} line\+\_\+rect\+\_\+over\+\_\+threshold\+\_\+alarm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_temp_threshold__t}{Temp\+Threshold\+\_\+t}}}]{temp\+\_\+threshold,  }\item[{\mbox{\hyperlink{struct_temp_info__t}{Temp\+Info\+\_\+t}} $\ast$}]{temp\+\_\+info }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{struct_line__t}{Line\+\_\+t}} or rectangle temperature over threshold alarm. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em temp\+\_\+threshold} & Temperature threshold,include upper limit and lower limit \\
+\hline
+\mbox{\texttt{ in}}  & {\em temp\+\_\+info} & current temperature. Units\+:K(integer)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see Alarm\+Type\+\_\+t (max or average value greater than upper limit return OVER\+\_\+\+HEAT/min or average value less than lower limit return OVER\+\_\+\+COLD) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirtemp_8h_aa8dac8415df5389bd3eb35f40335581e}\label{libirtemp_8h_aa8dac8415df5389bd3eb35f40335581e}} 
+\index{libirtemp.h@{libirtemp.h}!multi\_point\_calc\_new\_nuc\_table@{multi\_point\_calc\_new\_nuc\_table}}
+\index{multi\_point\_calc\_new\_nuc\_table@{multi\_point\_calc\_new\_nuc\_table}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{multi\_point\_calc\_new\_nuc\_table()}{multi\_point\_calc\_new\_nuc\_table()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} multi\+\_\+point\+\_\+calc\+\_\+new\+\_\+nuc\+\_\+table (\begin{DoxyParamCaption}\item[{uint16\+\_\+t $\ast$}]{nuc\+\_\+table,  }\item[{\mbox{\hyperlink{struct_multi_point_calib_nuc__t}{Multi\+Point\+Calib\+Nuc\+\_\+t}} $\ast$}]{multi\+\_\+point\+\_\+nuc,  }\item[{uint16\+\_\+t}]{multi\+\_\+point\+\_\+num,  }\item[{uint16\+\_\+t $\ast$}]{new\+\_\+nuc\+\_\+table }\end{DoxyParamCaption})}
+
+
+
+calculate new nuc-\/t table 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em nuc\+\_\+table} & the nuc-\/t table which read from device \\
+\hline
+\mbox{\texttt{ in}}  & {\em multi\+\_\+point\+\_\+nuc} & the nuc value array of setting temperature and output tmperature \\
+\hline
+\mbox{\texttt{ in}}  & {\em multi\+\_\+point\+\_\+num} & the number of multi\+\_\+point calibration \\
+\hline
+\mbox{\texttt{ out}}  & {\em new\+\_\+nuc\+\_\+table} & the correct table of\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irtemp\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirtemp_8h_a7f72abdea657a13a2eb93c2c7fd894dd}\label{libirtemp_8h_a7f72abdea657a13a2eb93c2c7fd894dd}} 
+\index{libirtemp.h@{libirtemp.h}!multi\_point\_calc\_one\_point\_correct@{multi\_point\_calc\_one\_point\_correct}}
+\index{multi\_point\_calc\_one\_point\_correct@{multi\_point\_calc\_one\_point\_correct}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{multi\_point\_calc\_one\_point\_correct()}{multi\_point\_calc\_one\_point\_correct()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} multi\+\_\+point\+\_\+calc\+\_\+one\+\_\+point\+\_\+correct (\begin{DoxyParamCaption}\item[{uint16\+\_\+t $\ast$}]{nuc\+\_\+table,  }\item[{\mbox{\hyperlink{struct_multi_point_calib_nuc__t}{Multi\+Point\+Calib\+Nuc\+\_\+t}} $\ast$}]{multi\+\_\+point\+\_\+nuc,  }\item[{uint16\+\_\+t}]{multi\+\_\+point\+\_\+num,  }\item[{uint16\+\_\+t $\ast$}]{new\+\_\+nuc\+\_\+table }\end{DoxyParamCaption})}
+
+
+
+calculate new nuc-\/t table for one point correct 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em nuc\+\_\+table} & the nuc-\/t table which read from device \\
+\hline
+\mbox{\texttt{ in}}  & {\em multi\+\_\+point\+\_\+nuc} & the nuc value array of setting temperature and output tmperature. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+the first and sencond temperature point is accurate temperature point and the third temperature point is the temperature point to be revised. 
+
+the sencond temperature point must greater than the first temperature point. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em multi\+\_\+point\+\_\+num} & the number of multi\+\_\+point calibration , here number is 3 \\
+\hline
+\mbox{\texttt{ out}}  & {\em new\+\_\+nuc\+\_\+table} & the correct table of\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irtemp\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirtemp_8h_acea44b7140689c2e7ed8532891d5c0ac}\label{libirtemp_8h_acea44b7140689c2e7ed8532891d5c0ac}} 
+\index{libirtemp.h@{libirtemp.h}!multi\_point\_calc\_user\_defined\_nuc@{multi\_point\_calc\_user\_defined\_nuc}}
+\index{multi\_point\_calc\_user\_defined\_nuc@{multi\_point\_calc\_user\_defined\_nuc}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{multi\_point\_calc\_user\_defined\_nuc()}{multi\_point\_calc\_user\_defined\_nuc()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} multi\+\_\+point\+\_\+calc\+\_\+user\+\_\+defined\+\_\+nuc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_multi_point_calib_param__t}{Multi\+Point\+Calib\+Param\+\_\+t}} $\ast$}]{multi\+\_\+point\+\_\+param,  }\item[{int}]{product\+\_\+type,  }\item[{\mbox{\hyperlink{struct_multi_point_calib_array__t}{Multi\+Point\+Calib\+Array\+\_\+t}} $\ast$}]{multi\+\_\+point\+\_\+calib\+\_\+array,  }\item[{\mbox{\hyperlink{struct_two_point_calib_result__t}{Two\+Point\+Calib\+Result\+\_\+t}} $\ast$}]{two\+\_\+point\+\_\+calib\+\_\+result,  }\item[{\mbox{\hyperlink{struct_multi_point_calib_temp__t}{Multi\+Point\+Calib\+Temp\+\_\+t}} $\ast$}]{multi\+\_\+point\+\_\+temp,  }\item[{\mbox{\hyperlink{struct_multi_point_calib_nuc__t}{Multi\+Point\+Calib\+Nuc\+\_\+t}} $\ast$}]{multi\+\_\+point\+\_\+nuc }\end{DoxyParamCaption})}
+
+
+
+calculate user defined environment correct coefficient 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em multi\+\_\+point\+\_\+param} & The parameter for multi\+\_\+point\+\_\+calibration \\
+\hline
+\mbox{\texttt{ in}}  & {\em product\+\_\+type} & product(unused now) \\
+\hline
+\mbox{\texttt{ in}}  & {\em multi\+\_\+point\+\_\+calib\+\_\+array} & multi point calibration array (include kt, bt, nuc-\/t,correct array) \\
+\hline
+\mbox{\texttt{ in}}  & {\em two\+\_\+point\+\_\+calib\+\_\+result} & second calibration result (include kt array and bt array) \\
+\hline
+\mbox{\texttt{ in}}  & {\em multi\+\_\+point\+\_\+temp} & The setting target temperature and output target temperature \\
+\hline
+\mbox{\texttt{ out}}  & {\em multi\+\_\+point\+\_\+nuc} & The setting target nuc value and output target nuc value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irtemp\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirtemp_8h_aa9764ed95df2df594d745ee344a2d0ce}\label{libirtemp_8h_aa9764ed95df2df594d745ee344a2d0ce}} 
+\index{libirtemp.h@{libirtemp.h}!new\_ktbt\_recal\_double\_point\_calculate@{new\_ktbt\_recal\_double\_point\_calculate}}
+\index{new\_ktbt\_recal\_double\_point\_calculate@{new\_ktbt\_recal\_double\_point\_calculate}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{new\_ktbt\_recal\_double\_point\_calculate()}{new\_ktbt\_recal\_double\_point\_calculate()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} new\+\_\+ktbt\+\_\+recal\+\_\+double\+\_\+point\+\_\+calculate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_multi_point_calib_param__t}{Multi\+Point\+Calib\+Param\+\_\+t}} $\ast$}]{multi\+\_\+point\+\_\+param,  }\item[{int}]{product\+\_\+type,  }\item[{\mbox{\hyperlink{struct_multi_point_calib_array__t}{Multi\+Point\+Calib\+Array\+\_\+t}} $\ast$}]{multi\+\_\+point\+\_\+calib\+\_\+array,  }\item[{\mbox{\hyperlink{struct_two_point_calib_result__t}{Two\+Point\+Calib\+Result\+\_\+t}} $\ast$}]{two\+\_\+point\+\_\+calib\+\_\+result }\end{DoxyParamCaption})}
+
+
+
+calculate new nuc-\/t table 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em multi\+\_\+point\+\_\+param} & multi point calibration parameter \\
+\hline
+\mbox{\texttt{ in}}  & {\em product\+\_\+type} & product(refer to Product\+Type\+\_\+t) \\
+\hline
+\mbox{\texttt{ in}}  & {\em multi\+\_\+point\+\_\+calib\+\_\+array} & multi point calibration array (include kt, bt, nuc-\/t,correct array) \\
+\hline
+\mbox{\texttt{ out}}  & {\em two\+\_\+point\+\_\+calib\+\_\+result} & second calibration result (include kt array and bt array)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irtemp\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirtemp_8h_a9acaab0c1b48b7cc047a1a4520b69904}\label{libirtemp_8h_a9acaab0c1b48b7cc047a1a4520b69904}} 
+\index{libirtemp.h@{libirtemp.h}!point\_over\_threshold\_alarm@{point\_over\_threshold\_alarm}}
+\index{point\_over\_threshold\_alarm@{point\_over\_threshold\_alarm}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{point\_over\_threshold\_alarm()}{point\_over\_threshold\_alarm()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirtemp_8h_a8752b7bca77d1d46d5c370eb2cdb6038}{Alarm\+Type\+\_\+t}} point\+\_\+over\+\_\+threshold\+\_\+alarm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_temp_threshold__t}{Temp\+Threshold\+\_\+t}}}]{temp\+\_\+threshold,  }\item[{uint16\+\_\+t}]{cur\+\_\+temp }\end{DoxyParamCaption})}
+
+
+
+Point temperature over threshold alarm. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em temp\+\_\+threshold} & Temperature threshold,include upper limit and lower limit \\
+\hline
+\mbox{\texttt{ in}}  & {\em cur\+\_\+temp} & current temperature. Units\+:K(integer)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see Alarm\+Type\+\_\+t (greater than upper limit return OVER\+\_\+\+HEAT/less than lower limit return OVER\+\_\+\+COLD) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirtemp_8h_af397bc7f4452addb87d994b4f37e9674}\label{libirtemp_8h_af397bc7f4452addb87d994b4f37e9674}} 
+\index{libirtemp.h@{libirtemp.h}!read\_tau@{read\_tau}}
+\index{read\_tau@{read\_tau}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{read\_tau()}{read\_tau()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} read\+\_\+tau (\begin{DoxyParamCaption}\item[{const uint16\+\_\+t $\ast$}]{correct\+\_\+table,  }\item[{float}]{hum,  }\item[{float}]{t\+\_\+env,  }\item[{float}]{dist,  }\item[{uint16\+\_\+t $\ast$}]{tau }\end{DoxyParamCaption})}
+
+
+
+read tau from correct table 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em correct} & table that store tau at different humidity,environment temperature and object distance \\
+\hline
+\mbox{\texttt{ in}}  & {\em hum} & humidity(0-\/1) \\
+\hline
+\mbox{\texttt{ in}}  & {\em t\+\_\+env} & environment temperature (unit\+: Celcius) \\
+\hline
+\mbox{\texttt{ in}}  & {\em dist} & object distance (0.\+25-\/49.\+99) (unit\+: m) \\
+\hline
+\mbox{\texttt{ out}}  & {\em tau} & tau after double linear interpolation\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irtemp\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirtemp_8h_a0654ec7e85095434ecf5df6fd8642250}\label{libirtemp_8h_a0654ec7e85095434ecf5df6fd8642250}} 
+\index{libirtemp.h@{libirtemp.h}!read\_tau\_with\_target\_temp\_and\_dist@{read\_tau\_with\_target\_temp\_and\_dist}}
+\index{read\_tau\_with\_target\_temp\_and\_dist@{read\_tau\_with\_target\_temp\_and\_dist}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{read\_tau\_with\_target\_temp\_and\_dist()}{read\_tau\_with\_target\_temp\_and\_dist()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} read\+\_\+tau\+\_\+with\+\_\+target\+\_\+temp\+\_\+and\+\_\+dist (\begin{DoxyParamCaption}\item[{const uint16\+\_\+t $\ast$}]{correct\+\_\+table,  }\item[{float}]{target\+\_\+temp,  }\item[{float}]{dist,  }\item[{uint16\+\_\+t $\ast$}]{tau }\end{DoxyParamCaption})}
+
+
+
+read tau from correct table 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em correct} & table that store tau at different target distance and target temperature \\
+\hline
+\mbox{\texttt{ in}}  & {\em target\+\_\+temp} & target temperature (unit\+: Celcius) \\
+\hline
+\mbox{\texttt{ in}}  & {\em dist} & target distance (0.\+25-\/49.\+99) (unit\+: m) \\
+\hline
+\mbox{\texttt{ out}}  & {\em tau} & tau after double linear interpolation\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irtemp\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirtemp_8h_a3e6007e6cfd2b6df9b9119a21be3e204}\label{libirtemp_8h_a3e6007e6cfd2b6df9b9119a21be3e204}} 
+\index{libirtemp.h@{libirtemp.h}!recalc\_NUC\_with\_env\_correct@{recalc\_NUC\_with\_env\_correct}}
+\index{recalc\_NUC\_with\_env\_correct@{recalc\_NUC\_with\_env\_correct}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{recalc\_NUC\_with\_env\_correct()}{recalc\_NUC\_with\_env\_correct()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} recalc\+\_\+\+NUC\+\_\+with\+\_\+env\+\_\+correct (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_env_factor__t}{Env\+Factor\+\_\+t}} $\ast$}]{env\+\_\+factor,  }\item[{uint16\+\_\+t}]{nuc\+\_\+org,  }\item[{uint16\+\_\+t $\ast$}]{nuc\+\_\+cal }\end{DoxyParamCaption})}
+
+
+
+recalculate new NUC value with environment correction 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em env\+\_\+factor} & Environment factor correction coefficient contains K\+\_\+E and B\+\_\+E \\
+\hline
+\mbox{\texttt{ in}}  & {\em nuc\+\_\+org} & The NUC value without environment correction \\
+\hline
+\mbox{\texttt{ out}}  & {\em nuc\+\_\+cal} & The NUC value with environment correction\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irtemp\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirtemp_8h_a4f0c8804a67a8ee30fc7cf608e802731}\label{libirtemp_8h_a4f0c8804a67a8ee30fc7cf608e802731}} 
+\index{libirtemp.h@{libirtemp.h}!remap\_temp@{remap\_temp}}
+\index{remap\_temp@{remap\_temp}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{remap\_temp()}{remap\_temp()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} remap\+\_\+temp (\begin{DoxyParamCaption}\item[{const uint16\+\_\+t $\ast$}]{nuc\+\_\+table,  }\item[{uint16\+\_\+t}]{nuc\+\_\+cal,  }\item[{uint16\+\_\+t $\ast$}]{temp\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+remap tempertature with nuc\+\_\+table 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em nuc\+\_\+table} & NUC\+\_\+T table \\
+\hline
+\mbox{\texttt{ in}}  & {\em nuc\+\_\+cal} & The NUC value with environment correction \\
+\hline
+\mbox{\texttt{ out}}  & {\em temp\+\_\+data} & Tempertature data (kelvin\+\_\+temp$\ast$16)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irtemp\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirtemp_8h_a369574e3ec0268b1869305233f6817c4}\label{libirtemp_8h_a369574e3ec0268b1869305233f6817c4}} 
+\index{libirtemp.h@{libirtemp.h}!reverse\_calc\_NUC\_with\_env\_correct@{reverse\_calc\_NUC\_with\_env\_correct}}
+\index{reverse\_calc\_NUC\_with\_env\_correct@{reverse\_calc\_NUC\_with\_env\_correct}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{reverse\_calc\_NUC\_with\_env\_correct()}{reverse\_calc\_NUC\_with\_env\_correct()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} reverse\+\_\+calc\+\_\+\+NUC\+\_\+with\+\_\+env\+\_\+correct (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_nuc_factor__t}{Nuc\+Factor\+\_\+t}} $\ast$}]{nuc\+\_\+factor,  }\item[{double}]{kelvin\+\_\+temp,  }\item[{uint16\+\_\+t $\ast$}]{nuc\+\_\+cal }\end{DoxyParamCaption})}
+
+
+
+reverse calculate NUC value with environment correction 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em nuc\+\_\+factor} & The NUC map factor read from device \\
+\hline
+\mbox{\texttt{ in}}  & {\em kelvin\+\_\+temp} & object temperature(unit\+:\+K) \\
+\hline
+\mbox{\texttt{ out}}  & {\em nuc\+\_\+cal} & NUC value with environment correction\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irtemp\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirtemp_8h_ada2ad373d7550e4b554311c2c3f8b980}\label{libirtemp_8h_ada2ad373d7550e4b554311c2c3f8b980}} 
+\index{libirtemp.h@{libirtemp.h}!reverse\_calc\_NUC\_with\_nuc\_t@{reverse\_calc\_NUC\_with\_nuc\_t}}
+\index{reverse\_calc\_NUC\_with\_nuc\_t@{reverse\_calc\_NUC\_with\_nuc\_t}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{reverse\_calc\_NUC\_with\_nuc\_t()}{reverse\_calc\_NUC\_with\_nuc\_t()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} reverse\+\_\+calc\+\_\+\+NUC\+\_\+with\+\_\+nuc\+\_\+t (\begin{DoxyParamCaption}\item[{uint16\+\_\+t $\ast$}]{nuc\+\_\+table,  }\item[{float}]{temp,  }\item[{uint16\+\_\+t $\ast$}]{nuc\+\_\+value }\end{DoxyParamCaption})}
+
+
+
+reverse calculate NUC value with nuc\+\_\+t table 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em nuc\+\_\+table} & NUC\+\_\+T table (uin16\+\_\+t$\ast$8192) \\
+\hline
+\mbox{\texttt{ in}}  & {\em temp} & celcius temperature \\
+\hline
+\mbox{\texttt{ out}}  & {\em nuc\+\_\+value} & nuc value after reverse calculate.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irtemp\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirtemp_8h_a8a56df866e197eee6d2197ab48e8233c}\label{libirtemp_8h_a8a56df866e197eee6d2197ab48e8233c}} 
+\index{libirtemp.h@{libirtemp.h}!reverse\_calc\_NUC\_without\_env\_correct@{reverse\_calc\_NUC\_without\_env\_correct}}
+\index{reverse\_calc\_NUC\_without\_env\_correct@{reverse\_calc\_NUC\_without\_env\_correct}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{reverse\_calc\_NUC\_without\_env\_correct()}{reverse\_calc\_NUC\_without\_env\_correct()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} reverse\+\_\+calc\+\_\+\+NUC\+\_\+without\+\_\+env\+\_\+correct (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_env_factor__t}{Env\+Factor\+\_\+t}} $\ast$}]{env\+\_\+factor,  }\item[{uint16\+\_\+t}]{nuc\+\_\+cal,  }\item[{uint16\+\_\+t $\ast$}]{nuc\+\_\+org }\end{DoxyParamCaption})}
+
+
+
+reverse calculate NUC value without environment correction 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em env\+\_\+factor} & factor correction coefficient contains K\+\_\+E and B\+\_\+E \\
+\hline
+\mbox{\texttt{ in}}  & {\em nuc\+\_\+cal} & NUC value with environment correction \\
+\hline
+\mbox{\texttt{ out}}  & {\em nuc\+\_\+org} & NUC value without environment correction\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irtemp\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirtemp_8h_a7b74fe6e7ce751e9663955fdf322c39b}\label{libirtemp_8h_a7b74fe6e7ce751e9663955fdf322c39b}} 
+\index{libirtemp.h@{libirtemp.h}!reverse\_temp\_correct@{reverse\_temp\_correct}}
+\index{reverse\_temp\_correct@{reverse\_temp\_correct}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{reverse\_temp\_correct()}{reverse\_temp\_correct()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} reverse\+\_\+temp\+\_\+correct (\begin{DoxyParamCaption}\item[{float}]{ems,  }\item[{uint16\+\_\+t}]{tau,  }\item[{float}]{ta,  }\item[{float}]{new\+\_\+temp,  }\item[{float $\ast$}]{org\+\_\+temp }\end{DoxyParamCaption})}
+
+
+
+reverse calculate temperature correction with new method 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ems} & Target emissivity(0-\/1) \\
+\hline
+\mbox{\texttt{ in}}  & {\em tau} & Atmospheric transmittance(0-\/16384) \\
+\hline
+\mbox{\texttt{ in}}  & {\em ta} & Atmospheric temperature(unit\+: Celcius) \\
+\hline
+\mbox{\texttt{ in}}  & {\em new\+\_\+temp} & new temperature after correction(unit\+: Celcius) \\
+\hline
+\mbox{\texttt{ out}}  & {\em org\+\_\+temp} & origin temperature before correction(unit\+: Celcius)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irtemp\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirtemp_8h_ae75c040df80fe787cd4233d13257bdf6}\label{libirtemp_8h_ae75c040df80fe787cd4233d13257bdf6}} 
+\index{libirtemp.h@{libirtemp.h}!single\_point\_recalibrate\_KB@{single\_point\_recalibrate\_KB}}
+\index{single\_point\_recalibrate\_KB@{single\_point\_recalibrate\_KB}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{single\_point\_recalibrate\_KB()}{single\_point\_recalibrate\_KB()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} single\+\_\+point\+\_\+recalibrate\+\_\+\+KB (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_cali_factor__t}{Cali\+Factor\+\_\+t}} $\ast$}]{cali\+\_\+factor,  }\item[{int}]{cur\+\_\+vtemp,  }\item[{double}]{t\+\_\+env,  }\item[{\mbox{\hyperlink{struct_re_cali_factor__t}{Re\+Cali\+Factor\+\_\+t}} $\ast$}]{recali\+\_\+factor }\end{DoxyParamCaption})}
+
+
+
+calibrate K and B value with single point calibration process 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em cali\+\_\+factor} & The normalization coefficient of KT curve contains Kn and Bn \\
+\hline
+\mbox{\texttt{ in}}  & {\em cur\+\_\+vtemp} & current vtemp from sensor \\
+\hline
+\mbox{\texttt{ in}}  & {\em t\+\_\+env} & current environment temperature (unit\+:Celcius) \\
+\hline
+\mbox{\texttt{ out}}  & {\em recali\+\_\+factor} & The correction factor after recalibration process contains K and B\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irtemp\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirtemp_8h_aa752f9f1478bbb97e5eaef3f1f3431e9}\label{libirtemp_8h_aa752f9f1478bbb97e5eaef3f1f3431e9}} 
+\index{libirtemp.h@{libirtemp.h}!temp\_correct@{temp\_correct}}
+\index{temp\_correct@{temp\_correct}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{temp\_correct()}{temp\_correct()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} temp\+\_\+correct (\begin{DoxyParamCaption}\item[{float}]{ems,  }\item[{uint16\+\_\+t}]{tau,  }\item[{float}]{ta,  }\item[{float}]{org\+\_\+temp,  }\item[{float $\ast$}]{new\+\_\+temp }\end{DoxyParamCaption})}
+
+
+
+temperature correction with new method 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ems} & Target emissivity(0-\/1) \\
+\hline
+\mbox{\texttt{ in}}  & {\em tau} & Atmospheric transmittance(0-\/16384) \\
+\hline
+\mbox{\texttt{ in}}  & {\em ta} & Atmospheric temperature(unit\+: Celcius) \\
+\hline
+\mbox{\texttt{ in}}  & {\em org\+\_\+temp} & origin temperature before correction(unit\+: Celcius) \\
+\hline
+\mbox{\texttt{ out}}  & {\em new\+\_\+temp} & new temperature after correction(unit\+: Celcius)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irtemp\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirtemp_8h_abd2d839a9d942a81c7af637e6f333cc9}\label{libirtemp_8h_abd2d839a9d942a81c7af637e6f333cc9}} 
+\index{libirtemp.h@{libirtemp.h}!write\_tau@{write\_tau}}
+\index{write\_tau@{write\_tau}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{write\_tau()}{write\_tau()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} write\+\_\+tau (\begin{DoxyParamCaption}\item[{uint16\+\_\+t $\ast$}]{correct\+\_\+table,  }\item[{float}]{hum,  }\item[{float}]{t\+\_\+env,  }\item[{float}]{dist,  }\item[{uint16\+\_\+t}]{tau }\end{DoxyParamCaption})}
+
+
+
+write specific tau to correct table 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em correct} & table that store tau at different humidity,environment temperature and distance \\
+\hline
+\mbox{\texttt{ in}}  & {\em hum} & humidity(0-\/1) \\
+\hline
+\mbox{\texttt{ in}}  & {\em t\+\_\+env} & environment temperature (unit\+: Celcius) \\
+\hline
+\mbox{\texttt{ in}}  & {\em dist} & object distance (0.\+25-\/49.\+99) (unit\+: m) \\
+\hline
+\mbox{\texttt{ out}}  & {\em tau} & tau that will be written\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irtemp\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirtemp_8h_a24396ee05ca1cbb584e66bb6585d8c56}\label{libirtemp_8h_a24396ee05ca1cbb584e66bb6585d8c56}} 
+\index{libirtemp.h@{libirtemp.h}!write\_tau\_with\_target\_temp\_and\_dist@{write\_tau\_with\_target\_temp\_and\_dist}}
+\index{write\_tau\_with\_target\_temp\_and\_dist@{write\_tau\_with\_target\_temp\_and\_dist}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{write\_tau\_with\_target\_temp\_and\_dist()}{write\_tau\_with\_target\_temp\_and\_dist()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\+\_\+error\+\_\+t}} write\+\_\+tau\+\_\+with\+\_\+target\+\_\+temp\+\_\+and\+\_\+dist (\begin{DoxyParamCaption}\item[{uint16\+\_\+t $\ast$}]{correct\+\_\+table,  }\item[{float}]{target\+\_\+temp,  }\item[{float}]{dist,  }\item[{uint16\+\_\+t}]{tau }\end{DoxyParamCaption})}
+
+
+
+write tau to correct table 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em correct} & table that store tau at different target distance and target temperature \\
+\hline
+\mbox{\texttt{ in}}  & {\em target\+\_\+temp} & target temperature (unit\+: Celcius) \\
+\hline
+\mbox{\texttt{ in}}  & {\em dist} & target distance (0.\+25-\/49.\+99) (unit\+: m) \\
+\hline
+\mbox{\texttt{ out}}  & {\em tau} & tau after double linear interpolation\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irtemp\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{libirtemp_8h_a03b02af31fc3eb58dec90a2b11267ca7}\label{libirtemp_8h_a03b02af31fc3eb58dec90a2b11267ca7}} 
+\index{libirtemp.h@{libirtemp.h}!irtemp\_debug\_print@{irtemp\_debug\_print}}
+\index{irtemp\_debug\_print@{irtemp\_debug\_print}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{irtemp\_debug\_print}{irtemp\_debug\_print}}
+{\footnotesize\ttfamily void($\ast$ irtemp\+\_\+debug\+\_\+print) (const char $\ast$fmt,...) (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{libirtemp_8h_ae2a982ed47cd76d03d6b1785a27c0c36}\label{libirtemp_8h_ae2a982ed47cd76d03d6b1785a27c0c36}} 
+\index{libirtemp.h@{libirtemp.h}!irtemp\_error\_print@{irtemp\_error\_print}}
+\index{irtemp\_error\_print@{irtemp\_error\_print}!libirtemp.h@{libirtemp.h}}
+\doxysubsubsection{\texorpdfstring{irtemp\_error\_print}{irtemp\_error\_print}}
+{\footnotesize\ttfamily void($\ast$ irtemp\+\_\+error\+\_\+print) (const char $\ast$fmt,...) (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+

@@ -1,0 +1,495 @@
+\hypertarget{libiruvc_8h}{}\doxysection{libiruvc.\+h File Reference}
+\label{libiruvc_8h}\index{libiruvc.h@{libiruvc.h}}
+
+
+Libiruvc library header file.  
+
+
+{\ttfamily \#include \char`\"{}all\+\_\+config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}falcon\+\_\+cmd.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_dev_cfg__t}{Dev\+Cfg\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Device\textquotesingle{}s configuration. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_camera_stream_info__t}{Camera\+Stream\+Info\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Camera\textquotesingle{}s supported stream information. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_camera_param__t}{Camera\+Param\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Camera\textquotesingle{}s one stream parameter. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_user_callback__t}{User\+Callback\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em User\textquotesingle{}s callback function and parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{libiruvc_8h_ad5749aaf83ee6a32fe4398fb90a0a13d}{FORMAT\+\_\+\+YUY2}}~\char`\"{}YUY2\char`\"{}
+\item 
+\#define \mbox{\hyperlink{libiruvc_8h_abffb53619ba3d3fafde04219bd8cdcf8}{FORMAT\+\_\+\+MJPEG}}~\char`\"{}MJPEG\char`\"{}
+\item 
+\#define \mbox{\hyperlink{libiruvc_8h_a23248e989e257d155df26cb3b7f33bd9}{FPS\+\_\+\+CNT\+\_\+\+MAX}}~32
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{libiruvc_8h_a0d8f3b7726a44ad3ef43aada448169fa}{cam\+\_\+side\+\_\+preview\+\_\+ctl}} \{ \mbox{\hyperlink{libiruvc_8h_a0d8f3b7726a44ad3ef43aada448169faa5cea0dcba8146bff0b0887d3b5c4530f}{CLOSE\+\_\+\+CAM\+\_\+\+SIDE\+\_\+\+PREVIEW}} = 0
+, \mbox{\hyperlink{libiruvc_8h_a0d8f3b7726a44ad3ef43aada448169faaaffdfccbda47740eb9e1055aacbf3e96}{KEEP\+\_\+\+CAM\+\_\+\+SIDE\+\_\+\+PREVIEW}} = 1
+ \}
+\begin{DoxyCompactList}\small\item\em Control camera side\textquotesingle{}s preview. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+DLLEXPORT char $\ast$ \mbox{\hyperlink{libiruvc_8h_a21206065ac0439949df375b61a84d538}{libiruvc\+\_\+version}} (void)
+\begin{DoxyCompactList}\small\item\em Get libiruvc library\textquotesingle{}s version. \end{DoxyCompactList}\item 
+DLLEXPORT const char $\ast$ \mbox{\hyperlink{libiruvc_8h_aea6edf851f5c0dd86a48f463c5024577}{iruvc\+\_\+version\+\_\+number}} (void)
+\begin{DoxyCompactList}\small\item\em Get libiruvc library\textquotesingle{}s version number. \end{DoxyCompactList}\item 
+DLLEXPORT char $\ast$ \mbox{\hyperlink{libiruvc_8h_a3a1aeff9b3821c3f83af5438f2b283f7}{product\+\_\+type}} (void)
+\begin{DoxyCompactList}\small\item\em Get product type. \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390}{iruvc\+\_\+error\+\_\+t}} \mbox{\hyperlink{libiruvc_8h_acd5e984aee2522e056ae19b54d5a2a65}{uvc\+\_\+camera\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize libiruvc\textquotesingle{}s service context. \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390}{iruvc\+\_\+error\+\_\+t}} \mbox{\hyperlink{libiruvc_8h_a11a522fb3f80777fd4117036055ad290}{uvc\+\_\+camera\+\_\+list}} (\mbox{\hyperlink{struct_dev_cfg__t}{Dev\+Cfg\+\_\+t}} devs\+\_\+cfg\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Return a devices\textquotesingle{} list with pid,vid and name. \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390}{iruvc\+\_\+error\+\_\+t}} \mbox{\hyperlink{libiruvc_8h_a820210ff53e4be69f4e1556468c45058}{uvc\+\_\+camera\+\_\+info\+\_\+get}} (\mbox{\hyperlink{struct_dev_cfg__t}{Dev\+Cfg\+\_\+t}} dev\+\_\+cfg, \mbox{\hyperlink{struct_camera_stream_info__t}{Camera\+Stream\+Info\+\_\+t}} camera\+\_\+stream\+\_\+info\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Using a devices\textquotesingle{} configuration to find it, and list its supported stream infomation. \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390}{iruvc\+\_\+error\+\_\+t}} \mbox{\hyperlink{libiruvc_8h_a81917b5d1acff0f28efd70adcc5e83ce}{uvc\+\_\+camera\+\_\+open}} (\mbox{\hyperlink{struct_dev_cfg__t}{Dev\+Cfg\+\_\+t}} dev\+\_\+cfg)
+\begin{DoxyCompactList}\small\item\em Open a camera device with its configuration. \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390}{iruvc\+\_\+error\+\_\+t}} \mbox{\hyperlink{libiruvc_8h_aa2267f60e710f4e4fc658b7cba4722ab}{uvc\+\_\+camera\+\_\+open\+\_\+same}} (\mbox{\hyperlink{struct_dev_cfg__t}{Dev\+Cfg\+\_\+t}} dev\+\_\+cfg, int same\+\_\+dev\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Open a camera device with its configuration, and distinguish the same device via same\+\_\+dev\+\_\+index. \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390}{iruvc\+\_\+error\+\_\+t}} \mbox{\hyperlink{libiruvc_8h_aeaaa7c52aafb8586ed5a9f32f9fe5547}{uvc\+\_\+camera\+\_\+stream\+\_\+start}} (\mbox{\hyperlink{struct_camera_param__t}{Camera\+Param\+\_\+t}} camera\+\_\+param, \mbox{\hyperlink{struct_user_callback__t}{User\+Callback\+\_\+t}} $\ast$usr\+\_\+callback)
+\begin{DoxyCompactList}\small\item\em Start stream with specific one stream parameter of the camera, you can use user\textquotesingle{}s callback function or polling frame(usr\+\_\+callback=NULL) \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390}{iruvc\+\_\+error\+\_\+t}} \mbox{\hyperlink{libiruvc_8h_a0e769ee26121eadba08d23db2beb6715}{uvc\+\_\+camera\+\_\+stream\+\_\+close}} (\mbox{\hyperlink{libiruvc_8h_a0d8f3b7726a44ad3ef43aada448169fa}{cam\+\_\+side\+\_\+preview\+\_\+ctl}} cam\+\_\+preview)
+\begin{DoxyCompactList}\small\item\em Close camera\textquotesingle{}s stream. \end{DoxyCompactList}\item 
+DLLEXPORT void \mbox{\hyperlink{libiruvc_8h_a2c152fe6df1e6daa78dfda0ee021a4d7}{uvc\+\_\+camera\+\_\+close}} (void)
+\begin{DoxyCompactList}\small\item\em Disconnect the camera\textquotesingle{}s device connection. \end{DoxyCompactList}\item 
+DLLEXPORT void \mbox{\hyperlink{libiruvc_8h_aca399146f6082f28a03fd519242e1696}{uvc\+\_\+camera\+\_\+release}} (void)
+\begin{DoxyCompactList}\small\item\em Release libiruvc\textquotesingle{}s service context. \end{DoxyCompactList}\item 
+DLLEXPORT void $\ast$ \mbox{\hyperlink{libiruvc_8h_a8d6d9cd03125062678652d02f941d5e2}{uvc\+\_\+frame\+\_\+buf\+\_\+create}} (\mbox{\hyperlink{struct_camera_param__t}{Camera\+Param\+\_\+t}} camera\+\_\+param)
+\begin{DoxyCompactList}\small\item\em Create one frame\textquotesingle{}s buffer for frame\+\_\+get. \end{DoxyCompactList}\item 
+DLLEXPORT void \mbox{\hyperlink{libiruvc_8h_a81fa44ce53366876c8b1d66329f44033}{uvc\+\_\+frame\+\_\+buf\+\_\+release}} (void $\ast$frame\+\_\+buf)
+\begin{DoxyCompactList}\small\item\em Release the frame\textquotesingle{}s buffer created before. \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390}{iruvc\+\_\+error\+\_\+t}} \mbox{\hyperlink{libiruvc_8h_a5b749feb9be6f8d4539754897235358b}{uvc\+\_\+frame\+\_\+get}} (void $\ast$raw\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Polling frame transfered from uvc camera. User can\textquotesingle{}t recieve data when use user callback function. \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390}{iruvc\+\_\+error\+\_\+t}} \mbox{\hyperlink{libiruvc_8h_a1a1b71d2cdd7cfd46721305450372925}{uvc\+\_\+control\+\_\+cmd}} (unsigned char request\+\_\+type, unsigned char b\+Request, unsigned short w\+Value, unsigned short w\+Index, unsigned char $\ast$data, unsigned short w\+Length, unsigned int timeout)
+\begin{DoxyCompactList}\small\item\em Send control command to uvc camera. \end{DoxyCompactList}\item 
+DLLEXPORT void \mbox{\hyperlink{libiruvc_8h_afabed489f9180555902d14b82b8247e8}{iruvc\+\_\+log\+\_\+register}} (\mbox{\hyperlink{all__config_8h_aec639dc0ea9770ef145f8ff592f6fad6}{iruvc\+\_\+log\+\_\+level\+\_\+t}} log\+\_\+level)
+\begin{DoxyCompactList}\small\item\em Register log print via log\+\_\+level. \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390}{iruvc\+\_\+error\+\_\+t}} \mbox{\hyperlink{libiruvc_8h_a4759ca3a5cd8f708ad8090f4743331ee}{register\+\_\+i2c\+\_\+device\+\_\+node}} (const char $\ast$node\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Register i2c device node. \end{DoxyCompactList}\item 
+DLLEXPORT int \mbox{\hyperlink{libiruvc_8h_a05d2da3dd347d6f8240b93101ab5a8bd}{i2c\+\_\+start\+\_\+stream}} (uint8\+\_\+t path, uint8\+\_\+t src, uint16\+\_\+t width, uint16\+\_\+t height, uint8\+\_\+t fps, uint8\+\_\+t mode)
+\begin{DoxyCompactList}\small\item\em Start stream by i2c.\+Will be deleted in 2.\+0.\+0. \end{DoxyCompactList}\item 
+DLLEXPORT int \mbox{\hyperlink{libiruvc_8h_a1b6f6a4964c0f702dafddad014c61937}{i2c\+\_\+stop\+\_\+stream}} (uint8\+\_\+t path)
+\begin{DoxyCompactList}\small\item\em Stop stream by i2c.\+Will be deleted in 2.\+0.\+0. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Libiruvc library header file. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{libiruvc_8h_abffb53619ba3d3fafde04219bd8cdcf8}\label{libiruvc_8h_abffb53619ba3d3fafde04219bd8cdcf8}} 
+\index{libiruvc.h@{libiruvc.h}!FORMAT\_MJPEG@{FORMAT\_MJPEG}}
+\index{FORMAT\_MJPEG@{FORMAT\_MJPEG}!libiruvc.h@{libiruvc.h}}
+\doxysubsubsection{\texorpdfstring{FORMAT\_MJPEG}{FORMAT\_MJPEG}}
+{\footnotesize\ttfamily \#define FORMAT\+\_\+\+MJPEG~\char`\"{}MJPEG\char`\"{}}
+
+\mbox{\Hypertarget{libiruvc_8h_ad5749aaf83ee6a32fe4398fb90a0a13d}\label{libiruvc_8h_ad5749aaf83ee6a32fe4398fb90a0a13d}} 
+\index{libiruvc.h@{libiruvc.h}!FORMAT\_YUY2@{FORMAT\_YUY2}}
+\index{FORMAT\_YUY2@{FORMAT\_YUY2}!libiruvc.h@{libiruvc.h}}
+\doxysubsubsection{\texorpdfstring{FORMAT\_YUY2}{FORMAT\_YUY2}}
+{\footnotesize\ttfamily \#define FORMAT\+\_\+\+YUY2~\char`\"{}YUY2\char`\"{}}
+
+\mbox{\Hypertarget{libiruvc_8h_a23248e989e257d155df26cb3b7f33bd9}\label{libiruvc_8h_a23248e989e257d155df26cb3b7f33bd9}} 
+\index{libiruvc.h@{libiruvc.h}!FPS\_CNT\_MAX@{FPS\_CNT\_MAX}}
+\index{FPS\_CNT\_MAX@{FPS\_CNT\_MAX}!libiruvc.h@{libiruvc.h}}
+\doxysubsubsection{\texorpdfstring{FPS\_CNT\_MAX}{FPS\_CNT\_MAX}}
+{\footnotesize\ttfamily \#define FPS\+\_\+\+CNT\+\_\+\+MAX~32}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{libiruvc_8h_a0d8f3b7726a44ad3ef43aada448169fa}\label{libiruvc_8h_a0d8f3b7726a44ad3ef43aada448169fa}} 
+\index{libiruvc.h@{libiruvc.h}!cam\_side\_preview\_ctl@{cam\_side\_preview\_ctl}}
+\index{cam\_side\_preview\_ctl@{cam\_side\_preview\_ctl}!libiruvc.h@{libiruvc.h}}
+\doxysubsubsection{\texorpdfstring{cam\_side\_preview\_ctl}{cam\_side\_preview\_ctl}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{libiruvc_8h_a0d8f3b7726a44ad3ef43aada448169fa}{cam\+\_\+side\+\_\+preview\+\_\+ctl}}}
+
+
+
+Control camera side\textquotesingle{}s preview. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CLOSE\_CAM\_SIDE\_PREVIEW@{CLOSE\_CAM\_SIDE\_PREVIEW}!libiruvc.h@{libiruvc.h}}\index{libiruvc.h@{libiruvc.h}!CLOSE\_CAM\_SIDE\_PREVIEW@{CLOSE\_CAM\_SIDE\_PREVIEW}}}\mbox{\Hypertarget{libiruvc_8h_a0d8f3b7726a44ad3ef43aada448169faa5cea0dcba8146bff0b0887d3b5c4530f}\label{libiruvc_8h_a0d8f3b7726a44ad3ef43aada448169faa5cea0dcba8146bff0b0887d3b5c4530f}} 
+CLOSE\+\_\+\+CAM\+\_\+\+SIDE\+\_\+\+PREVIEW&close camera side\textquotesingle{}s preview \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEEP\_CAM\_SIDE\_PREVIEW@{KEEP\_CAM\_SIDE\_PREVIEW}!libiruvc.h@{libiruvc.h}}\index{libiruvc.h@{libiruvc.h}!KEEP\_CAM\_SIDE\_PREVIEW@{KEEP\_CAM\_SIDE\_PREVIEW}}}\mbox{\Hypertarget{libiruvc_8h_a0d8f3b7726a44ad3ef43aada448169faaaffdfccbda47740eb9e1055aacbf3e96}\label{libiruvc_8h_a0d8f3b7726a44ad3ef43aada448169faaaffdfccbda47740eb9e1055aacbf3e96}} 
+KEEP\+\_\+\+CAM\+\_\+\+SIDE\+\_\+\+PREVIEW&keep camera side\textquotesingle{}s preview \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{libiruvc_8h_a05d2da3dd347d6f8240b93101ab5a8bd}\label{libiruvc_8h_a05d2da3dd347d6f8240b93101ab5a8bd}} 
+\index{libiruvc.h@{libiruvc.h}!i2c\_start\_stream@{i2c\_start\_stream}}
+\index{i2c\_start\_stream@{i2c\_start\_stream}!libiruvc.h@{libiruvc.h}}
+\doxysubsubsection{\texorpdfstring{i2c\_start\_stream()}{i2c\_start\_stream()}}
+{\footnotesize\ttfamily DLLEXPORT int i2c\+\_\+start\+\_\+stream (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{path,  }\item[{uint8\+\_\+t}]{src,  }\item[{uint16\+\_\+t}]{width,  }\item[{uint16\+\_\+t}]{height,  }\item[{uint8\+\_\+t}]{fps,  }\item[{uint8\+\_\+t}]{mode }\end{DoxyParamCaption})}
+
+
+
+Start stream by i2c.\+Will be deleted in 2.\+0.\+0. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em path} & stream path \\
+\hline
+\mbox{\texttt{ in}}  & {\em src} & stream source \\
+\hline
+\mbox{\texttt{ in}}  & {\em width} & stream frame width \\
+\hline
+\mbox{\texttt{ in}}  & {\em height} & stream frame height \\
+\hline
+\mbox{\texttt{ in}}  & {\em fps} & stream frame fps \\
+\hline
+\mbox{\texttt{ in}}  & {\em mode} & stream mode \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{libiruvc_8h_a1b6f6a4964c0f702dafddad014c61937}\label{libiruvc_8h_a1b6f6a4964c0f702dafddad014c61937}} 
+\index{libiruvc.h@{libiruvc.h}!i2c\_stop\_stream@{i2c\_stop\_stream}}
+\index{i2c\_stop\_stream@{i2c\_stop\_stream}!libiruvc.h@{libiruvc.h}}
+\doxysubsubsection{\texorpdfstring{i2c\_stop\_stream()}{i2c\_stop\_stream()}}
+{\footnotesize\ttfamily DLLEXPORT int i2c\+\_\+stop\+\_\+stream (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{path }\end{DoxyParamCaption})}
+
+
+
+Stop stream by i2c.\+Will be deleted in 2.\+0.\+0. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em path} & stream path \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{libiruvc_8h_afabed489f9180555902d14b82b8247e8}\label{libiruvc_8h_afabed489f9180555902d14b82b8247e8}} 
+\index{libiruvc.h@{libiruvc.h}!iruvc\_log\_register@{iruvc\_log\_register}}
+\index{iruvc\_log\_register@{iruvc\_log\_register}!libiruvc.h@{libiruvc.h}}
+\doxysubsubsection{\texorpdfstring{iruvc\_log\_register()}{iruvc\_log\_register()}}
+{\footnotesize\ttfamily DLLEXPORT void iruvc\+\_\+log\+\_\+register (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{all__config_8h_aec639dc0ea9770ef145f8ff592f6fad6}{iruvc\+\_\+log\+\_\+level\+\_\+t}}}]{log\+\_\+level }\end{DoxyParamCaption})}
+
+
+
+Register log print via log\+\_\+level. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em log\+\_\+level} & debug information level \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{libiruvc_8h_aea6edf851f5c0dd86a48f463c5024577}\label{libiruvc_8h_aea6edf851f5c0dd86a48f463c5024577}} 
+\index{libiruvc.h@{libiruvc.h}!iruvc\_version\_number@{iruvc\_version\_number}}
+\index{iruvc\_version\_number@{iruvc\_version\_number}!libiruvc.h@{libiruvc.h}}
+\doxysubsubsection{\texorpdfstring{iruvc\_version\_number()}{iruvc\_version\_number()}}
+{\footnotesize\ttfamily DLLEXPORT const char $\ast$ iruvc\+\_\+version\+\_\+number (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get libiruvc library\textquotesingle{}s version number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em NULL} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+supported device\textquotesingle{}s type string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libiruvc_8h_a21206065ac0439949df375b61a84d538}\label{libiruvc_8h_a21206065ac0439949df375b61a84d538}} 
+\index{libiruvc.h@{libiruvc.h}!libiruvc\_version@{libiruvc\_version}}
+\index{libiruvc\_version@{libiruvc\_version}!libiruvc.h@{libiruvc.h}}
+\doxysubsubsection{\texorpdfstring{libiruvc\_version()}{libiruvc\_version()}}
+{\footnotesize\ttfamily DLLEXPORT char $\ast$ libiruvc\+\_\+version (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get libiruvc library\textquotesingle{}s version. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em NULL} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+version\textquotesingle{}s string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libiruvc_8h_a3a1aeff9b3821c3f83af5438f2b283f7}\label{libiruvc_8h_a3a1aeff9b3821c3f83af5438f2b283f7}} 
+\index{libiruvc.h@{libiruvc.h}!product\_type@{product\_type}}
+\index{product\_type@{product\_type}!libiruvc.h@{libiruvc.h}}
+\doxysubsubsection{\texorpdfstring{product\_type()}{product\_type()}}
+{\footnotesize\ttfamily DLLEXPORT char $\ast$ product\+\_\+type (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get product type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em NULL} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+supported device\textquotesingle{}s type string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libiruvc_8h_a4759ca3a5cd8f708ad8090f4743331ee}\label{libiruvc_8h_a4759ca3a5cd8f708ad8090f4743331ee}} 
+\index{libiruvc.h@{libiruvc.h}!register\_i2c\_device\_node@{register\_i2c\_device\_node}}
+\index{register\_i2c\_device\_node@{register\_i2c\_device\_node}!libiruvc.h@{libiruvc.h}}
+\doxysubsubsection{\texorpdfstring{register\_i2c\_device\_node()}{register\_i2c\_device\_node()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390}{iruvc\+\_\+error\+\_\+t}} register\+\_\+i2c\+\_\+device\+\_\+node (\begin{DoxyParamCaption}\item[{const char $\ast$}]{node\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Register i2c device node. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em node\+\_\+name} & i2c device node name\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see iruvc\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libiruvc_8h_a2c152fe6df1e6daa78dfda0ee021a4d7}\label{libiruvc_8h_a2c152fe6df1e6daa78dfda0ee021a4d7}} 
+\index{libiruvc.h@{libiruvc.h}!uvc\_camera\_close@{uvc\_camera\_close}}
+\index{uvc\_camera\_close@{uvc\_camera\_close}!libiruvc.h@{libiruvc.h}}
+\doxysubsubsection{\texorpdfstring{uvc\_camera\_close()}{uvc\_camera\_close()}}
+{\footnotesize\ttfamily DLLEXPORT void uvc\+\_\+camera\+\_\+close (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Disconnect the camera\textquotesingle{}s device connection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em NULL} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{libiruvc_8h_a820210ff53e4be69f4e1556468c45058}\label{libiruvc_8h_a820210ff53e4be69f4e1556468c45058}} 
+\index{libiruvc.h@{libiruvc.h}!uvc\_camera\_info\_get@{uvc\_camera\_info\_get}}
+\index{uvc\_camera\_info\_get@{uvc\_camera\_info\_get}!libiruvc.h@{libiruvc.h}}
+\doxysubsubsection{\texorpdfstring{uvc\_camera\_info\_get()}{uvc\_camera\_info\_get()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390}{iruvc\+\_\+error\+\_\+t}} uvc\+\_\+camera\+\_\+info\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_dev_cfg__t}{Dev\+Cfg\+\_\+t}}}]{dev\+\_\+cfg,  }\item[{\mbox{\hyperlink{struct_camera_stream_info__t}{Camera\+Stream\+Info\+\_\+t}}}]{camera\+\_\+stream\+\_\+info\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Using a devices\textquotesingle{} configuration to find it, and list its supported stream infomation. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em dev\+\_\+cfg} & devices\textquotesingle{} configuration \\
+\hline
+\mbox{\texttt{ out}}  & {\em camera\+\_\+stream\+\_\+info} & camera\textquotesingle{}s supported stream infomation\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see iruvc\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libiruvc_8h_acd5e984aee2522e056ae19b54d5a2a65}\label{libiruvc_8h_acd5e984aee2522e056ae19b54d5a2a65}} 
+\index{libiruvc.h@{libiruvc.h}!uvc\_camera\_init@{uvc\_camera\_init}}
+\index{uvc\_camera\_init@{uvc\_camera\_init}!libiruvc.h@{libiruvc.h}}
+\doxysubsubsection{\texorpdfstring{uvc\_camera\_init()}{uvc\_camera\_init()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390}{iruvc\+\_\+error\+\_\+t}} uvc\+\_\+camera\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialize libiruvc\textquotesingle{}s service context. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em NULL} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see iruvc\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libiruvc_8h_a11a522fb3f80777fd4117036055ad290}\label{libiruvc_8h_a11a522fb3f80777fd4117036055ad290}} 
+\index{libiruvc.h@{libiruvc.h}!uvc\_camera\_list@{uvc\_camera\_list}}
+\index{uvc\_camera\_list@{uvc\_camera\_list}!libiruvc.h@{libiruvc.h}}
+\doxysubsubsection{\texorpdfstring{uvc\_camera\_list()}{uvc\_camera\_list()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390}{iruvc\+\_\+error\+\_\+t}} uvc\+\_\+camera\+\_\+list (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_dev_cfg__t}{Dev\+Cfg\+\_\+t}}}]{devs\+\_\+cfg\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Return a devices\textquotesingle{} list with pid,vid and name. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em devs\+\_\+cfg} & devices\textquotesingle{} configuration\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see iruvc\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libiruvc_8h_a81917b5d1acff0f28efd70adcc5e83ce}\label{libiruvc_8h_a81917b5d1acff0f28efd70adcc5e83ce}} 
+\index{libiruvc.h@{libiruvc.h}!uvc\_camera\_open@{uvc\_camera\_open}}
+\index{uvc\_camera\_open@{uvc\_camera\_open}!libiruvc.h@{libiruvc.h}}
+\doxysubsubsection{\texorpdfstring{uvc\_camera\_open()}{uvc\_camera\_open()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390}{iruvc\+\_\+error\+\_\+t}} uvc\+\_\+camera\+\_\+open (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_dev_cfg__t}{Dev\+Cfg\+\_\+t}}}]{dev\+\_\+cfg }\end{DoxyParamCaption})}
+
+
+
+Open a camera device with its configuration. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em dev\+\_\+cfg} & devices\textquotesingle{} configuration\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see iruvc\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libiruvc_8h_aa2267f60e710f4e4fc658b7cba4722ab}\label{libiruvc_8h_aa2267f60e710f4e4fc658b7cba4722ab}} 
+\index{libiruvc.h@{libiruvc.h}!uvc\_camera\_open\_same@{uvc\_camera\_open\_same}}
+\index{uvc\_camera\_open\_same@{uvc\_camera\_open\_same}!libiruvc.h@{libiruvc.h}}
+\doxysubsubsection{\texorpdfstring{uvc\_camera\_open\_same()}{uvc\_camera\_open\_same()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390}{iruvc\+\_\+error\+\_\+t}} uvc\+\_\+camera\+\_\+open\+\_\+same (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_dev_cfg__t}{Dev\+Cfg\+\_\+t}}}]{dev\+\_\+cfg,  }\item[{int}]{same\+\_\+dev\+\_\+index }\end{DoxyParamCaption})}
+
+
+
+Open a camera device with its configuration, and distinguish the same device via same\+\_\+dev\+\_\+index. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em dev\+\_\+cfg} & devices\textquotesingle{} configuration \\
+\hline
+\mbox{\texttt{ in}}  & {\em same\+\_\+dev\+\_\+index} & same device\textquotesingle{}s index\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see iruvc\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libiruvc_8h_aca399146f6082f28a03fd519242e1696}\label{libiruvc_8h_aca399146f6082f28a03fd519242e1696}} 
+\index{libiruvc.h@{libiruvc.h}!uvc\_camera\_release@{uvc\_camera\_release}}
+\index{uvc\_camera\_release@{uvc\_camera\_release}!libiruvc.h@{libiruvc.h}}
+\doxysubsubsection{\texorpdfstring{uvc\_camera\_release()}{uvc\_camera\_release()}}
+{\footnotesize\ttfamily DLLEXPORT void uvc\+\_\+camera\+\_\+release (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Release libiruvc\textquotesingle{}s service context. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em NULL} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{libiruvc_8h_a0e769ee26121eadba08d23db2beb6715}\label{libiruvc_8h_a0e769ee26121eadba08d23db2beb6715}} 
+\index{libiruvc.h@{libiruvc.h}!uvc\_camera\_stream\_close@{uvc\_camera\_stream\_close}}
+\index{uvc\_camera\_stream\_close@{uvc\_camera\_stream\_close}!libiruvc.h@{libiruvc.h}}
+\doxysubsubsection{\texorpdfstring{uvc\_camera\_stream\_close()}{uvc\_camera\_stream\_close()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390}{iruvc\+\_\+error\+\_\+t}} uvc\+\_\+camera\+\_\+stream\+\_\+close (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{libiruvc_8h_a0d8f3b7726a44ad3ef43aada448169fa}{cam\+\_\+side\+\_\+preview\+\_\+ctl}}}]{cam\+\_\+preview }\end{DoxyParamCaption})}
+
+
+
+Close camera\textquotesingle{}s stream. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em cam\+\_\+preview} & control camera side\textquotesingle{}s preview \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{libiruvc_8h_aeaaa7c52aafb8586ed5a9f32f9fe5547}\label{libiruvc_8h_aeaaa7c52aafb8586ed5a9f32f9fe5547}} 
+\index{libiruvc.h@{libiruvc.h}!uvc\_camera\_stream\_start@{uvc\_camera\_stream\_start}}
+\index{uvc\_camera\_stream\_start@{uvc\_camera\_stream\_start}!libiruvc.h@{libiruvc.h}}
+\doxysubsubsection{\texorpdfstring{uvc\_camera\_stream\_start()}{uvc\_camera\_stream\_start()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390}{iruvc\+\_\+error\+\_\+t}} uvc\+\_\+camera\+\_\+stream\+\_\+start (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_camera_param__t}{Camera\+Param\+\_\+t}}}]{camera\+\_\+param,  }\item[{\mbox{\hyperlink{struct_user_callback__t}{User\+Callback\+\_\+t}} $\ast$}]{usr\+\_\+callback }\end{DoxyParamCaption})}
+
+
+
+Start stream with specific one stream parameter of the camera, you can use user\textquotesingle{}s callback function or polling frame(usr\+\_\+callback=NULL) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em camera\+\_\+param} & camera\textquotesingle{}s one selected stream parameter \\
+\hline
+\mbox{\texttt{ in}}  & {\em usr\+\_\+callback} & user\textquotesingle{}s callback function\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see iruvc\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libiruvc_8h_a1a1b71d2cdd7cfd46721305450372925}\label{libiruvc_8h_a1a1b71d2cdd7cfd46721305450372925}} 
+\index{libiruvc.h@{libiruvc.h}!uvc\_control\_cmd@{uvc\_control\_cmd}}
+\index{uvc\_control\_cmd@{uvc\_control\_cmd}!libiruvc.h@{libiruvc.h}}
+\doxysubsubsection{\texorpdfstring{uvc\_control\_cmd()}{uvc\_control\_cmd()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390}{iruvc\+\_\+error\+\_\+t}} uvc\+\_\+control\+\_\+cmd (\begin{DoxyParamCaption}\item[{unsigned char}]{request\+\_\+type,  }\item[{unsigned char}]{b\+Request,  }\item[{unsigned short}]{w\+Value,  }\item[{unsigned short}]{w\+Index,  }\item[{unsigned char $\ast$}]{data,  }\item[{unsigned short}]{w\+Length,  }\item[{unsigned int}]{timeout }\end{DoxyParamCaption})}
+
+
+
+Send control command to uvc camera. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em request\+\_\+type} & command\textquotesingle{}s request type \\
+\hline
+\mbox{\texttt{ in}}  & {\em b\+Request} & command\textquotesingle{}s b\+Request \\
+\hline
+\mbox{\texttt{ in}}  & {\em w\+Value} & command\textquotesingle{}s w\+Value \\
+\hline
+\mbox{\texttt{ in}}  & {\em w\+Index} & command\textquotesingle{}s w\+Index \\
+\hline
+ & {\em data} & command\textquotesingle{}s data pointer \\
+\hline
+\mbox{\texttt{ in}}  & {\em w\+Length} & command\textquotesingle{}s data length \\
+\hline
+\mbox{\texttt{ in}}  & {\em timeout} & command\textquotesingle{}s timeout timer(ms)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see iruvc\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libiruvc_8h_a8d6d9cd03125062678652d02f941d5e2}\label{libiruvc_8h_a8d6d9cd03125062678652d02f941d5e2}} 
+\index{libiruvc.h@{libiruvc.h}!uvc\_frame\_buf\_create@{uvc\_frame\_buf\_create}}
+\index{uvc\_frame\_buf\_create@{uvc\_frame\_buf\_create}!libiruvc.h@{libiruvc.h}}
+\doxysubsubsection{\texorpdfstring{uvc\_frame\_buf\_create()}{uvc\_frame\_buf\_create()}}
+{\footnotesize\ttfamily DLLEXPORT void $\ast$ uvc\+\_\+frame\+\_\+buf\+\_\+create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_camera_param__t}{Camera\+Param\+\_\+t}}}]{camera\+\_\+param }\end{DoxyParamCaption})}
+
+
+
+Create one frame\textquotesingle{}s buffer for frame\+\_\+get. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em camera\+\_\+param} & camera\textquotesingle{}s one selected stream parameter \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{libiruvc_8h_a81fa44ce53366876c8b1d66329f44033}\label{libiruvc_8h_a81fa44ce53366876c8b1d66329f44033}} 
+\index{libiruvc.h@{libiruvc.h}!uvc\_frame\_buf\_release@{uvc\_frame\_buf\_release}}
+\index{uvc\_frame\_buf\_release@{uvc\_frame\_buf\_release}!libiruvc.h@{libiruvc.h}}
+\doxysubsubsection{\texorpdfstring{uvc\_frame\_buf\_release()}{uvc\_frame\_buf\_release()}}
+{\footnotesize\ttfamily DLLEXPORT void uvc\+\_\+frame\+\_\+buf\+\_\+release (\begin{DoxyParamCaption}\item[{void $\ast$}]{frame\+\_\+buf }\end{DoxyParamCaption})}
+
+
+
+Release the frame\textquotesingle{}s buffer created before. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em frame\+\_\+buf} & the frame\textquotesingle{}s buffer created before \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{libiruvc_8h_a5b749feb9be6f8d4539754897235358b}\label{libiruvc_8h_a5b749feb9be6f8d4539754897235358b}} 
+\index{libiruvc.h@{libiruvc.h}!uvc\_frame\_get@{uvc\_frame\_get}}
+\index{uvc\_frame\_get@{uvc\_frame\_get}!libiruvc.h@{libiruvc.h}}
+\doxysubsubsection{\texorpdfstring{uvc\_frame\_get()}{uvc\_frame\_get()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390}{iruvc\+\_\+error\+\_\+t}} uvc\+\_\+frame\+\_\+get (\begin{DoxyParamCaption}\item[{void $\ast$}]{raw\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Polling frame transfered from uvc camera. User can\textquotesingle{}t recieve data when use user callback function. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em raw\+\_\+data} & raw frame data that transfered from camera\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see iruvc\+\_\+error\+\_\+t 
+\end{DoxyReturn}

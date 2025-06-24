@@ -1,0 +1,376 @@
+\hypertarget{libirparse_8h}{}\doxysection{libirparse.\+h File Reference}
+\label{libirparse_8h}\index{libirparse.h@{libirparse.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{libirparse_8h_a39f953928efe8d23f4159b2a36e4d2f3}{irparse\+\_\+log\+\_\+level\+\_\+t}} \{ \mbox{\hyperlink{libirparse_8h_a39f953928efe8d23f4159b2a36e4d2f3a965d76766e796b132df924a0604eaf29}{IRPARSE\+\_\+\+LOG\+\_\+\+DEBUG}} = 0
+, \mbox{\hyperlink{libirparse_8h_a39f953928efe8d23f4159b2a36e4d2f3aac4fbdda0294815e4abbf17192686280}{IRPARSE\+\_\+\+LOG\+\_\+\+ERROR}} = 1
+, \mbox{\hyperlink{libirparse_8h_a39f953928efe8d23f4159b2a36e4d2f3a30e51d789adfa7ec49dd62877a4a0c5d}{IRPARSE\+\_\+\+LOG\+\_\+\+NO\+\_\+\+PRINT}} = 2
+ \}
+\begin{DoxyCompactList}\small\item\em Log level definition in libirparse library. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{libirparse_8h_a8d94284b2d8b9459bc9fb1e8c9476a32}{irparse\+\_\+error\+\_\+t}} \{ \mbox{\hyperlink{libirparse_8h_a8d94284b2d8b9459bc9fb1e8c9476a32aca634d6a88d562a3cc90ce9ebfb3daad}{IRPARSE\+\_\+\+SUCCESS}} = 0
+, \mbox{\hyperlink{libirparse_8h_a8d94284b2d8b9459bc9fb1e8c9476a32a170a6fbb60629c2c461e136cfa719581}{IRPARSE\+\_\+\+ERROR\+\_\+\+PARAM}} = -\/1
+ \}
+\begin{DoxyCompactList}\small\item\em Error type in libirparse library. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+DLLEXPORT char $\ast$ \mbox{\hyperlink{libirparse_8h_aceee187c31f0c4bf42657ea680c6d3f2}{irparse\+\_\+version}} (void)
+\begin{DoxyCompactList}\small\item\em Get current libirparse library version. \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirparse_8h_a8d94284b2d8b9459bc9fb1e8c9476a32}{irparse\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirparse_8h_ab65f8a0011ca4dba969299fe2766a47a}{y16\+\_\+to\+\_\+y14}} (uint16\+\_\+t $\ast$y16\+\_\+data, int pixel\+\_\+num, uint16\+\_\+t $\ast$y14\+\_\+data)
+\begin{DoxyCompactList}\small\item\em convert Y16 array to Y14 array \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirparse_8h_a8d94284b2d8b9459bc9fb1e8c9476a32}{irparse\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirparse_8h_a3bcc8c31110ae2254361acf47f5bd007}{y14\+\_\+to\+\_\+y8}} (uint16\+\_\+t $\ast$y14\+\_\+data, int pixel\+\_\+num, uint8\+\_\+t $\ast$y8\+\_\+data)
+\begin{DoxyCompactList}\small\item\em convert Y14 array to Y8 array \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirparse_8h_a8d94284b2d8b9459bc9fb1e8c9476a32}{irparse\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirparse_8h_afd0c10ce8eff5bc931fc0612f1e5b86a}{y14\+\_\+to\+\_\+rgb}} (uint16\+\_\+t $\ast$packet\+\_\+data, int pixel\+\_\+num, uint8\+\_\+t $\ast$rgb\+\_\+data)
+\begin{DoxyCompactList}\small\item\em convert Y14 array to RGB array \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirparse_8h_a8d94284b2d8b9459bc9fb1e8c9476a32}{irparse\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirparse_8h_a526475fd8ee2d28d07132d35e142f5a0}{y14\+\_\+to\+\_\+yuv444}} (uint16\+\_\+t $\ast$packet\+\_\+data, int pixel\+\_\+num, uint8\+\_\+t $\ast$yuv\+\_\+data)
+\begin{DoxyCompactList}\small\item\em convert Y14 array to YUV444 array. Y=Y14to\+Y8 U=128 V=128 \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirparse_8h_a8d94284b2d8b9459bc9fb1e8c9476a32}{irparse\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirparse_8h_ad05c9ca36027604bb6de855fa8a1ee45}{yuv444\+\_\+to\+\_\+yuv422}} (uint8\+\_\+t $\ast$yuv444\+\_\+data, int pixel\+\_\+num, uint8\+\_\+t $\ast$yuv422\+\_\+data)
+\begin{DoxyCompactList}\small\item\em convert YUV444 array to YUV422 array \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirparse_8h_a8d94284b2d8b9459bc9fb1e8c9476a32}{irparse\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirparse_8h_a51370bc0474ae9c0245118d7370b3e87}{yuv422\+\_\+to\+\_\+rgb}} (uint8\+\_\+t $\ast$yuv422, int pixel\+\_\+num, uint8\+\_\+t $\ast$rgb\+\_\+data)
+\begin{DoxyCompactList}\small\item\em convert YUV422 array to RGB array \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirparse_8h_a8d94284b2d8b9459bc9fb1e8c9476a32}{irparse\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirparse_8h_ae82b3ba297dfbcedd8ed61923dc44286}{yuv444\+\_\+to\+\_\+rgb}} (uint8\+\_\+t $\ast$packet\+\_\+data, int pixel\+\_\+num, uint8\+\_\+t $\ast$rgb\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Convert YUV444 array to RGB array. \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirparse_8h_a8d94284b2d8b9459bc9fb1e8c9476a32}{irparse\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirparse_8h_a2b8add69a8bae18618d805003742cf6e}{rgb\+\_\+to\+\_\+bgr}} (uint8\+\_\+t $\ast$rgb\+\_\+data, int pixel\+\_\+num, uint8\+\_\+t $\ast$bgr\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Convert RGB array to BGR array. \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirparse_8h_a8d94284b2d8b9459bc9fb1e8c9476a32}{irparse\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirparse_8h_abf0bdca94e883e66f472cee24204e77c}{yuv422\+\_\+add\+\_\+y}} (uint8\+\_\+t $\ast$src, int pixel\+\_\+num, int y\+\_\+value, uint8\+\_\+t $\ast$dst)
+\begin{DoxyCompactList}\small\item\em YUV422 array add a Y value. \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirparse_8h_a8d94284b2d8b9459bc9fb1e8c9476a32}{irparse\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirparse_8h_aed86f5ff8dd302945b08db49ec4ffa86}{raw\+\_\+data\+\_\+cut}} (uint8\+\_\+t $\ast$raw\+\_\+data, int image\+\_\+byte\+\_\+size, int temp\+\_\+byte\+\_\+size, uint8\+\_\+t $\ast$image\+\_\+data, uint8\+\_\+t $\ast$temp\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Cut the raw frame to image and temperature frames. \end{DoxyCompactList}\item 
+DLLEXPORT void \mbox{\hyperlink{libirparse_8h_a7518e056a2174a95841eddfad677c298}{irparse\+\_\+log\+\_\+register}} (\mbox{\hyperlink{libirparse_8h_a39f953928efe8d23f4159b2a36e4d2f3}{irparse\+\_\+log\+\_\+level\+\_\+t}} log\+\_\+level)
+\begin{DoxyCompactList}\small\item\em Register log function depend on log level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+void($\ast$ \mbox{\hyperlink{libirparse_8h_a787cf352c038cb9cc12490832e527672}{irparse\+\_\+debug\+\_\+print}} )(const char $\ast$fmt,...)
+\item 
+void($\ast$ \mbox{\hyperlink{libirparse_8h_ab99662557112b958df0c766dba7ee3a5}{irparse\+\_\+error\+\_\+print}} )(const char $\ast$fmt,...)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{libirparse_8h_a8d94284b2d8b9459bc9fb1e8c9476a32}\label{libirparse_8h_a8d94284b2d8b9459bc9fb1e8c9476a32}} 
+\index{libirparse.h@{libirparse.h}!irparse\_error\_t@{irparse\_error\_t}}
+\index{irparse\_error\_t@{irparse\_error\_t}!libirparse.h@{libirparse.h}}
+\doxysubsubsection{\texorpdfstring{irparse\_error\_t}{irparse\_error\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{libirparse_8h_a8d94284b2d8b9459bc9fb1e8c9476a32}{irparse\+\_\+error\+\_\+t}}}
+
+
+
+Error type in libirparse library. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRPARSE\_SUCCESS@{IRPARSE\_SUCCESS}!libirparse.h@{libirparse.h}}\index{libirparse.h@{libirparse.h}!IRPARSE\_SUCCESS@{IRPARSE\_SUCCESS}}}\mbox{\Hypertarget{libirparse_8h_a8d94284b2d8b9459bc9fb1e8c9476a32aca634d6a88d562a3cc90ce9ebfb3daad}\label{libirparse_8h_a8d94284b2d8b9459bc9fb1e8c9476a32aca634d6a88d562a3cc90ce9ebfb3daad}} 
+IRPARSE\+\_\+\+SUCCESS&function excute success \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRPARSE\_ERROR\_PARAM@{IRPARSE\_ERROR\_PARAM}!libirparse.h@{libirparse.h}}\index{libirparse.h@{libirparse.h}!IRPARSE\_ERROR\_PARAM@{IRPARSE\_ERROR\_PARAM}}}\mbox{\Hypertarget{libirparse_8h_a8d94284b2d8b9459bc9fb1e8c9476a32a170a6fbb60629c2c461e136cfa719581}\label{libirparse_8h_a8d94284b2d8b9459bc9fb1e8c9476a32a170a6fbb60629c2c461e136cfa719581}} 
+IRPARSE\+\_\+\+ERROR\+\_\+\+PARAM&parameter is invalid \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{libirparse_8h_a39f953928efe8d23f4159b2a36e4d2f3}\label{libirparse_8h_a39f953928efe8d23f4159b2a36e4d2f3}} 
+\index{libirparse.h@{libirparse.h}!irparse\_log\_level\_t@{irparse\_log\_level\_t}}
+\index{irparse\_log\_level\_t@{irparse\_log\_level\_t}!libirparse.h@{libirparse.h}}
+\doxysubsubsection{\texorpdfstring{irparse\_log\_level\_t}{irparse\_log\_level\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{libirparse_8h_a39f953928efe8d23f4159b2a36e4d2f3}{irparse\+\_\+log\+\_\+level\+\_\+t}}}
+
+
+
+Log level definition in libirparse library. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRPARSE\_LOG\_DEBUG@{IRPARSE\_LOG\_DEBUG}!libirparse.h@{libirparse.h}}\index{libirparse.h@{libirparse.h}!IRPARSE\_LOG\_DEBUG@{IRPARSE\_LOG\_DEBUG}}}\mbox{\Hypertarget{libirparse_8h_a39f953928efe8d23f4159b2a36e4d2f3a965d76766e796b132df924a0604eaf29}\label{libirparse_8h_a39f953928efe8d23f4159b2a36e4d2f3a965d76766e796b132df924a0604eaf29}} 
+IRPARSE\+\_\+\+LOG\+\_\+\+DEBUG&print debug and error infomation \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRPARSE\_LOG\_ERROR@{IRPARSE\_LOG\_ERROR}!libirparse.h@{libirparse.h}}\index{libirparse.h@{libirparse.h}!IRPARSE\_LOG\_ERROR@{IRPARSE\_LOG\_ERROR}}}\mbox{\Hypertarget{libirparse_8h_a39f953928efe8d23f4159b2a36e4d2f3aac4fbdda0294815e4abbf17192686280}\label{libirparse_8h_a39f953928efe8d23f4159b2a36e4d2f3aac4fbdda0294815e4abbf17192686280}} 
+IRPARSE\+\_\+\+LOG\+\_\+\+ERROR&only print error infomation \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRPARSE\_LOG\_NO\_PRINT@{IRPARSE\_LOG\_NO\_PRINT}!libirparse.h@{libirparse.h}}\index{libirparse.h@{libirparse.h}!IRPARSE\_LOG\_NO\_PRINT@{IRPARSE\_LOG\_NO\_PRINT}}}\mbox{\Hypertarget{libirparse_8h_a39f953928efe8d23f4159b2a36e4d2f3a30e51d789adfa7ec49dd62877a4a0c5d}\label{libirparse_8h_a39f953928efe8d23f4159b2a36e4d2f3a30e51d789adfa7ec49dd62877a4a0c5d}} 
+IRPARSE\+\_\+\+LOG\+\_\+\+NO\+\_\+\+PRINT&don\textquotesingle{}t print debug and error infomation \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{libirparse_8h_a7518e056a2174a95841eddfad677c298}\label{libirparse_8h_a7518e056a2174a95841eddfad677c298}} 
+\index{libirparse.h@{libirparse.h}!irparse\_log\_register@{irparse\_log\_register}}
+\index{irparse\_log\_register@{irparse\_log\_register}!libirparse.h@{libirparse.h}}
+\doxysubsubsection{\texorpdfstring{irparse\_log\_register()}{irparse\_log\_register()}}
+{\footnotesize\ttfamily DLLEXPORT void irparse\+\_\+log\+\_\+register (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{libirparse_8h_a39f953928efe8d23f4159b2a36e4d2f3}{irparse\+\_\+log\+\_\+level\+\_\+t}}}]{log\+\_\+level }\end{DoxyParamCaption})}
+
+
+
+Register log function depend on log level. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em log\+\_\+level} & detail see irparse\+\_\+log\+\_\+level\+\_\+t \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{libirparse_8h_aceee187c31f0c4bf42657ea680c6d3f2}\label{libirparse_8h_aceee187c31f0c4bf42657ea680c6d3f2}} 
+\index{libirparse.h@{libirparse.h}!irparse\_version@{irparse\_version}}
+\index{irparse\_version@{irparse\_version}!libirparse.h@{libirparse.h}}
+\doxysubsubsection{\texorpdfstring{irparse\_version()}{irparse\_version()}}
+{\footnotesize\ttfamily DLLEXPORT char $\ast$ irparse\+\_\+version (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get current libirparse library version. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em NULL} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+current libirparse library version 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirparse_8h_aed86f5ff8dd302945b08db49ec4ffa86}\label{libirparse_8h_aed86f5ff8dd302945b08db49ec4ffa86}} 
+\index{libirparse.h@{libirparse.h}!raw\_data\_cut@{raw\_data\_cut}}
+\index{raw\_data\_cut@{raw\_data\_cut}!libirparse.h@{libirparse.h}}
+\doxysubsubsection{\texorpdfstring{raw\_data\_cut()}{raw\_data\_cut()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirparse_8h_a8d94284b2d8b9459bc9fb1e8c9476a32}{irparse\+\_\+error\+\_\+t}} raw\+\_\+data\+\_\+cut (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{raw\+\_\+data,  }\item[{int}]{image\+\_\+byte\+\_\+size,  }\item[{int}]{temp\+\_\+byte\+\_\+size,  }\item[{uint8\+\_\+t $\ast$}]{image\+\_\+data,  }\item[{uint8\+\_\+t $\ast$}]{temp\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Cut the raw frame to image and temperature frames. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em raw\+\_\+data} & raw data frame from device \\
+\hline
+\mbox{\texttt{ in}}  & {\em image\+\_\+byte\+\_\+size} & image\+\_\+byte\+\_\+size of image frame \\
+\hline
+\mbox{\texttt{ in}}  & {\em temp\+\_\+byte\+\_\+size} & temp\+\_\+byte\+\_\+size of temperature frame \\
+\hline
+\mbox{\texttt{ out}}  & {\em image\+\_\+data} & image frame after cut \\
+\hline
+\mbox{\texttt{ out}}  & {\em temp\+\_\+data} & temperature frame after cut\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irparse\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirparse_8h_a2b8add69a8bae18618d805003742cf6e}\label{libirparse_8h_a2b8add69a8bae18618d805003742cf6e}} 
+\index{libirparse.h@{libirparse.h}!rgb\_to\_bgr@{rgb\_to\_bgr}}
+\index{rgb\_to\_bgr@{rgb\_to\_bgr}!libirparse.h@{libirparse.h}}
+\doxysubsubsection{\texorpdfstring{rgb\_to\_bgr()}{rgb\_to\_bgr()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirparse_8h_a8d94284b2d8b9459bc9fb1e8c9476a32}{irparse\+\_\+error\+\_\+t}} rgb\+\_\+to\+\_\+bgr (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{rgb\+\_\+data,  }\item[{int}]{pixel\+\_\+num,  }\item[{uint8\+\_\+t $\ast$}]{bgr\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Convert RGB array to BGR array. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em rgb\+\_\+data} & source RGB image frame \\
+\hline
+\mbox{\texttt{ in}}  & {\em pixel\+\_\+num} & pixel number of source image frame \\
+\hline
+\mbox{\texttt{ out}}  & {\em bgr\+\_\+data} & BGR image frame after convertion\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irparse\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirparse_8h_afd0c10ce8eff5bc931fc0612f1e5b86a}\label{libirparse_8h_afd0c10ce8eff5bc931fc0612f1e5b86a}} 
+\index{libirparse.h@{libirparse.h}!y14\_to\_rgb@{y14\_to\_rgb}}
+\index{y14\_to\_rgb@{y14\_to\_rgb}!libirparse.h@{libirparse.h}}
+\doxysubsubsection{\texorpdfstring{y14\_to\_rgb()}{y14\_to\_rgb()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirparse_8h_a8d94284b2d8b9459bc9fb1e8c9476a32}{irparse\+\_\+error\+\_\+t}} y14\+\_\+to\+\_\+rgb (\begin{DoxyParamCaption}\item[{uint16\+\_\+t $\ast$}]{packet\+\_\+data,  }\item[{int}]{pixel\+\_\+num,  }\item[{uint8\+\_\+t $\ast$}]{rgb\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+convert Y14 array to RGB array 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em packet\+\_\+data} & source Y14 image frame \\
+\hline
+\mbox{\texttt{ in}}  & {\em pixel\+\_\+num} & pixel number of source image frame \\
+\hline
+\mbox{\texttt{ out}}  & {\em rgb\+\_\+data} & RGB image frame after convertion\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irparse\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirparse_8h_a3bcc8c31110ae2254361acf47f5bd007}\label{libirparse_8h_a3bcc8c31110ae2254361acf47f5bd007}} 
+\index{libirparse.h@{libirparse.h}!y14\_to\_y8@{y14\_to\_y8}}
+\index{y14\_to\_y8@{y14\_to\_y8}!libirparse.h@{libirparse.h}}
+\doxysubsubsection{\texorpdfstring{y14\_to\_y8()}{y14\_to\_y8()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirparse_8h_a8d94284b2d8b9459bc9fb1e8c9476a32}{irparse\+\_\+error\+\_\+t}} y14\+\_\+to\+\_\+y8 (\begin{DoxyParamCaption}\item[{uint16\+\_\+t $\ast$}]{y14\+\_\+data,  }\item[{int}]{pixel\+\_\+num,  }\item[{uint8\+\_\+t $\ast$}]{y8\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+convert Y14 array to Y8 array 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em y14\+\_\+data} & Y14 data source \\
+\hline
+\mbox{\texttt{ in}}  & {\em pixel\+\_\+num} & pixel number of source image frame \\
+\hline
+\mbox{\texttt{ out}}  & {\em y8\+\_\+data} & Y8 data after convertion\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irparse\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirparse_8h_a526475fd8ee2d28d07132d35e142f5a0}\label{libirparse_8h_a526475fd8ee2d28d07132d35e142f5a0}} 
+\index{libirparse.h@{libirparse.h}!y14\_to\_yuv444@{y14\_to\_yuv444}}
+\index{y14\_to\_yuv444@{y14\_to\_yuv444}!libirparse.h@{libirparse.h}}
+\doxysubsubsection{\texorpdfstring{y14\_to\_yuv444()}{y14\_to\_yuv444()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirparse_8h_a8d94284b2d8b9459bc9fb1e8c9476a32}{irparse\+\_\+error\+\_\+t}} y14\+\_\+to\+\_\+yuv444 (\begin{DoxyParamCaption}\item[{uint16\+\_\+t $\ast$}]{packet\+\_\+data,  }\item[{int}]{pixel\+\_\+num,  }\item[{uint8\+\_\+t $\ast$}]{yuv\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+convert Y14 array to YUV444 array. Y=Y14to\+Y8 U=128 V=128 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em packet\+\_\+data} & source Y14 image frame \\
+\hline
+\mbox{\texttt{ in}}  & {\em pixel\+\_\+num} & pixel number of source image frame \\
+\hline
+\mbox{\texttt{ out}}  & {\em yuv\+\_\+data} & YUV444 image frame after convertion\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irparse\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirparse_8h_ab65f8a0011ca4dba969299fe2766a47a}\label{libirparse_8h_ab65f8a0011ca4dba969299fe2766a47a}} 
+\index{libirparse.h@{libirparse.h}!y16\_to\_y14@{y16\_to\_y14}}
+\index{y16\_to\_y14@{y16\_to\_y14}!libirparse.h@{libirparse.h}}
+\doxysubsubsection{\texorpdfstring{y16\_to\_y14()}{y16\_to\_y14()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirparse_8h_a8d94284b2d8b9459bc9fb1e8c9476a32}{irparse\+\_\+error\+\_\+t}} y16\+\_\+to\+\_\+y14 (\begin{DoxyParamCaption}\item[{uint16\+\_\+t $\ast$}]{y16\+\_\+data,  }\item[{int}]{pixel\+\_\+num,  }\item[{uint16\+\_\+t $\ast$}]{y14\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+convert Y16 array to Y14 array 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em y16\+\_\+data} & Y16 data source \\
+\hline
+\mbox{\texttt{ in}}  & {\em pixel\+\_\+num} & pixel number of source image frame \\
+\hline
+\mbox{\texttt{ out}}  & {\em y14\+\_\+data} & Y14 data after convertion\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irparse\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirparse_8h_abf0bdca94e883e66f472cee24204e77c}\label{libirparse_8h_abf0bdca94e883e66f472cee24204e77c}} 
+\index{libirparse.h@{libirparse.h}!yuv422\_add\_y@{yuv422\_add\_y}}
+\index{yuv422\_add\_y@{yuv422\_add\_y}!libirparse.h@{libirparse.h}}
+\doxysubsubsection{\texorpdfstring{yuv422\_add\_y()}{yuv422\_add\_y()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirparse_8h_a8d94284b2d8b9459bc9fb1e8c9476a32}{irparse\+\_\+error\+\_\+t}} yuv422\+\_\+add\+\_\+y (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{src,  }\item[{int}]{pixel\+\_\+num,  }\item[{int}]{y\+\_\+value,  }\item[{uint8\+\_\+t $\ast$}]{dst }\end{DoxyParamCaption})}
+
+
+
+YUV422 array add a Y value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em src} & source image frame \\
+\hline
+\mbox{\texttt{ in}}  & {\em pixel\+\_\+num} & pixel number of source image frame \\
+\hline
+\mbox{\texttt{ in}}  & {\em y\+\_\+value} & every pixel add y\+\_\+value to Y component \\
+\hline
+\mbox{\texttt{ out}}  & {\em dst} & image frame after add y\+\_\+value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irparse\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirparse_8h_a51370bc0474ae9c0245118d7370b3e87}\label{libirparse_8h_a51370bc0474ae9c0245118d7370b3e87}} 
+\index{libirparse.h@{libirparse.h}!yuv422\_to\_rgb@{yuv422\_to\_rgb}}
+\index{yuv422\_to\_rgb@{yuv422\_to\_rgb}!libirparse.h@{libirparse.h}}
+\doxysubsubsection{\texorpdfstring{yuv422\_to\_rgb()}{yuv422\_to\_rgb()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirparse_8h_a8d94284b2d8b9459bc9fb1e8c9476a32}{irparse\+\_\+error\+\_\+t}} yuv422\+\_\+to\+\_\+rgb (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{yuv422,  }\item[{int}]{pixel\+\_\+num,  }\item[{uint8\+\_\+t $\ast$}]{rgb\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+convert YUV422 array to RGB array 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em yuv422} & source YUV422 image frame \\
+\hline
+\mbox{\texttt{ in}}  & {\em pixel\+\_\+num} & pixel number of source image frame \\
+\hline
+\mbox{\texttt{ out}}  & {\em rgb\+\_\+data} & RGB image frame after convertion\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irparse\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirparse_8h_ae82b3ba297dfbcedd8ed61923dc44286}\label{libirparse_8h_ae82b3ba297dfbcedd8ed61923dc44286}} 
+\index{libirparse.h@{libirparse.h}!yuv444\_to\_rgb@{yuv444\_to\_rgb}}
+\index{yuv444\_to\_rgb@{yuv444\_to\_rgb}!libirparse.h@{libirparse.h}}
+\doxysubsubsection{\texorpdfstring{yuv444\_to\_rgb()}{yuv444\_to\_rgb()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirparse_8h_a8d94284b2d8b9459bc9fb1e8c9476a32}{irparse\+\_\+error\+\_\+t}} yuv444\+\_\+to\+\_\+rgb (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{packet\+\_\+data,  }\item[{int}]{pixel\+\_\+num,  }\item[{uint8\+\_\+t $\ast$}]{rgb\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Convert YUV444 array to RGB array. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em packet\+\_\+data} & source YUV444 image frame \\
+\hline
+\mbox{\texttt{ in}}  & {\em pixel\+\_\+num} & pixel number of source image frame \\
+\hline
+\mbox{\texttt{ out}}  & {\em rgb\+\_\+data} & RGB image frame after convertion\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irparse\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirparse_8h_ad05c9ca36027604bb6de855fa8a1ee45}\label{libirparse_8h_ad05c9ca36027604bb6de855fa8a1ee45}} 
+\index{libirparse.h@{libirparse.h}!yuv444\_to\_yuv422@{yuv444\_to\_yuv422}}
+\index{yuv444\_to\_yuv422@{yuv444\_to\_yuv422}!libirparse.h@{libirparse.h}}
+\doxysubsubsection{\texorpdfstring{yuv444\_to\_yuv422()}{yuv444\_to\_yuv422()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirparse_8h_a8d94284b2d8b9459bc9fb1e8c9476a32}{irparse\+\_\+error\+\_\+t}} yuv444\+\_\+to\+\_\+yuv422 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{yuv444\+\_\+data,  }\item[{int}]{pixel\+\_\+num,  }\item[{uint8\+\_\+t $\ast$}]{yuv422\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+convert YUV444 array to YUV422 array 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em yuv444\+\_\+data} & source YUV444 image frame \\
+\hline
+\mbox{\texttt{ in}}  & {\em pixel\+\_\+num} & pixel number of source image frame \\
+\hline
+\mbox{\texttt{ out}}  & {\em yuv422\+\_\+data} & YUV422 image frame after convertion\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irparse\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{libirparse_8h_a787cf352c038cb9cc12490832e527672}\label{libirparse_8h_a787cf352c038cb9cc12490832e527672}} 
+\index{libirparse.h@{libirparse.h}!irparse\_debug\_print@{irparse\_debug\_print}}
+\index{irparse\_debug\_print@{irparse\_debug\_print}!libirparse.h@{libirparse.h}}
+\doxysubsubsection{\texorpdfstring{irparse\_debug\_print}{irparse\_debug\_print}}
+{\footnotesize\ttfamily void($\ast$ irparse\+\_\+debug\+\_\+print) (const char $\ast$fmt,...) (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{libirparse_8h_ab99662557112b958df0c766dba7ee3a5}\label{libirparse_8h_ab99662557112b958df0c766dba7ee3a5}} 
+\index{libirparse.h@{libirparse.h}!irparse\_error\_print@{irparse\_error\_print}}
+\index{irparse\_error\_print@{irparse\_error\_print}!libirparse.h@{libirparse.h}}
+\doxysubsubsection{\texorpdfstring{irparse\_error\_print}{irparse\_error\_print}}
+{\footnotesize\ttfamily void($\ast$ irparse\+\_\+error\+\_\+print) (const char $\ast$fmt,...) (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+

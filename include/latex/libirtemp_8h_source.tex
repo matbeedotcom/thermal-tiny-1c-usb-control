@@ -1,0 +1,467 @@
+\hypertarget{libirtemp_8h_source}{}\doxysection{libirtemp.\+h}
+\mbox{\hyperlink{libirtemp_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_LIBIRTEMP\_H\_}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_LIBIRTEMP\_H\_}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{5 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <stdarg.h>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define EPSILON 0.001}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#define TEMP\_NUM 14}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define DIST\_NUM                64}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#define NEW\_DIST\_NUM            88}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#define DIST\_NUM\_V3             88}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#define TARGET\_TEMP\_NUM         56}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#define NEW\_TARGET\_TEMP\_NUM     42}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#define TARGET\_TEMP\_NUM\_V3      45}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#define HIGH\_GAIN 1}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define LOW\_GAIN  0}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#define EMS\_MAX 128}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#define EMS\_MIN  0}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#define TAU\_MAX 128}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#define TAU\_MIN  0}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#define HIGH\_GAIN\_TA\_MAX  430}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#define HIGH\_GAIN\_TU\_MAX  430}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#define HIGH\_GAIN\_TA\_MIN  230}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define HIGH\_GAIN\_TU\_MIN  230}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#define LOW\_GAIN\_TA\_MAX   873}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#define LOW\_GAIN\_TU\_MAX   873}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define LOW\_GAIN\_TA\_MIN   230}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define LOW\_GAIN\_TU\_MIN   230}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define TAU\_TEMP\_MIN  -\/5}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define TAU\_TEMP\_MAX  55}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define TAU\_DIST\_MAX  50}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define TAU\_DIST\_MIN  0.25}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#define TARGET\_TEMP\_MIN  248.15   }\textcolor{comment}{//kilven temperature}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#define TARGET\_TEMP\_MAX  1623.15  }\textcolor{comment}{//kilven temperature}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define NUC\_T\_SIZE  8192}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#define KT\_SIZE  1201}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#define BT\_SIZE  1201}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#define HEAD\_SIZE  128   }}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#define max(a,b) (((a) > (b)) ? (a) : (b))}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define min(a,b) (((a) < (b)) ? (a) : (b))}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#define ERROR\_LOG\_TO\_FILE(format, ...) do\{ FILE* fp = NULL;\(\backslash\)}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{                                            fp = fopen("{}err\_log.txt"{}}, "{}a+"{});\(\backslash\)}
+\DoxyCodeLine{66                                             fprintf(fp, format"{}\(\backslash\)n"{}, \_\_VA\_ARGS\_\_);\(\backslash\)}
+\DoxyCodeLine{67                                             fclose(fp); \}while(0);}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69     \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{70         \mbox{\hyperlink{libirtemp_8h_a4413aa72a29f678f5c38a4e41096e80aa32badd3c34e8826813efd36dbfd27893}{TINY1B}} = 0,}
+\DoxyCodeLine{71         \mbox{\hyperlink{libirtemp_8h_a4413aa72a29f678f5c38a4e41096e80aa4f91372c87192fdfeacbcd14f8d5a9ca}{TINY1C}},}
+\DoxyCodeLine{72         \mbox{\hyperlink{libirtemp_8h_a4413aa72a29f678f5c38a4e41096e80aa9d7d88bb4691f0dc9a32e144f3ed9738}{TINY1BE}},}
+\DoxyCodeLine{73         \mbox{\hyperlink{libirtemp_8h_a4413aa72a29f678f5c38a4e41096e80aa3d4cef855087c40d15d9e6fa6212d588}{MINI256}},}
+\DoxyCodeLine{74         \mbox{\hyperlink{libirtemp_8h_a4413aa72a29f678f5c38a4e41096e80aae6fed73e34c644fafb3ad4a1fb81711f}{MINI384}},}
+\DoxyCodeLine{75         \mbox{\hyperlink{libirtemp_8h_a4413aa72a29f678f5c38a4e41096e80aa027532e7d665ef1a9bc3d6959bbddf26}{MINI640}},}
+\DoxyCodeLine{76         \mbox{\hyperlink{libirtemp_8h_a4413aa72a29f678f5c38a4e41096e80aa8b57afdf165e597991c29f09afcf71f9}{P2}},}
+\DoxyCodeLine{77     \}\mbox{\hyperlink{libirtemp_8h_a4413aa72a29f678f5c38a4e41096e80a}{ProductType\_t}};}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 }
+\DoxyCodeLine{84     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{85         uint16\_t \mbox{\hyperlink{struct_temp_data_res__t_ae47795960c6e334d6b61151f7a78449c}{width}};        }
+\DoxyCodeLine{86         uint16\_t \mbox{\hyperlink{struct_temp_data_res__t_a4cc2b8448d2032c3e0efcda362e2db47}{height}};  }
+\DoxyCodeLine{87     \}\mbox{\hyperlink{struct_temp_data_res__t}{TempDataRes\_t}};}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 }
+\DoxyCodeLine{93     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{94         uint16\_t \mbox{\hyperlink{struct_search_info__t_a05e904bc9e548a15160656f6fc30fdd8}{start\_point}};        }
+\DoxyCodeLine{95         uint16\_t \mbox{\hyperlink{struct_search_info__t_a18200304dadabb890d22ac4276bdd13b}{end\_point}};            }
+\DoxyCodeLine{96     \}\mbox{\hyperlink{struct_search_info__t}{SearchInfo\_t}};}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98 }
+\DoxyCodeLine{102     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{103         uint16\_t \mbox{\hyperlink{struct_kt_info__t_a0c43a476430942205a30dfbdbc37887f}{start\_addr}};      }
+\DoxyCodeLine{104         uint16\_t \mbox{\hyperlink{struct_kt_info__t_a91336a8892ae59596972c935e0ebf66c}{end\_addr}};         }
+\DoxyCodeLine{105     \}\mbox{\hyperlink{struct_kt_info__t}{KtInfo\_t}};}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107 }
+\DoxyCodeLine{111     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{112         int16\_t \mbox{\hyperlink{struct_vtemp_info__t_a7d002b826b0deef2ad0197562eb330d4}{Ktemp}};         }
+\DoxyCodeLine{113         int16\_t \mbox{\hyperlink{struct_vtemp_info__t_aeaea1bda32372af15f10aae8a9bf9914}{Btemp}};         }
+\DoxyCodeLine{114         uint16\_t \mbox{\hyperlink{struct_vtemp_info__t_a20350ace5e29dd3a8f07a98f52ba6c44}{Address\_CA}};    }
+\DoxyCodeLine{115     \}\mbox{\hyperlink{struct_vtemp_info__t}{VtempInfo\_t}};}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117 }
+\DoxyCodeLine{121     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{122         \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_cali_point__t_a748ef53bc8c51c10010156e8deae8add}{TH}};           }
+\DoxyCodeLine{123         \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_cali_point__t_a38549a1db8d18373e238d29bdc7897f5}{TL}};           }
+\DoxyCodeLine{124     \}\mbox{\hyperlink{struct_cali_point__t}{CaliPoint\_t}};}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126 }
+\DoxyCodeLine{130     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{131         \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_cali_factor__t_a4909d5ff727fffbf10a756be6dfc318c}{Kn}};           }
+\DoxyCodeLine{132         \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_cali_factor__t_aaf22c706470705067c62297ee91a96d0}{Bn}};           }
+\DoxyCodeLine{133     \}\mbox{\hyperlink{struct_cali_factor__t}{CaliFactor\_t}};}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135 }
+\DoxyCodeLine{139     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{140         \textcolor{keywordtype}{double} \mbox{\hyperlink{struct_env_temp__t_a3e5d85e91fce26e807990d5c5752f6bd}{T\_high}};            }
+\DoxyCodeLine{141         \textcolor{keywordtype}{double} \mbox{\hyperlink{struct_env_temp__t_a19797f9f6458b8f92362c75e5c0ab400}{T\_low}};          }
+\DoxyCodeLine{142     \}\mbox{\hyperlink{struct_env_temp__t}{EnvTemp\_t}};}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{147     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{148         \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_v_temp_set__t_a8e8472551e9d653015dfe753dcbb7b73}{VTemp\_High}};           }
+\DoxyCodeLine{149         \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_v_temp_set__t_a8377842102835300ef1f31744574a21b}{VTemp\_Low}};         }
+\DoxyCodeLine{150     \}\mbox{\hyperlink{struct_v_temp_set__t}{VTempSet\_t}};}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{155     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{156         \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_re_cali_factor__t_a8e4fe54dfded9544db5a7a1e0e84c58b}{K}};         }
+\DoxyCodeLine{157         \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_re_cali_factor__t_a282a2c903b623d849d33573521811f36}{B}};         }
+\DoxyCodeLine{158     \}\mbox{\hyperlink{struct_re_cali_factor__t}{ReCaliFactor\_t}};}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{163     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{164         \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_env_param__t_ab0080915b963203e3074ebd64290c11a}{EMS}};     }
+\DoxyCodeLine{165         \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_env_param__t_a3ae758b18ce533b5e215c0a26fdd2b07}{TAU}};     }
+\DoxyCodeLine{166         \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_env_param__t_a2e4e0d7cd1679df6d40d3de252886229}{Ta}};           }
+\DoxyCodeLine{167         \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_env_param__t_a2144087e1f9c2210d5594e76725373da}{Tu}};           }
+\DoxyCodeLine{168     \}\mbox{\hyperlink{struct_env_param__t}{EnvParam\_t}};}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{173     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{174         \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_env_factor__t_ac2c8953203f84d9a3f452af115b45069}{K\_E}};     }
+\DoxyCodeLine{175         \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_env_factor__t_a365dedb345859f02fd5bb1e8b4e98ff9}{B\_E}};     }
+\DoxyCodeLine{176     \}\mbox{\hyperlink{struct_env_factor__t}{EnvFactor\_t}};}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{178 }
+\DoxyCodeLine{182     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{183         \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_temp_threshold__t_ad577b1cb62c6bd270c4b2b480b3e677a}{upper\_limit}}; }
+\DoxyCodeLine{184         \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_temp_threshold__t_ae81ed6a9c24c0e855c845553be46486f}{lower\_limit}}; }
+\DoxyCodeLine{185     \}\mbox{\hyperlink{struct_temp_threshold__t}{TempThreshold\_t}};}
+\DoxyCodeLine{186 }
+\DoxyCodeLine{187 }
+\DoxyCodeLine{191     \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
+\DoxyCodeLine{192     \{}
+\DoxyCodeLine{193         \mbox{\hyperlink{libirtemp_8h_a29c1c3eb10fc106b359b90a438c69011ac7c4a9a242de572e3c0d59127faef0f8}{SINGLE\_POINT}} = 0,   }
+\DoxyCodeLine{194         \mbox{\hyperlink{libirtemp_8h_a29c1c3eb10fc106b359b90a438c69011a967506c04621dedf2fe10ac322fb50cd}{DOUBLE\_POINT}},       }
+\DoxyCodeLine{195     \}\mbox{\hyperlink{libirtemp_8h_a29c1c3eb10fc106b359b90a438c69011}{ReCaliType\_t}};}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{197 }
+\DoxyCodeLine{201     \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
+\DoxyCodeLine{202     \{}
+\DoxyCodeLine{203         \mbox{\hyperlink{libirtemp_8h_a8752b7bca77d1d46d5c370eb2cdb6038a1c0c1c880058ab81dac39f56cedc8a79}{TEMP\_NORMAL}} = 0,     }
+\DoxyCodeLine{204         \mbox{\hyperlink{libirtemp_8h_a8752b7bca77d1d46d5c370eb2cdb6038afa4d1408df15d896861c8c8ea9d1bf16}{OVER\_HEAT}} = 1,         }
+\DoxyCodeLine{205         \mbox{\hyperlink{libirtemp_8h_a8752b7bca77d1d46d5c370eb2cdb6038ac8316201e4ff8c1f255d1d1084866979}{OVER\_COLD}} = 2,         }
+\DoxyCodeLine{206         \mbox{\hyperlink{libirtemp_8h_a8752b7bca77d1d46d5c370eb2cdb6038a0ee8b5ebe2bca1d366ebeeacc48a5ac9}{WRONG\_TYPE}} = 3,           }
+\DoxyCodeLine{207     \}\mbox{\hyperlink{libirtemp_8h_a8752b7bca77d1d46d5c370eb2cdb6038}{AlarmType\_t}};}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{209 }
+\DoxyCodeLine{213     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{214         \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_nuc_factor__t_abdd6e41d30df98275662a6f8718878d9}{P0}};           }
+\DoxyCodeLine{215         \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_nuc_factor__t_aa6e7734e6b18eb86fdcb761ea3e08394}{P1}};           }
+\DoxyCodeLine{216         \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_nuc_factor__t_aa8888c0f65fdc4575285ddee45d0fb3c}{P2}};           }
+\DoxyCodeLine{217     \}\mbox{\hyperlink{struct_nuc_factor__t}{NucFactor\_t}};}
+\DoxyCodeLine{218 }
+\DoxyCodeLine{219 }
+\DoxyCodeLine{223     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{224         \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_dot__t_ad791d4e2c353324a479f5b971b938727}{x}};     }
+\DoxyCodeLine{225         \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_dot__t_a5405fe85f1e4ee8166df0254de827eb8}{y}};     }
+\DoxyCodeLine{226     \}\mbox{\hyperlink{struct_dot__t}{Dot\_t}};}
+\DoxyCodeLine{227 }
+\DoxyCodeLine{228 }
+\DoxyCodeLine{232     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{233         \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_line__t_ab2f18195f9c955670ec6fd62e2191f27}{start\_x}}; }
+\DoxyCodeLine{234         \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_line__t_a694aef4623c8a6cdd91db1f95a6690d8}{start\_y}}; }
+\DoxyCodeLine{235         \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_line__t_ab116e29856c2a89b979467f2cd48500d}{end\_x}};     }
+\DoxyCodeLine{236         \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_line__t_a6b34c89a121498faca5aac76a9cf0aaf}{end\_y}};     }
+\DoxyCodeLine{237     \}\mbox{\hyperlink{struct_line__t}{Line\_t}};}
+\DoxyCodeLine{238 }
+\DoxyCodeLine{239 }
+\DoxyCodeLine{243     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{244         \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_area__t_a2f01c97f6ecb32109b05209737545ebb}{start\_x}}; }
+\DoxyCodeLine{245         \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_area__t_adc34e630ec7120a4c9aadfe2aacceb0f}{start\_y}}; }
+\DoxyCodeLine{246         \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_area__t_a6b02166d161afdad0b8f9ec75f465a38}{width}};     }
+\DoxyCodeLine{247         \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_area__t_a6913f43b0273c13d014eec7cf1eebf5b}{height}};       }
+\DoxyCodeLine{248     \} \mbox{\hyperlink{struct_area__t}{Area\_t}};}
+\DoxyCodeLine{249 }
+\DoxyCodeLine{250 }
+\DoxyCodeLine{254     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{255         uint16\_t \mbox{\hyperlink{struct_temp_info__t_aff92c8b1a6855c0e4673343284061c79}{max\_temp}};      }
+\DoxyCodeLine{256         uint16\_t \mbox{\hyperlink{struct_temp_info__t_a44ce92d3d6397d1ec324bf54cdb6ae3c}{min\_temp}};      }
+\DoxyCodeLine{257         uint16\_t \mbox{\hyperlink{struct_temp_info__t_a1fe3af145b64ee21d989ddfce8560c5b}{avr\_temp}};      }
+\DoxyCodeLine{258         \mbox{\hyperlink{struct_dot__t}{Dot\_t}}    \mbox{\hyperlink{struct_temp_info__t_ae3426378d7bef4c7302460f70aec0e0b}{max\_cord}};     }
+\DoxyCodeLine{259         \mbox{\hyperlink{struct_dot__t}{Dot\_t}}    \mbox{\hyperlink{struct_temp_info__t_a5293e033a695174cc06f3cae1ec4d79f}{min\_cord}};     }
+\DoxyCodeLine{260     \}\mbox{\hyperlink{struct_temp_info__t}{TempInfo\_t}};}
+\DoxyCodeLine{261 }
+\DoxyCodeLine{262 }
+\DoxyCodeLine{266     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{267         \textcolor{keywordtype}{float}    \mbox{\hyperlink{struct_env_correct_param_ae48970115203c7de144916a826134197}{dist}};              }
+\DoxyCodeLine{268         \textcolor{keywordtype}{float}    \mbox{\hyperlink{struct_env_correct_param_a6c60fbd133174a089dc94168f4dd9681}{ems}};                }
+\DoxyCodeLine{269         \textcolor{keywordtype}{float}    \mbox{\hyperlink{struct_env_correct_param_a2ea677a6fa8721978734860b01990cf4}{hum}};                }
+\DoxyCodeLine{270         \textcolor{keywordtype}{float}    \mbox{\hyperlink{struct_env_correct_param_a489176aad65494e0e068fb81951dd660}{ta}};              }
+\DoxyCodeLine{271         \textcolor{keywordtype}{float}    \mbox{\hyperlink{struct_env_correct_param_a30f5f96c88923d7ebbce1bafaf7e391d}{tu}};              }
+\DoxyCodeLine{272     \}\mbox{\hyperlink{struct_env_correct_param}{EnvCorrectParam}};}
+\DoxyCodeLine{273 }
+\DoxyCodeLine{274 }
+\DoxyCodeLine{275 }
+\DoxyCodeLine{279     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{280         \textcolor{keywordtype}{float}    \mbox{\hyperlink{struct_multi_point_calib_temp__t_a5105a01fd8bff8ae3de288b1eb12b0ef}{output\_temp}};                }
+\DoxyCodeLine{281         \textcolor{keywordtype}{float}    \mbox{\hyperlink{struct_multi_point_calib_temp__t_acc5b03c91fce11e5532ff912199cd977}{setting\_temp}};              }
+\DoxyCodeLine{282     \}\mbox{\hyperlink{struct_multi_point_calib_temp__t}{MultiPointCalibTemp\_t}};}
+\DoxyCodeLine{283 }
+\DoxyCodeLine{284 }
+\DoxyCodeLine{288     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{289         uint16\_t    \mbox{\hyperlink{struct_multi_point_calib_nuc__t_a21011b95a7f548c414d6d4ed6e7886b5}{output\_nuc}};                   }
+\DoxyCodeLine{290         uint16\_t    \mbox{\hyperlink{struct_multi_point_calib_nuc__t_a98c9dc27e11ef450f58b5070a9d72ca5}{setting\_nuc}};             }
+\DoxyCodeLine{291     \}\mbox{\hyperlink{struct_multi_point_calib_nuc__t}{MultiPointCalibNuc\_t}};}
+\DoxyCodeLine{292 }
+\DoxyCodeLine{293 }
+\DoxyCodeLine{294     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{295         uint16\_t  \mbox{\hyperlink{struct_correct_table__t_a32c2fb484be683ac295be3a14325ea27}{gain}};}
+\DoxyCodeLine{296         uint16\_t  \mbox{\hyperlink{struct_correct_table__t_af03792704b6b8a2d0545615efdc6a5a4}{version}};}
+\DoxyCodeLine{297     \}\mbox{\hyperlink{struct_correct_table__t}{CorrectTable\_t}};}
+\DoxyCodeLine{298 }
+\DoxyCodeLine{299 }
+\DoxyCodeLine{300 }
+\DoxyCodeLine{301 }
+\DoxyCodeLine{302 }
+\DoxyCodeLine{306     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{307         int16\_t \mbox{\hyperlink{structsecond__calibration__param__t_a6e7e804e2361e8e80e47fb7e177957a0}{K\_Temp}};                                                           }
+\DoxyCodeLine{308         uint16\_t \mbox{\hyperlink{structsecond__calibration__param__t_a7a3f191381c2dc71c7192d2e55ddbf5f}{B\_Temp}};                                                          }
+\DoxyCodeLine{309         uint16\_t \mbox{\hyperlink{structsecond__calibration__param__t_ac9c0b67e2c96ab8861c5be73c4fb7a12}{Address\_CA}};                                                  }
+\DoxyCodeLine{310         uint16\_t \mbox{\hyperlink{structsecond__calibration__param__t_a68e9e73f9a19b3182463ce783c645924}{kt\_len}};                                                      }
+\DoxyCodeLine{311         uint16\_t \mbox{\hyperlink{structsecond__calibration__param__t_a5b0031799a6082411887e5bd63870f20}{bt\_len}};                                                      }
+\DoxyCodeLine{312         uint16\_t \mbox{\hyperlink{structsecond__calibration__param__t_a4204a6e90cfd7d43e7903051e538b9d8}{nuc\_len}};                                                        }
+\DoxyCodeLine{313         uint16\_t \mbox{\hyperlink{structsecond__calibration__param__t_ae93c600e6fc269e9b5a413b5dad9047a}{high\_vtemp}};                                                  }
+\DoxyCodeLine{314         uint16\_t \mbox{\hyperlink{structsecond__calibration__param__t_a8150996f88fdd1e271412507a9b6df67}{low\_vtemp}};                                                        }
+\DoxyCodeLine{315         \textcolor{keywordtype}{float} \mbox{\hyperlink{structsecond__calibration__param__t_aecd71744ad3c5eb52ee27e642ba0f379}{object\_temp\_high}};                                                 }
+\DoxyCodeLine{316         \textcolor{keywordtype}{float} \mbox{\hyperlink{structsecond__calibration__param__t_a15adc4d9bbdadc1b14599f771aac45ba}{object\_temp\_low}};                                                   }
+\DoxyCodeLine{317         \textcolor{keywordtype}{float} \mbox{\hyperlink{structsecond__calibration__param__t_abc9f7e22070e4a375e882bc51f139b9a}{setting\_temp\_high}};                                               }
+\DoxyCodeLine{318         \textcolor{keywordtype}{float} \mbox{\hyperlink{structsecond__calibration__param__t_ad1f5b5b9232e8109a07d49a188d55925}{setting\_temp\_low}};                                                 }
+\DoxyCodeLine{319     \}\mbox{\hyperlink{structsecond__calibration__param__t}{second\_calibration\_param\_t}};}
+\DoxyCodeLine{320 }
+\DoxyCodeLine{324     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{325         uint16\_t* \mbox{\hyperlink{structsecond__calibration__result__t_a26e895cbd5abb58e1e2d7a70cc2d0496}{kt\_array}};                                                     }
+\DoxyCodeLine{326         int16\_t* \mbox{\hyperlink{structsecond__calibration__result__t_af01f379aa8426ce5d336f890fed3374b}{bt\_array}};                                                      }
+\DoxyCodeLine{327     \}\mbox{\hyperlink{structsecond__calibration__result__t}{second\_calibration\_result\_t}};}
+\DoxyCodeLine{328 }
+\DoxyCodeLine{329 }
+\DoxyCodeLine{330     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{331         int16\_t \mbox{\hyperlink{structktbt__correct__param__t_abe4a7c1c922f6a10e02dabaee1f75a95}{K\_Temp}};                                                       }
+\DoxyCodeLine{332         uint16\_t \mbox{\hyperlink{structktbt__correct__param__t_afdeb13f2319841a232242d0c464bc7bb}{B\_Temp}};                                                          }
+\DoxyCodeLine{333         uint16\_t \mbox{\hyperlink{structktbt__correct__param__t_a52ca218084354a81203eb1f3c45185c9}{Address\_CA}};                                                  }
+\DoxyCodeLine{334         uint16\_t* \mbox{\hyperlink{structktbt__correct__param__t_a2d8b290aa5beff4c6c1d0ca4af3a01b3}{kt\_array}};                                             }
+\DoxyCodeLine{335         int16\_t* \mbox{\hyperlink{structktbt__correct__param__t_a977530554057a118851fba50426a1413}{bt\_array}};                                              }
+\DoxyCodeLine{336         uint16\_t \mbox{\hyperlink{structktbt__correct__param__t_a418343e994f17bde95874a8b0141d84c}{vtemp}};                                                            }
+\DoxyCodeLine{337     \}\mbox{\hyperlink{structktbt__correct__param__t}{ktbt\_correct\_param\_t}};}
+\DoxyCodeLine{338 }
+\DoxyCodeLine{339     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{340         \mbox{\hyperlink{struct_env_correct_param}{EnvCorrectParam}} \mbox{\hyperlink{struct_multi_point_calib_param__t_af7804f89583f496fbba3574edf92b8aa}{env\_cor\_param}};}
+\DoxyCodeLine{341         \mbox{\hyperlink{structsecond__calibration__param__t}{second\_calibration\_param\_t}} \mbox{\hyperlink{struct_multi_point_calib_param__t_a12f7dd4a2fa75000fce41ccdaf1fdaf3}{second\_calib\_param}};}
+\DoxyCodeLine{342         uint16\_t \mbox{\hyperlink{struct_multi_point_calib_param__t_ae9a6a3ed7b7a4836e4598fa4c7c65ec8}{cur\_vtemp}};}
+\DoxyCodeLine{343     \}\mbox{\hyperlink{struct_multi_point_calib_param__t}{MultiPointCalibParam\_t}};}
+\DoxyCodeLine{344 }
+\DoxyCodeLine{345 }
+\DoxyCodeLine{346     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{347         uint16\_t* \mbox{\hyperlink{struct_multi_point_calib_array__t_a0f5de09d480418e999d2e63431e8731c}{default\_kt\_array}};}
+\DoxyCodeLine{348         int16\_t* \mbox{\hyperlink{struct_multi_point_calib_array__t_a8b85abfc1209f4620bb372cf538b2938}{default\_bt\_array}};}
+\DoxyCodeLine{349         uint16\_t* \mbox{\hyperlink{struct_multi_point_calib_array__t_a475f5616c39b8eae1287a311299b2be1}{default\_nuc\_table}};}
+\DoxyCodeLine{350         uint16\_t* \mbox{\hyperlink{struct_multi_point_calib_array__t_a1f3d6eb4397441a52c88ceb3a928cbfc}{correct\_table}};}
+\DoxyCodeLine{351     \}\mbox{\hyperlink{struct_multi_point_calib_array__t}{MultiPointCalibArray\_t}};}
+\DoxyCodeLine{352 }
+\DoxyCodeLine{353 }
+\DoxyCodeLine{354     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{355         uint16\_t* \mbox{\hyperlink{struct_two_point_calib_result__t_a4b47b4d7aa55e41aa71476edcab38fb7}{new\_kt\_array}};}
+\DoxyCodeLine{356         int16\_t* \mbox{\hyperlink{struct_two_point_calib_result__t_a9275b769045e3585b9b2f1214ef26a27}{new\_bt\_array}};}
+\DoxyCodeLine{357     \}\mbox{\hyperlink{struct_two_point_calib_result__t}{TwoPointCalibResult\_t}};}
+\DoxyCodeLine{358 }
+\DoxyCodeLine{359 }
+\DoxyCodeLine{360 \textcolor{preprocessor}{\#if defined(\_WIN32)}}
+\DoxyCodeLine{361 \textcolor{preprocessor}{\#define DLLEXPORT \_\_declspec(dllexport)}}
+\DoxyCodeLine{362 \textcolor{preprocessor}{\#elif defined(linux) || defined(unix)}}
+\DoxyCodeLine{363 \textcolor{preprocessor}{\#define DLLEXPORT}}
+\DoxyCodeLine{364 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{365 }
+\DoxyCodeLine{366 }
+\DoxyCodeLine{367 }
+\DoxyCodeLine{371     \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{372         \mbox{\hyperlink{libirtemp_8h_a783499c3db571cad6500e623d52e5ceca10db40443b759d7651b745b1f3d96aab}{IRTEMP\_LOG\_DEBUG}} = 0,       }
+\DoxyCodeLine{373         \mbox{\hyperlink{libirtemp_8h_a783499c3db571cad6500e623d52e5ceca6ddba59e32e2439aaab22311730072cd}{IRTEMP\_LOG\_ERROR}} = 1,       }
+\DoxyCodeLine{374         \mbox{\hyperlink{libirtemp_8h_a783499c3db571cad6500e623d52e5cecaad6e4fd4914a1976df5f4a0ce466bef3}{IRTEMP\_LOG\_NO\_PRINT}} = 2, }
+\DoxyCodeLine{375     \}\mbox{\hyperlink{libirtemp_8h_a783499c3db571cad6500e623d52e5cec}{irtemp\_log\_level\_t}};}
+\DoxyCodeLine{376 }
+\DoxyCodeLine{377 }
+\DoxyCodeLine{378 }
+\DoxyCodeLine{382     \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{383         \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61ba06458e0148c2873ea6716362d9400394}{IRTEMP\_SUCCESS}} = 0,           }
+\DoxyCodeLine{384         \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61ba96459ce81d3121ca2823368a83b52e07}{IRTEMP\_ERROR\_PARAM}} = -\/1,  }
+\DoxyCodeLine{385         \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61baa8906059c9dec2a3b7f25a78ad92cd3f}{MEMORY\_ALLOC\_FAIL}} = -\/2,       }
+\DoxyCodeLine{386         \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61bad4703ff858b99d0ab254bc020ec29d01}{FILE\_OPERATION\_FAIL}} = -\/3     }
+\DoxyCodeLine{387     \}\mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\_error\_t}};}
+\DoxyCodeLine{388 }
+\DoxyCodeLine{389 }
+\DoxyCodeLine{390 \textcolor{preprocessor}{\#if defined(\_WIN32)}}
+\DoxyCodeLine{391 \textcolor{preprocessor}{\#define IRTEMP\_DEBUG(format, ...) irtemp\_debug\_print("{}libirtemp debug [\%s:\%d/\%s] "{}} format "{}\(\backslash\)n"{}, \(\backslash\)}
+\DoxyCodeLine{392                                                          \_\_FILE\_\_,\_\_LINE\_\_, \_\_FUNCTION\_\_, \_\_VA\_ARGS\_\_)}
+\DoxyCodeLine{393 \textcolor{preprocessor}{\#define IRTEMP\_ERROR(format, ...) irtemp\_error\_print("{}libirtemp error [\%s:\%d/\%s] "{}} format "{}\(\backslash\)n"{}, \(\backslash\)}
+\DoxyCodeLine{394                                                         \_\_FILE\_\_,\_\_LINE\_\_, \_\_FUNCTION\_\_, \_\_VA\_ARGS\_\_)}
+\DoxyCodeLine{395 \textcolor{preprocessor}{\#elif defined(linux) || defined(unix)}}
+\DoxyCodeLine{396 \textcolor{preprocessor}{\#include <libgen.h>}}
+\DoxyCodeLine{397 \textcolor{preprocessor}{\#define IRTEMP\_DEBUG(format, ...) irtemp\_debug\_print("{}libirtemp debug [\%s:\%d/\%s] "{}} format "{}\(\backslash\)n"{}, \(\backslash\)}
+\DoxyCodeLine{398                                                         basename(\_\_FILE\_\_), \_\_LINE\_\_, \_\_FUNCTION\_\_, \#\#\_\_VA\_ARGS\_\_)}
+\DoxyCodeLine{399 \textcolor{preprocessor}{\#define IRTEMP\_ERROR(format, ...) irtemp\_error\_print("{}libirtemp error [\%s:\%d/\%s] "{}} format "{}\(\backslash\)n"{}, \(\backslash\)}
+\DoxyCodeLine{400                                                         basename(\_\_FILE\_\_), \_\_LINE\_\_, \_\_FUNCTION\_\_, \#\#\_\_VA\_ARGS\_\_)}
+\DoxyCodeLine{401 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{402 }
+\DoxyCodeLine{403     \textcolor{keyword}{extern} void (*\mbox{\hyperlink{libirtemp_8h_a03b02af31fc3eb58dec90a2b11267ca7}{irtemp\_debug\_print}})(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* fmt, ...);}
+\DoxyCodeLine{404     \textcolor{keyword}{extern} void (*\mbox{\hyperlink{libirtemp_8h_ae2a982ed47cd76d03d6b1785a27c0c36}{irtemp\_error\_print}})(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* fmt, ...);}
+\DoxyCodeLine{405 }
+\DoxyCodeLine{406 }
+\DoxyCodeLine{414     DLLEXPORT \textcolor{keywordtype}{char}* \mbox{\hyperlink{libirtemp_8h_ae408f86f0efcb9be56ef8714eb4cbb94}{irtemp\_version}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{415 }
+\DoxyCodeLine{416 }
+\DoxyCodeLine{427     DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\_error\_t}} \mbox{\hyperlink{libirtemp_8h_a0e0c20fa286dcb4d61e587701907ad56}{get\_point\_temp}}(uint16\_t* src, \mbox{\hyperlink{struct_temp_data_res__t}{TempDataRes\_t}} temp\_res, \mbox{\hyperlink{struct_dot__t}{Dot\_t}} point, uint16\_t* dst);}
+\DoxyCodeLine{428 }
+\DoxyCodeLine{429 }
+\DoxyCodeLine{440     DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\_error\_t}} \mbox{\hyperlink{libirtemp_8h_a0f201386a3403266f7e6fa4b5268de6a}{get\_line\_temp}}(uint16\_t* src, \mbox{\hyperlink{struct_temp_data_res__t}{TempDataRes\_t}} temp\_res, \mbox{\hyperlink{struct_line__t}{Line\_t}} line, \mbox{\hyperlink{struct_temp_info__t}{TempInfo\_t}}* temp\_info);}
+\DoxyCodeLine{441 }
+\DoxyCodeLine{442 }
+\DoxyCodeLine{453     DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\_error\_t}} \mbox{\hyperlink{libirtemp_8h_a69df2604c49e5e45881e45e46c05a395}{get\_rect\_temp}}(uint16\_t* src, \mbox{\hyperlink{struct_temp_data_res__t}{TempDataRes\_t}} temp\_res, \mbox{\hyperlink{struct_area__t}{Area\_t}} rect, \mbox{\hyperlink{struct_temp_info__t}{TempInfo\_t}}* temp\_info);}
+\DoxyCodeLine{454 }
+\DoxyCodeLine{455 }
+\DoxyCodeLine{462     DLLEXPORT \textcolor{keywordtype}{void} \mbox{\hyperlink{libirtemp_8h_ad4d35b7bb2e4e140509b4aaf5f77f872}{irtemp\_log\_register}}(\mbox{\hyperlink{libirtemp_8h_a783499c3db571cad6500e623d52e5cec}{irtemp\_log\_level\_t}} log\_level);}
+\DoxyCodeLine{463 }
+\DoxyCodeLine{464 }
+\DoxyCodeLine{473     DLLEXPORT \mbox{\hyperlink{libirtemp_8h_a8752b7bca77d1d46d5c370eb2cdb6038}{AlarmType\_t}} \mbox{\hyperlink{libirtemp_8h_a9acaab0c1b48b7cc047a1a4520b69904}{point\_over\_threshold\_alarm}}(\mbox{\hyperlink{struct_temp_threshold__t}{TempThreshold\_t}} temp\_threshold, uint16\_t cur\_temp);}
+\DoxyCodeLine{474 }
+\DoxyCodeLine{475 }
+\DoxyCodeLine{484     DLLEXPORT \mbox{\hyperlink{libirtemp_8h_a8752b7bca77d1d46d5c370eb2cdb6038}{AlarmType\_t}} \mbox{\hyperlink{libirtemp_8h_a66f406bd234f8f2906a70d57a1e6c733}{line\_rect\_over\_threshold\_alarm}}(\mbox{\hyperlink{struct_temp_threshold__t}{TempThreshold\_t}} temp\_threshold, \mbox{\hyperlink{struct_temp_info__t}{TempInfo\_t}}* temp\_info);}
+\DoxyCodeLine{485 }
+\DoxyCodeLine{496     DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\_error\_t}} \mbox{\hyperlink{libirtemp_8h_ab9f360dabf6cdf2a52c9d03dbdb549c4}{find\_start\_and\_end\_addr}}(\textcolor{keyword}{const} uint16\_t* kt\_array, \textcolor{keyword}{const} \mbox{\hyperlink{struct_search_info__t}{SearchInfo\_t}}* search\_info, uint16\_t len, \mbox{\hyperlink{struct_kt_info__t}{KtInfo\_t}}* kt\_info);}
+\DoxyCodeLine{497 }
+\DoxyCodeLine{498 }
+\DoxyCodeLine{509     DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\_error\_t}} \mbox{\hyperlink{libirtemp_8h_a20d181cf46c2ae2d8fc2265e3f51e54a}{calculate\_Kn\_and\_Bn}}(\textcolor{keyword}{const} \mbox{\hyperlink{struct_vtemp_info__t}{VtempInfo\_t}}* vtemp\_info, \textcolor{keyword}{const} \mbox{\hyperlink{struct_kt_info__t}{KtInfo\_t}}* kt\_info, \(\backslash\)}
+\DoxyCodeLine{510         \textcolor{keyword}{const} \mbox{\hyperlink{struct_cali_point__t}{CaliPoint\_t}}* cali\_point, \mbox{\hyperlink{struct_cali_factor__t}{CaliFactor\_t}}* cali\_factor);}
+\DoxyCodeLine{511 }
+\DoxyCodeLine{512 }
+\DoxyCodeLine{523     DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\_error\_t}} \mbox{\hyperlink{libirtemp_8h_ae75c040df80fe787cd4233d13257bdf6}{single\_point\_recalibrate\_KB}}(\textcolor{keyword}{const} \mbox{\hyperlink{struct_cali_factor__t}{CaliFactor\_t}}* cali\_factor, \textcolor{keywordtype}{int} cur\_vtemp, \(\backslash\)}
+\DoxyCodeLine{524         \textcolor{keywordtype}{double} t\_env, \mbox{\hyperlink{struct_re_cali_factor__t}{ReCaliFactor\_t}}* recali\_factor);}
+\DoxyCodeLine{525 }
+\DoxyCodeLine{526 }
+\DoxyCodeLine{537     DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\_error\_t}} \mbox{\hyperlink{libirtemp_8h_a605bc0c77735c483b167d88b78d73d87}{double\_point\_recalibrate\_KB}}(\textcolor{keyword}{const} \mbox{\hyperlink{struct_cali_factor__t}{CaliFactor\_t}}* cali\_factor, \textcolor{keyword}{const} \mbox{\hyperlink{struct_v_temp_set__t}{VTempSet\_t}}* vtemp\_set, \(\backslash\)}
+\DoxyCodeLine{538         \textcolor{keyword}{const} \mbox{\hyperlink{struct_env_temp__t}{EnvTemp\_t}}* env\_temp, \mbox{\hyperlink{struct_re_cali_factor__t}{ReCaliFactor\_t}}* recali\_factor);}
+\DoxyCodeLine{539 }
+\DoxyCodeLine{550     DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\_error\_t}} \mbox{\hyperlink{libirtemp_8h_a4333265bbd7c3d87ea45c4ee7df51012}{env\_temp\_calculate}}(\textcolor{keyword}{const} \mbox{\hyperlink{struct_cali_factor__t}{CaliFactor\_t}}* cali\_factor, \textcolor{keyword}{const} \mbox{\hyperlink{struct_re_cali_factor__t}{ReCaliFactor\_t}}* recali\_factor, \(\backslash\)}
+\DoxyCodeLine{551         uint16\_t cur\_vtemp, \textcolor{keywordtype}{double}* t\_env);}
+\DoxyCodeLine{552 }
+\DoxyCodeLine{553 }
+\DoxyCodeLine{564     DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\_error\_t}} \mbox{\hyperlink{libirtemp_8h_a9d716cb195173452cebc1182a78daf7d}{calculate\_KE\_and\_BE}}(\textcolor{keyword}{const} \mbox{\hyperlink{struct_env_param__t}{EnvParam\_t}}* env\_param, \textcolor{keyword}{const} \mbox{\hyperlink{struct_nuc_factor__t}{NucFactor\_t}}* nuc\_factor, \(\backslash\)}
+\DoxyCodeLine{565         uint8\_t gain\_flag, \mbox{\hyperlink{struct_env_factor__t}{EnvFactor\_t}}* env\_factor);}
+\DoxyCodeLine{566 }
+\DoxyCodeLine{567 }
+\DoxyCodeLine{577     DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\_error\_t}} \mbox{\hyperlink{libirtemp_8h_a369574e3ec0268b1869305233f6817c4}{reverse\_calc\_NUC\_with\_env\_correct}}(\textcolor{keyword}{const} \mbox{\hyperlink{struct_nuc_factor__t}{NucFactor\_t}}* nuc\_factor, \textcolor{keywordtype}{double} kelvin\_temp, uint16\_t* nuc\_cal);}
+\DoxyCodeLine{578 }
+\DoxyCodeLine{579 }
+\DoxyCodeLine{589     DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\_error\_t}}  \mbox{\hyperlink{libirtemp_8h_a8a56df866e197eee6d2197ab48e8233c}{reverse\_calc\_NUC\_without\_env\_correct}}(\textcolor{keyword}{const} \mbox{\hyperlink{struct_env_factor__t}{EnvFactor\_t}}* env\_factor, uint16\_t nuc\_cal, uint16\_t* nuc\_org);}
+\DoxyCodeLine{590 }
+\DoxyCodeLine{591 }
+\DoxyCodeLine{602     DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\_error\_t}} \mbox{\hyperlink{libirtemp_8h_a6dae1d5aea2040ff1e051a81ffbc6f96}{calculate\_new\_KE\_and\_BE}}(\textcolor{keyword}{const} \mbox{\hyperlink{struct_env_param__t}{EnvParam\_t}}* env\_param, \textcolor{keyword}{const} \mbox{\hyperlink{struct_nuc_factor__t}{NucFactor\_t}}* nuc\_factor, \(\backslash\)}
+\DoxyCodeLine{603         uint8\_t gain\_flag, \mbox{\hyperlink{struct_env_factor__t}{EnvFactor\_t}}* env\_factor);}
+\DoxyCodeLine{604 }
+\DoxyCodeLine{605 }
+\DoxyCodeLine{615     DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\_error\_t}} \mbox{\hyperlink{libirtemp_8h_a3e6007e6cfd2b6df9b9119a21be3e204}{recalc\_NUC\_with\_env\_correct}}(\textcolor{keyword}{const} \mbox{\hyperlink{struct_env_factor__t}{EnvFactor\_t}}* env\_factor, uint16\_t nuc\_org, uint16\_t* nuc\_cal);}
+\DoxyCodeLine{616 }
+\DoxyCodeLine{617 }
+\DoxyCodeLine{627     DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\_error\_t}}  \mbox{\hyperlink{libirtemp_8h_a4f0c8804a67a8ee30fc7cf608e802731}{remap\_temp}}(\textcolor{keyword}{const} uint16\_t* nuc\_table, uint16\_t nuc\_cal, uint16\_t* temp\_data);}
+\DoxyCodeLine{628 }
+\DoxyCodeLine{629 }
+\DoxyCodeLine{640     DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\_error\_t}} \mbox{\hyperlink{libirtemp_8h_afccddd28d2eeea490f73ac6162ed8b7f}{get\_NUC\_value}}(uint16\_t* src, \mbox{\hyperlink{struct_temp_data_res__t}{TempDataRes\_t}} temp\_res, \mbox{\hyperlink{struct_dot__t}{Dot\_t}} point, uint16\_t* nuc\_value);}
+\DoxyCodeLine{641 }
+\DoxyCodeLine{642 }
+\DoxyCodeLine{653     DLLEXPORT uint16\_t \mbox{\hyperlink{libirtemp_8h_ac36ecb9e62b6d1d4f8ba9982fcff8ec5}{calculate\_tau}}(uint16\_t nuc\_dist\_high, uint16\_t nuc\_dist\_low, uint16\_t nuc\_25\_high, uint16\_t nuc\_25\_low);}
+\DoxyCodeLine{654 }
+\DoxyCodeLine{655 }
+\DoxyCodeLine{667     DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\_error\_t}} \mbox{\hyperlink{libirtemp_8h_af397bc7f4452addb87d994b4f37e9674}{read\_tau}}(\textcolor{keyword}{const} uint16\_t* correct\_table, \textcolor{keywordtype}{float} hum, \textcolor{keywordtype}{float} t\_env, \textcolor{keywordtype}{float} dist, uint16\_t* tau);}
+\DoxyCodeLine{668 }
+\DoxyCodeLine{669 }
+\DoxyCodeLine{681     DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\_error\_t}} \mbox{\hyperlink{libirtemp_8h_abd2d839a9d942a81c7af637e6f333cc9}{write\_tau}}(uint16\_t* correct\_table, \textcolor{keywordtype}{float} hum, \textcolor{keywordtype}{float} t\_env, \textcolor{keywordtype}{float} dist, uint16\_t tau);}
+\DoxyCodeLine{682 }
+\DoxyCodeLine{683 }
+\DoxyCodeLine{694     DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\_error\_t}}  \mbox{\hyperlink{libirtemp_8h_a0654ec7e85095434ecf5df6fd8642250}{read\_tau\_with\_target\_temp\_and\_dist}}(\textcolor{keyword}{const} uint16\_t* correct\_table, \(\backslash\)}
+\DoxyCodeLine{695         \textcolor{keywordtype}{float} target\_temp, \textcolor{keywordtype}{float} dist, uint16\_t* tau);}
+\DoxyCodeLine{696 }
+\DoxyCodeLine{697 }
+\DoxyCodeLine{708     DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\_error\_t}}  \mbox{\hyperlink{libirtemp_8h_a24396ee05ca1cbb584e66bb6585d8c56}{write\_tau\_with\_target\_temp\_and\_dist}}(uint16\_t* correct\_table, \(\backslash\)}
+\DoxyCodeLine{709         \textcolor{keywordtype}{float} target\_temp, \textcolor{keywordtype}{float} dist, uint16\_t tau);}
+\DoxyCodeLine{710 }
+\DoxyCodeLine{711 }
+\DoxyCodeLine{723     DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\_error\_t}} \mbox{\hyperlink{libirtemp_8h_aa752f9f1478bbb97e5eaef3f1f3431e9}{temp\_correct}}(\textcolor{keywordtype}{float} ems, uint16\_t tau, \textcolor{keywordtype}{float} ta, \textcolor{keywordtype}{float} org\_temp, \textcolor{keywordtype}{float}* new\_temp);}
+\DoxyCodeLine{724 }
+\DoxyCodeLine{725 }
+\DoxyCodeLine{737     DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\_error\_t}} \mbox{\hyperlink{libirtemp_8h_a7b74fe6e7ce751e9663955fdf322c39b}{reverse\_temp\_correct}}(\textcolor{keywordtype}{float} ems, uint16\_t tau, \textcolor{keywordtype}{float} ta, \textcolor{keywordtype}{float} new\_temp, \textcolor{keywordtype}{float}* org\_temp);}
+\DoxyCodeLine{738 }
+\DoxyCodeLine{739 }
+\DoxyCodeLine{740 }
+\DoxyCodeLine{750     DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\_error\_t}} \mbox{\hyperlink{libirtemp_8h_a8935403bf91f53f480e5ff93104b3f56}{calculate\_nuc\_with\_nuc\_factor}}(\mbox{\hyperlink{struct_nuc_factor__t}{NucFactor\_t}}* nuc\_factor, \textcolor{keywordtype}{float} temp, uint16\_t* nuc\_value);}
+\DoxyCodeLine{751 }
+\DoxyCodeLine{760     DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\_error\_t}} \mbox{\hyperlink{libirtemp_8h_a5c48c86e8b6b90fd6e5c8bb3e4ff4347}{generate\_high\_gain\_nuc\_t}}(\mbox{\hyperlink{struct_nuc_factor__t}{NucFactor\_t}}* nuc\_factor, uint16\_t* nuc\_table);}
+\DoxyCodeLine{761 }
+\DoxyCodeLine{762 }
+\DoxyCodeLine{771     DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\_error\_t}} \mbox{\hyperlink{libirtemp_8h_a00cf048c7e92bfff95b5b47581080ab0}{generate\_low\_gain\_nuc\_t}}(\mbox{\hyperlink{struct_nuc_factor__t}{NucFactor\_t}}* nuc\_factor, uint16\_t* nuc\_table);}
+\DoxyCodeLine{772 }
+\DoxyCodeLine{773 }
+\DoxyCodeLine{783     DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\_error\_t}} \mbox{\hyperlink{libirtemp_8h_ada2ad373d7550e4b554311c2c3f8b980}{reverse\_calc\_NUC\_with\_nuc\_t}}(uint16\_t* nuc\_table, \textcolor{keywordtype}{float} temp, uint16\_t* nuc\_value);}
+\DoxyCodeLine{784 }
+\DoxyCodeLine{785 }
+\DoxyCodeLine{786 }
+\DoxyCodeLine{797     DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\_error\_t}} \mbox{\hyperlink{libirtemp_8h_a8473408b8f4229866200c165dd62efef}{calculate\_org\_KE\_and\_BE\_with\_nuc\_t}}(\textcolor{keyword}{const} \mbox{\hyperlink{struct_env_param__t}{EnvParam\_t}}* env\_param, \textcolor{keyword}{const} uint16\_t* nuc\_table, \(\backslash\)}
+\DoxyCodeLine{798         uint8\_t gain\_flag, \mbox{\hyperlink{struct_env_factor__t}{EnvFactor\_t}}* env\_factor);}
+\DoxyCodeLine{799 }
+\DoxyCodeLine{800 }
+\DoxyCodeLine{801 }
+\DoxyCodeLine{802 }
+\DoxyCodeLine{813     DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\_error\_t}} \mbox{\hyperlink{libirtemp_8h_abc01100292868522a494fd717248e819}{calculate\_new\_KE\_and\_BE\_with\_nuc\_t}}(\textcolor{keyword}{const} \mbox{\hyperlink{struct_env_param__t}{EnvParam\_t}}* env\_param, \textcolor{keyword}{const} uint16\_t* nuc\_table, \(\backslash\)}
+\DoxyCodeLine{814         uint8\_t gain\_flag, \mbox{\hyperlink{struct_env_factor__t}{EnvFactor\_t}}* env\_factor);}
+\DoxyCodeLine{815 }
+\DoxyCodeLine{816 }
+\DoxyCodeLine{817 }
+\DoxyCodeLine{829     DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\_error\_t}} \mbox{\hyperlink{libirtemp_8h_a9c882b4c96bba96a3d646708ac0280a7}{enhance\_distance\_temp\_correct}}(\mbox{\hyperlink{struct_env_correct_param}{EnvCorrectParam}}* env\_correct\_param, uint16\_t* correct\_table, uint32\_t table\_len, \(\backslash\)}
+\DoxyCodeLine{830         \textcolor{keywordtype}{float} org\_temp, \textcolor{keywordtype}{float}* new\_temp);}
+\DoxyCodeLine{831 }
+\DoxyCodeLine{832 }
+\DoxyCodeLine{833 }
+\DoxyCodeLine{844     DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\_error\_t}} \mbox{\hyperlink{libirtemp_8h_aa9764ed95df2df594d745ee344a2d0ce}{new\_ktbt\_recal\_double\_point\_calculate}}(\mbox{\hyperlink{struct_multi_point_calib_param__t}{MultiPointCalibParam\_t}}* multi\_point\_param, \textcolor{keywordtype}{int} \mbox{\hyperlink{libiruvc_8h_a3a1aeff9b3821c3f83af5438f2b283f7}{product\_type}}, \(\backslash\)}
+\DoxyCodeLine{845         \mbox{\hyperlink{struct_multi_point_calib_array__t}{MultiPointCalibArray\_t}}* multi\_point\_calib\_array, \mbox{\hyperlink{struct_two_point_calib_result__t}{TwoPointCalibResult\_t}}* two\_point\_calib\_result);}
+\DoxyCodeLine{846 }
+\DoxyCodeLine{847 }
+\DoxyCodeLine{848 }
+\DoxyCodeLine{861     DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\_error\_t}} \mbox{\hyperlink{libirtemp_8h_acea44b7140689c2e7ed8532891d5c0ac}{multi\_point\_calc\_user\_defined\_nuc}}(\mbox{\hyperlink{struct_multi_point_calib_param__t}{MultiPointCalibParam\_t}}* multi\_point\_param, \textcolor{keywordtype}{int} \mbox{\hyperlink{libiruvc_8h_a3a1aeff9b3821c3f83af5438f2b283f7}{product\_type}},}
+\DoxyCodeLine{862         \mbox{\hyperlink{struct_multi_point_calib_array__t}{MultiPointCalibArray\_t}}* multi\_point\_calib\_array, \mbox{\hyperlink{struct_two_point_calib_result__t}{TwoPointCalibResult\_t}}* two\_point\_calib\_result,}
+\DoxyCodeLine{863         \mbox{\hyperlink{struct_multi_point_calib_temp__t}{MultiPointCalibTemp\_t}}* multi\_point\_temp, \mbox{\hyperlink{struct_multi_point_calib_nuc__t}{MultiPointCalibNuc\_t}}* multi\_point\_nuc);}
+\DoxyCodeLine{864 }
+\DoxyCodeLine{865 }
+\DoxyCodeLine{876     DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\_error\_t}} \mbox{\hyperlink{libirtemp_8h_aa8dac8415df5389bd3eb35f40335581e}{multi\_point\_calc\_new\_nuc\_table}}(uint16\_t* nuc\_table, \mbox{\hyperlink{struct_multi_point_calib_nuc__t}{MultiPointCalibNuc\_t}}* multi\_point\_nuc, \(\backslash\)}
+\DoxyCodeLine{877         uint16\_t multi\_point\_num, uint16\_t* new\_nuc\_table);}
+\DoxyCodeLine{878 }
+\DoxyCodeLine{891     DLLEXPORT \mbox{\hyperlink{libirtemp_8h_adb85ed5b23396cbcec2679695e89b61b}{irtemp\_error\_t}} \mbox{\hyperlink{libirtemp_8h_a7f72abdea657a13a2eb93c2c7fd894dd}{multi\_point\_calc\_one\_point\_correct}}(uint16\_t* nuc\_table, \mbox{\hyperlink{struct_multi_point_calib_nuc__t}{MultiPointCalibNuc\_t}}* multi\_point\_nuc, \(\backslash\)}
+\DoxyCodeLine{892         uint16\_t multi\_point\_num, uint16\_t* new\_nuc\_table);}
+\DoxyCodeLine{893 }
+\DoxyCodeLine{894 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{895 \}}
+\DoxyCodeLine{896 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{897 }
+\DoxyCodeLine{898 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,94 @@
+\hypertarget{all__config_8h_source}{}\doxysection{all\+\_\+config.\+h}
+\mbox{\hyperlink{all__config_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#define     FALCON\_CMD}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#if defined(linux) || defined(unix)}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#define LINUX\_I2C\_SUPPORT}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#if defined(\_WIN32)}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define DLLEXPORT \_\_declspec(dllexport)}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <windows.h>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#elif defined(linux) || defined(unix)}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#define DLLEXPORT}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include <unistd.h>}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#if defined(FALCON\_CMD)}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{    \#define PRODUCT\_TYPE  "{}FALCON"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{    \#define PRODUCT\_TYPE  "{}NULL"{}}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{33 \textcolor{keyword}{enum} \mbox{\hyperlink{all__config_8h_a289b3e9a37338df0a7b258cafdfc7c46}{vdcmd\_driver\_type}} }
+\DoxyCodeLine{34 \{}
+\DoxyCodeLine{36     \mbox{\hyperlink{all__config_8h_a289b3e9a37338df0a7b258cafdfc7c46a9d1c99b7592961c047189ec266e48ae8}{VDCMD\_USB\_VDCMD}} = 0,}
+\DoxyCodeLine{38     \mbox{\hyperlink{all__config_8h_a289b3e9a37338df0a7b258cafdfc7c46a3900da308cb90865b7c960fe8e4cedad}{VDCMD\_I2C\_USB\_VDCMD}},}
+\DoxyCodeLine{40     \mbox{\hyperlink{all__config_8h_a289b3e9a37338df0a7b258cafdfc7c46a61868dc07d7654704762c9cd9a00d967}{VDCMD\_I2C\_VDCMD}},}
+\DoxyCodeLine{42     \mbox{\hyperlink{all__config_8h_a289b3e9a37338df0a7b258cafdfc7c46a901a0cf586d4ac39d40102e07fd3b79e}{VDCMD\_UART\_VDCMD}}}
+\DoxyCodeLine{43 \};}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{48 \textcolor{keyword}{typedef} \textcolor{keyword}{enum}\{}
+\DoxyCodeLine{50     \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390ad502897d0f045dbdc5a47e12dfb44049}{IRUVC\_SUCCESS}}                      = 0,}
+\DoxyCodeLine{52     \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390a808cd5e3dc22df7678575553e5deb605}{IRUVC\_ERROR\_PARAM}}                  = -\/1,}
+\DoxyCodeLine{54     \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390a121eb3f37bd4e99170bb4126e5ee4710}{IRUVC\_UVC\_INIT\_FAIL}}                  = -\/2,}
+\DoxyCodeLine{56     \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390a8ff0fef5992196cffd7def5862e01324}{IRUVC\_GET\_DEVICE\_LIST\_FAIL}}            = -\/3,}
+\DoxyCodeLine{58     \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390a7ebaa6539773f8efeaed8465bab8dae4}{IRUVC\_FIND\_DEVICE\_FAIL}}                = -\/4,}
+\DoxyCodeLine{60     \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390acac9e0bddc8da95678605a208b517495}{IRUVC\_NOT\_GET\_DEVICE\_INFO}}          = -\/5,}
+\DoxyCodeLine{62     \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390a71e7cb886518621978cf88c8dc5a5c7a}{IRUVC\_DEVICE\_OPEN\_FAIL}}                = -\/6,}
+\DoxyCodeLine{64     \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390aee565314b9da432857f7ee7ca9e912a5}{IRUVC\_GET\_DEVICE\_DESCRIPTOR\_FAIL}}    = -\/7,}
+\DoxyCodeLine{66     \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390a29c0c0a9a8a528b8497eab1ba86df975}{IRUVC\_DEVICE\_OPENED}}                  = -\/8,}
+\DoxyCodeLine{68     \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390a76a666df67fc80039ce7b2c1d2b464de}{IRUVC\_GET\_FORMAT\_FAIL}}              = -\/9,}
+\DoxyCodeLine{70     \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390a0055d17d0a53940dd9d48361638ac98e}{IRUVC\_USER\_CALLBACK\_EMPTY}}          = -\/10,}
+\DoxyCodeLine{72     \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390a959b6f2e4c45f27aa0af88cbee84f773}{IRUVC\_START\_STREAMING\_FAIL}}            = -\/11,}
+\DoxyCodeLine{74     \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390ab3748cd25597065f416d7f813b91b1a6}{IRUVC\_GET\_FRAME\_OVER\_TIME}}          = -\/12,}
+\DoxyCodeLine{76     \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390a44bf76acfc30e076af2d7baf3a13a5d0}{IRUVC\_VDCMD\_NOT\_REGISTER}}            = -\/13,}
+\DoxyCodeLine{78     \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390a6018236a26a53dd747586e9a1895c7f3}{IRUVC\_VDCMD\_REGISTER\_FAIL}}          = -\/14,}
+\DoxyCodeLine{80     \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390a0d0b23302ce324e8aaf4d7dd2799003b}{IRUVC\_CONTROL\_TRANSFER\_FAIL}}          = -\/15,}
+\DoxyCodeLine{82     \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390a2812e947ad3855bb197e98e95a817b5a}{IRUVC\_CHECK\_DONE\_FAIL}}              = -\/16,}
+\DoxyCodeLine{84     \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390a0d6d7e054f333e79436bd9d3b3c71ce9}{IRUVC\_VDCMD\_TOO\_LONG}}                = -\/17,}
+\DoxyCodeLine{86     \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390af063d6b6cfdf304d571a9076ff95e497}{IRUVC\_RESET\_DEVICE\_FAIL}}              = -\/18,}
+\DoxyCodeLine{88     \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390aac35adf1b7e5ff3c4ac27cce73369804}{IRUVC\_CLEAR\_HALT\_FAIL}}              = -\/19,}
+\DoxyCodeLine{90     \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390a57cbbc4bcce446d475182ce8780637df}{IRUVC\_UNSUPPORTED\_CMD}}              = -\/20,}
+\DoxyCodeLine{92     \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390a91a9f4ac103708174da9216993ee47e0}{IRUVC\_I2C\_TRANSFER\_FAIL}}              = -\/21,}
+\DoxyCodeLine{94     \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390a7e473467a125a2768b8420b0683b8634}{IRUVC\_I2C\_DEVICE\_OPEN\_FAIL}}            = -\/22,}
+\DoxyCodeLine{96     \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390ac11a6b47b930f1fba17f1fd5306421c4}{IRUVC\_I2C\_GET\_REGISTER\_FAIL}}          = -\/23,}
+\DoxyCodeLine{98     \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390a0ac42e7aba01d31559dbd9bb15e05d64}{IRUVC\_I2C\_SET\_REGISTER\_FAIL}}          = -\/24,}
+\DoxyCodeLine{100     \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390a09d78055ce1eb7f896a52843c84891d2}{IRUVC\_MEM\_ALLOC\_FAIL}}                = -\/25,}
+\DoxyCodeLine{102     \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390a253f06e5f9da628dce0c12103e45448a}{IRUVC\_CMD\_EXECUTE\_FAIL}}                = -\/26}
+\DoxyCodeLine{103 \}\mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390}{iruvc\_error\_t}};}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{108 \textcolor{keyword}{typedef} \textcolor{keyword}{enum}\{}
+\DoxyCodeLine{110     \mbox{\hyperlink{all__config_8h_aec639dc0ea9770ef145f8ff592f6fad6a80db490931fa078c3ae1cf93cf113733}{IRUVC\_LOG\_DEBUG}}                      = 0,}
+\DoxyCodeLine{112     \mbox{\hyperlink{all__config_8h_aec639dc0ea9770ef145f8ff592f6fad6ac3090e36b2c70d17e14c48e2dc1654f6}{IRUVC\_LOG\_ERROR}}                      = 1,}
+\DoxyCodeLine{114     \mbox{\hyperlink{all__config_8h_aec639dc0ea9770ef145f8ff592f6fad6a175cd3ae00efdfa3a569496901b8a7d3}{IRUVC\_LOG\_NO\_PRINT}}                    = 2}
+\DoxyCodeLine{115 \}\mbox{\hyperlink{all__config_8h_aec639dc0ea9770ef145f8ff592f6fad6}{iruvc\_log\_level\_t}};}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118 \textcolor{preprocessor}{\#if defined(\_WIN32)}}
+\DoxyCodeLine{119 \textcolor{preprocessor}{\#define IRUVC\_DEBUG(format, ...) iruvc\_debug\_print("{}libiruvc debug [\%s:\%d/\%s] "{}} format "{}\(\backslash\)n"{}, \(\backslash\)}
+\DoxyCodeLine{120                                                  \_\_FILE\_\_,\_\_LINE\_\_, \_\_FUNCTION\_\_, \_\_VA\_ARGS\_\_)}
+\DoxyCodeLine{121 \textcolor{preprocessor}{\#elif defined(linux) || defined(unix)}}
+\DoxyCodeLine{122 \textcolor{preprocessor}{\#include <libgen.h>}}
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#define IRUVC\_DEBUG(format, ...) iruvc\_debug\_print("{}libiruvc debug [\%s:\%d/\%s] "{}} format "{}\(\backslash\)n"{}, \(\backslash\)}
+\DoxyCodeLine{124                                                  basename(\_\_FILE\_\_), \_\_LINE\_\_, \_\_FUNCTION\_\_, \#\#\_\_VA\_ARGS\_\_)}
+\DoxyCodeLine{125 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127 \textcolor{preprocessor}{\#if defined(\_WIN32)}}
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#define IRUVC\_ERROR(format, ...) iruvc\_error\_print("{}libiruvc error [\%s:\%d/\%s] "{}} format "{}\(\backslash\)n"{}, \(\backslash\)}
+\DoxyCodeLine{129                                                  \_\_FILE\_\_,\_\_LINE\_\_, \_\_FUNCTION\_\_, \_\_VA\_ARGS\_\_)}
+\DoxyCodeLine{130 \textcolor{preprocessor}{\#elif defined(linux) || defined(unix)}}
+\DoxyCodeLine{131 \textcolor{preprocessor}{\#include <libgen.h>}}
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#define IRUVC\_ERROR(format, ...) iruvc\_error\_print("{}libiruvc error [\%s:\%d/\%s] "{}} format "{}\(\backslash\)n"{}, \(\backslash\)}
+\DoxyCodeLine{133                                                  basename(\_\_FILE\_\_), \_\_LINE\_\_, \_\_FUNCTION\_\_, \#\#\_\_VA\_ARGS\_\_)}
+\DoxyCodeLine{134 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{137 \textcolor{keyword}{extern} void (*\mbox{\hyperlink{all__config_8h_a85fb5a37a3e4914b8d777b33d3a747c7}{iruvc\_debug\_print}})(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* fmt, ...);}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{140 \textcolor{keyword}{extern} void (*\mbox{\hyperlink{all__config_8h_ae93567fafc99de7a93048270e7ff5c7e}{iruvc\_error\_print}})(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* fmt, ...);}
+\DoxyCodeLine{141 }
+
+\end{DoxyCode}

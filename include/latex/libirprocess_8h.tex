@@ -1,0 +1,584 @@
+\hypertarget{libirprocess_8h}{}\doxysection{libirprocess.\+h File Reference}
+\label{libirprocess_8h}\index{libirprocess.h@{libirprocess.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_image_res__t}{Image\+Res\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Image resulution. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_agc_stretch_param__t}{Agc\+Stretch\+Param\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em AGC stretch parameters. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_agc_param__t}{Agc\+Param\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em AGC algorithm parameter. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_dde_param__t}{Dde\+Param\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em DDE algorithm parameter. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_img_enhance_param__t}{Img\+Enhance\+Param\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em DDE algorithm parameters. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_gain_switch_param__t}{Gain\+Switch\+Param\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Gain switch detect parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{libirprocess_8h_a1d05cad2eddf6f18ef1ca3683c6f3c92}{irproc\+\_\+log\+\_\+level\+\_\+t}} \{ \mbox{\hyperlink{libirprocess_8h_a1d05cad2eddf6f18ef1ca3683c6f3c92a4d64afd742a5752421a89c92ac7ead7f}{IRPROC\+\_\+\+LOG\+\_\+\+DEBUG}} = 0
+, \mbox{\hyperlink{libirprocess_8h_a1d05cad2eddf6f18ef1ca3683c6f3c92a60d43736c5ed955ef15cd25c419a69db}{IRPROC\+\_\+\+LOG\+\_\+\+ERROR}} = 1
+, \mbox{\hyperlink{libirprocess_8h_a1d05cad2eddf6f18ef1ca3683c6f3c92a9b60606387bbbc2d260c83f4656a9103}{IRPROC\+\_\+\+LOG\+\_\+\+NO\+\_\+\+PRINT}} = 2
+ \}
+\begin{DoxyCompactList}\small\item\em Log level definition in libirprocess library. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57a}{irproc\+\_\+error\+\_\+t}} \{ \newline
+\mbox{\hyperlink{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57aa04259c1240d2bb2e37b43471925875ee}{IRPROC\+\_\+\+SUCCESS}} = 0
+, \mbox{\hyperlink{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57aa05bbc320655f2deb7a01ea9c01b684b9}{IRPROC\+\_\+\+ERROR\+\_\+\+PARAM}} = -\/1
+, \mbox{\hyperlink{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57aadd3befe7d09aff06cdc64ebf703c468d}{IRPROC\+\_\+\+FMT\+\_\+\+NOT\+\_\+\+SUPPORTED}} = -\/2
+, \mbox{\hyperlink{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57aa878231398b64fa3b1fdd4cc037e3125d}{IRPROC\+\_\+\+MALLOC\+\_\+\+FAILED}} = -\/3
+, \newline
+\mbox{\hyperlink{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57aacad5d42f3a8e3661dc6fed65c8598b83}{IRPROC\+\_\+\+ERROR\+\_\+\+SOURCE}} = -\/4
+ \}
+\begin{DoxyCompactList}\small\item\em Error type in libirprocess library. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{libirprocess_8h_a52fd30261619bc0807381861b64c1244}{irproc\+\_\+src\+\_\+fmt\+\_\+t}} \{ \newline
+\mbox{\hyperlink{libirprocess_8h_a52fd30261619bc0807381861b64c1244ab0ee89c5645ad12e535857b04886e458}{IRPROC\+\_\+\+SRC\+\_\+\+FMT\+\_\+\+Y14}} = 0
+, \mbox{\hyperlink{libirprocess_8h_a52fd30261619bc0807381861b64c1244af5d8dfa7564abf12bfdb919b8f3bfe69}{IRPROC\+\_\+\+SRC\+\_\+\+FMT\+\_\+\+YUV422}}
+, \mbox{\hyperlink{libirprocess_8h_a52fd30261619bc0807381861b64c1244a250ee291a5209aef24b11649b51cc561}{IRPROC\+\_\+\+SRC\+\_\+\+FMT\+\_\+\+YUV444}}
+, \mbox{\hyperlink{libirprocess_8h_a52fd30261619bc0807381861b64c1244a598410a2bb3da05c3a9b57df55db8334}{IRPROC\+\_\+\+SRC\+\_\+\+FMT\+\_\+\+RGB888}}
+, \newline
+\mbox{\hyperlink{libirprocess_8h_a52fd30261619bc0807381861b64c1244a897e98da349df54d2333205057deb6f0}{IRPROC\+\_\+\+SRC\+\_\+\+FMT\+\_\+\+BGR888}}
+ \}
+\begin{DoxyCompactList}\small\item\em Supported image format in libirprocess library. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7}{irproc\+\_\+color\+\_\+mode\+\_\+t}} \{ \newline
+\mbox{\hyperlink{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a1b975894125f44091b6f4da70ee618ab}{IRPROC\+\_\+\+COLOR\+\_\+\+MODE\+\_\+1}} = 1
+, \mbox{\hyperlink{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a40228404e45cb23cc4608f87509b2916}{IRPROC\+\_\+\+COLOR\+\_\+\+MODE\+\_\+2}}
+, \mbox{\hyperlink{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a6ca07c46d1acd2a805532579fc24e069}{IRPROC\+\_\+\+COLOR\+\_\+\+MODE\+\_\+3}}
+, \mbox{\hyperlink{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a48cf07ee05168e8d1826175e67e3106b}{IRPROC\+\_\+\+COLOR\+\_\+\+MODE\+\_\+4}}
+, \newline
+\mbox{\hyperlink{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7ae17b3ee0ae0a0dea4b73927b3b10d74d}{IRPROC\+\_\+\+COLOR\+\_\+\+MODE\+\_\+5}}
+, \mbox{\hyperlink{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a0e84eb799bea47fae136b7a3e24117b8}{IRPROC\+\_\+\+COLOR\+\_\+\+MODE\+\_\+6}}
+, \mbox{\hyperlink{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a245c4e212e28a8337116b241c74b288c}{IRPROC\+\_\+\+COLOR\+\_\+\+MODE\+\_\+7}}
+, \mbox{\hyperlink{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7ade63712946cdcb2b23d41f6d619bca33}{IRPROC\+\_\+\+COLOR\+\_\+\+MODE\+\_\+8}}
+, \newline
+\mbox{\hyperlink{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a9bddb6647c1a5fc857edeca64e307de1}{IRPROC\+\_\+\+COLOR\+\_\+\+MODE\+\_\+9}}
+, \mbox{\hyperlink{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a764e3ec8b7feaa7a77efdc3c42eed4dc}{IRPROC\+\_\+\+COLOR\+\_\+\+MODE\+\_\+10}}
+, \mbox{\hyperlink{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a227f5c90993312dc51625f166b8ed9fe}{IRPROC\+\_\+\+COLOR\+\_\+\+MODE\+\_\+11}}
+, \mbox{\hyperlink{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7afc37e6dd5558a4ccf88591975cb07359}{IRPROC\+\_\+\+COLOR\+\_\+\+MODE\+\_\+12}}
+, \newline
+\mbox{\hyperlink{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7ad78fb542f9094edede4fa580c7ee1266}{IRPROC\+\_\+\+COLOR\+\_\+\+MODE\+\_\+13}}
+, \mbox{\hyperlink{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a81b07cbdd4ffda980e58e231b86356f5}{IRPROC\+\_\+\+COLOR\+\_\+\+MODE\+\_\+14}}
+, \mbox{\hyperlink{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7ae12e5b7a810365a6e96f79fd9957f58e}{IRPROC\+\_\+\+COLOR\+\_\+\+MODE\+\_\+15}}
+, \mbox{\hyperlink{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a7843c629d3f2e463a3f7c892d259db8d}{IRPROC\+\_\+\+COLOR\+\_\+\+MODE\+\_\+16}}
+, \newline
+\mbox{\hyperlink{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a50161f09d50c7826bd2872bbda81a158}{IRPROC\+\_\+\+COLOR\+\_\+\+MODE\+\_\+17}}
+, \mbox{\hyperlink{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a1eb068fcdd14ad2cd99351754c174558}{IRPROC\+\_\+\+COLOR\+\_\+\+MODE\+\_\+18}}
+, \mbox{\hyperlink{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a91444df5343ae54ad23924c5c1133773}{IRPROC\+\_\+\+COLOR\+\_\+\+MODE\+\_\+19}}
+, \mbox{\hyperlink{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a961abbeb1251654677d1bcd4e4d08b58}{IRPROC\+\_\+\+COLOR\+\_\+\+MODE\+\_\+20}}
+ \}
+\begin{DoxyCompactList}\small\item\em Psudocolor mode types in libirprocess library. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+DLLEXPORT char $\ast$ \mbox{\hyperlink{libirprocess_8h_a03f1e005ab8c5fe7ab197a0153f1d5ec}{irproc\+\_\+version}} (void)
+\begin{DoxyCompactList}\small\item\em Get current libirprocess library version. \end{DoxyCompactList}\item 
+DLLEXPORT void \mbox{\hyperlink{libirprocess_8h_acef2c9f27d4ee7d2910c01ad83e4ff30}{irproc\+\_\+log\+\_\+register}} (\mbox{\hyperlink{libirprocess_8h_a1d05cad2eddf6f18ef1ca3683c6f3c92}{irproc\+\_\+log\+\_\+level\+\_\+t}} log\+\_\+level)
+\begin{DoxyCompactList}\small\item\em Register log function depend on log level. \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57a}{irproc\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirprocess_8h_adc9645420303ab3c3df8f180d57249e4}{rotate\+\_\+left\+\_\+90}} (uint8\+\_\+t $\ast$src, \mbox{\hyperlink{struct_image_res__t}{Image\+Res\+\_\+t}} image\+\_\+res, \mbox{\hyperlink{libirprocess_8h_a52fd30261619bc0807381861b64c1244}{irproc\+\_\+src\+\_\+fmt\+\_\+t}} input\+\_\+fmt, uint8\+\_\+t $\ast$dst)
+\begin{DoxyCompactList}\small\item\em Rotate the frame left 90 degree. \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57a}{irproc\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirprocess_8h_ad0468d58b1305489cfc91e10cc7078a5}{rotate\+\_\+right\+\_\+90}} (uint8\+\_\+t $\ast$src, \mbox{\hyperlink{struct_image_res__t}{Image\+Res\+\_\+t}} image\+\_\+res, \mbox{\hyperlink{libirprocess_8h_a52fd30261619bc0807381861b64c1244}{irproc\+\_\+src\+\_\+fmt\+\_\+t}} input\+\_\+fmt, uint8\+\_\+t $\ast$dst)
+\begin{DoxyCompactList}\small\item\em Rotate the frame right 90 degree. \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57a}{irproc\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirprocess_8h_a382e703887e28fc5261bb7d82bd3fe1c}{rotate\+\_\+180}} (uint8\+\_\+t $\ast$src, \mbox{\hyperlink{struct_image_res__t}{Image\+Res\+\_\+t}} image\+\_\+res, \mbox{\hyperlink{libirprocess_8h_a52fd30261619bc0807381861b64c1244}{irproc\+\_\+src\+\_\+fmt\+\_\+t}} input\+\_\+fmt, uint8\+\_\+t $\ast$dst)
+\begin{DoxyCompactList}\small\item\em Rotate the frame 180 degree. \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57a}{irproc\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirprocess_8h_ae8c5c1c16b575a6e3b153e501de2d962}{mirror}} (uint8\+\_\+t $\ast$src, \mbox{\hyperlink{struct_image_res__t}{Image\+Res\+\_\+t}} image\+\_\+res, \mbox{\hyperlink{libirprocess_8h_a52fd30261619bc0807381861b64c1244}{irproc\+\_\+src\+\_\+fmt\+\_\+t}} input\+\_\+fmt, uint8\+\_\+t $\ast$dst)
+\begin{DoxyCompactList}\small\item\em Mirror the frame (left and right side) \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57a}{irproc\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirprocess_8h_a501cbd2ad09a2ecc6536f487a2b093a2}{flip}} (uint8\+\_\+t $\ast$src, \mbox{\hyperlink{struct_image_res__t}{Image\+Res\+\_\+t}} image\+\_\+res, \mbox{\hyperlink{libirprocess_8h_a52fd30261619bc0807381861b64c1244}{irproc\+\_\+src\+\_\+fmt\+\_\+t}} input\+\_\+fmt, uint8\+\_\+t $\ast$dst)
+\begin{DoxyCompactList}\small\item\em Flip the frame (up and down side) \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57a}{irproc\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirprocess_8h_a8bfd96567998614046efde475e974d82}{y14\+\_\+map\+\_\+to\+\_\+yuyv\+\_\+pseudocolor}} (uint16\+\_\+t $\ast$image\+\_\+y14, uint32\+\_\+t pix\+\_\+num, \mbox{\hyperlink{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7}{irproc\+\_\+color\+\_\+mode\+\_\+t}} color\+\_\+mode, uint8\+\_\+t $\ast$out\+\_\+yuv)
+\begin{DoxyCompactList}\small\item\em Y14 array map to YUV422 pseudocolor array. \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57a}{irproc\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirprocess_8h_aeab0b9765be1abdaeb907eba11728b61}{y14\+\_\+image\+\_\+spatial\+\_\+noise\+\_\+reduction}} (uint16\+\_\+t $\ast$src, \mbox{\hyperlink{struct_image_res__t}{Image\+Res\+\_\+t}} image\+\_\+res, uint16\+\_\+t $\ast$dst)
+\begin{DoxyCompactList}\small\item\em Do spatial noise reduction to the y14 image. \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57a}{irproc\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirprocess_8h_a2558debdb4c3dc6809484e447b5589f8}{y14\+\_\+image\+\_\+enhance}} (uint16\+\_\+t $\ast$src, \mbox{\hyperlink{struct_image_res__t}{Image\+Res\+\_\+t}} image\+\_\+res, \mbox{\hyperlink{struct_img_enhance_param__t}{Img\+Enhance\+Param\+\_\+t}} img\+\_\+enhance\+\_\+param, uint16\+\_\+t $\ast$dst)
+\begin{DoxyCompactList}\small\item\em Enhance the y14 image. \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57a}{irproc\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirprocess_8h_a016bb3a56b10c91aefdf81807f9b1d83}{gain\+\_\+switch\+\_\+detect}} (uint16\+\_\+t $\ast$temp\+\_\+data, \mbox{\hyperlink{struct_image_res__t}{Image\+Res\+\_\+t}} image\+\_\+res, \mbox{\hyperlink{struct_gain_switch_param__t}{Gain\+Switch\+Param\+\_\+t}} gain\+\_\+switch\+\_\+param, uint8\+\_\+t $\ast$detect\+\_\+flag)
+\begin{DoxyCompactList}\small\item\em detect gain switch status \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57a}{irproc\+\_\+error\+\_\+t}} \mbox{\hyperlink{libirprocess_8h_a955442d5049f615e52542889fc2259c6}{overexposure\+\_\+detect}} (uint16\+\_\+t $\ast$temp\+\_\+data, \mbox{\hyperlink{struct_image_res__t}{Image\+Res\+\_\+t}} image\+\_\+res, int over\+\_\+temp\+\_\+data, float pixel\+\_\+above\+\_\+prop, uint8\+\_\+t $\ast$detect\+\_\+flag)
+\begin{DoxyCompactList}\small\item\em detect overexposure status \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+void($\ast$ \mbox{\hyperlink{libirprocess_8h_a53a7e081cc78b32d0b902b869282ff35}{irproc\+\_\+debug\+\_\+print}} )(const char $\ast$fmt,...)
+\item 
+void($\ast$ \mbox{\hyperlink{libirprocess_8h_a3337e097efe333d3e3bc6db0acd5301e}{irproc\+\_\+error\+\_\+print}} )(const char $\ast$fmt,...)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7}\label{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7}} 
+\index{libirprocess.h@{libirprocess.h}!irproc\_color\_mode\_t@{irproc\_color\_mode\_t}}
+\index{irproc\_color\_mode\_t@{irproc\_color\_mode\_t}!libirprocess.h@{libirprocess.h}}
+\doxysubsubsection{\texorpdfstring{irproc\_color\_mode\_t}{irproc\_color\_mode\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7}{irproc\+\_\+color\+\_\+mode\+\_\+t}}}
+
+
+
+Psudocolor mode types in libirprocess library. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRPROC\_COLOR\_MODE\_1@{IRPROC\_COLOR\_MODE\_1}!libirprocess.h@{libirprocess.h}}\index{libirprocess.h@{libirprocess.h}!IRPROC\_COLOR\_MODE\_1@{IRPROC\_COLOR\_MODE\_1}}}\mbox{\Hypertarget{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a1b975894125f44091b6f4da70ee618ab}\label{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a1b975894125f44091b6f4da70ee618ab}} 
+IRPROC\+\_\+\+COLOR\+\_\+\+MODE\+\_\+1&white hot \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRPROC\_COLOR\_MODE\_2@{IRPROC\_COLOR\_MODE\_2}!libirprocess.h@{libirprocess.h}}\index{libirprocess.h@{libirprocess.h}!IRPROC\_COLOR\_MODE\_2@{IRPROC\_COLOR\_MODE\_2}}}\mbox{\Hypertarget{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a40228404e45cb23cc4608f87509b2916}\label{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a40228404e45cb23cc4608f87509b2916}} 
+IRPROC\+\_\+\+COLOR\+\_\+\+MODE\+\_\+2&reserved \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRPROC\_COLOR\_MODE\_3@{IRPROC\_COLOR\_MODE\_3}!libirprocess.h@{libirprocess.h}}\index{libirprocess.h@{libirprocess.h}!IRPROC\_COLOR\_MODE\_3@{IRPROC\_COLOR\_MODE\_3}}}\mbox{\Hypertarget{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a6ca07c46d1acd2a805532579fc24e069}\label{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a6ca07c46d1acd2a805532579fc24e069}} 
+IRPROC\+\_\+\+COLOR\+\_\+\+MODE\+\_\+3&color3 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRPROC\_COLOR\_MODE\_4@{IRPROC\_COLOR\_MODE\_4}!libirprocess.h@{libirprocess.h}}\index{libirprocess.h@{libirprocess.h}!IRPROC\_COLOR\_MODE\_4@{IRPROC\_COLOR\_MODE\_4}}}\mbox{\Hypertarget{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a48cf07ee05168e8d1826175e67e3106b}\label{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a48cf07ee05168e8d1826175e67e3106b}} 
+IRPROC\+\_\+\+COLOR\+\_\+\+MODE\+\_\+4&color4 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRPROC\_COLOR\_MODE\_5@{IRPROC\_COLOR\_MODE\_5}!libirprocess.h@{libirprocess.h}}\index{libirprocess.h@{libirprocess.h}!IRPROC\_COLOR\_MODE\_5@{IRPROC\_COLOR\_MODE\_5}}}\mbox{\Hypertarget{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7ae17b3ee0ae0a0dea4b73927b3b10d74d}\label{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7ae17b3ee0ae0a0dea4b73927b3b10d74d}} 
+IRPROC\+\_\+\+COLOR\+\_\+\+MODE\+\_\+5&color5 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRPROC\_COLOR\_MODE\_6@{IRPROC\_COLOR\_MODE\_6}!libirprocess.h@{libirprocess.h}}\index{libirprocess.h@{libirprocess.h}!IRPROC\_COLOR\_MODE\_6@{IRPROC\_COLOR\_MODE\_6}}}\mbox{\Hypertarget{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a0e84eb799bea47fae136b7a3e24117b8}\label{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a0e84eb799bea47fae136b7a3e24117b8}} 
+IRPROC\+\_\+\+COLOR\+\_\+\+MODE\+\_\+6&color6 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRPROC\_COLOR\_MODE\_7@{IRPROC\_COLOR\_MODE\_7}!libirprocess.h@{libirprocess.h}}\index{libirprocess.h@{libirprocess.h}!IRPROC\_COLOR\_MODE\_7@{IRPROC\_COLOR\_MODE\_7}}}\mbox{\Hypertarget{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a245c4e212e28a8337116b241c74b288c}\label{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a245c4e212e28a8337116b241c74b288c}} 
+IRPROC\+\_\+\+COLOR\+\_\+\+MODE\+\_\+7&color7 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRPROC\_COLOR\_MODE\_8@{IRPROC\_COLOR\_MODE\_8}!libirprocess.h@{libirprocess.h}}\index{libirprocess.h@{libirprocess.h}!IRPROC\_COLOR\_MODE\_8@{IRPROC\_COLOR\_MODE\_8}}}\mbox{\Hypertarget{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7ade63712946cdcb2b23d41f6d619bca33}\label{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7ade63712946cdcb2b23d41f6d619bca33}} 
+IRPROC\+\_\+\+COLOR\+\_\+\+MODE\+\_\+8&color8 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRPROC\_COLOR\_MODE\_9@{IRPROC\_COLOR\_MODE\_9}!libirprocess.h@{libirprocess.h}}\index{libirprocess.h@{libirprocess.h}!IRPROC\_COLOR\_MODE\_9@{IRPROC\_COLOR\_MODE\_9}}}\mbox{\Hypertarget{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a9bddb6647c1a5fc857edeca64e307de1}\label{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a9bddb6647c1a5fc857edeca64e307de1}} 
+IRPROC\+\_\+\+COLOR\+\_\+\+MODE\+\_\+9&color9 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRPROC\_COLOR\_MODE\_10@{IRPROC\_COLOR\_MODE\_10}!libirprocess.h@{libirprocess.h}}\index{libirprocess.h@{libirprocess.h}!IRPROC\_COLOR\_MODE\_10@{IRPROC\_COLOR\_MODE\_10}}}\mbox{\Hypertarget{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a764e3ec8b7feaa7a77efdc3c42eed4dc}\label{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a764e3ec8b7feaa7a77efdc3c42eed4dc}} 
+IRPROC\+\_\+\+COLOR\+\_\+\+MODE\+\_\+10&color10 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRPROC\_COLOR\_MODE\_11@{IRPROC\_COLOR\_MODE\_11}!libirprocess.h@{libirprocess.h}}\index{libirprocess.h@{libirprocess.h}!IRPROC\_COLOR\_MODE\_11@{IRPROC\_COLOR\_MODE\_11}}}\mbox{\Hypertarget{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a227f5c90993312dc51625f166b8ed9fe}\label{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a227f5c90993312dc51625f166b8ed9fe}} 
+IRPROC\+\_\+\+COLOR\+\_\+\+MODE\+\_\+11&black hot \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRPROC\_COLOR\_MODE\_12@{IRPROC\_COLOR\_MODE\_12}!libirprocess.h@{libirprocess.h}}\index{libirprocess.h@{libirprocess.h}!IRPROC\_COLOR\_MODE\_12@{IRPROC\_COLOR\_MODE\_12}}}\mbox{\Hypertarget{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7afc37e6dd5558a4ccf88591975cb07359}\label{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7afc37e6dd5558a4ccf88591975cb07359}} 
+IRPROC\+\_\+\+COLOR\+\_\+\+MODE\+\_\+12&reserved \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRPROC\_COLOR\_MODE\_13@{IRPROC\_COLOR\_MODE\_13}!libirprocess.h@{libirprocess.h}}\index{libirprocess.h@{libirprocess.h}!IRPROC\_COLOR\_MODE\_13@{IRPROC\_COLOR\_MODE\_13}}}\mbox{\Hypertarget{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7ad78fb542f9094edede4fa580c7ee1266}\label{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7ad78fb542f9094edede4fa580c7ee1266}} 
+IRPROC\+\_\+\+COLOR\+\_\+\+MODE\+\_\+13&reserved \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRPROC\_COLOR\_MODE\_14@{IRPROC\_COLOR\_MODE\_14}!libirprocess.h@{libirprocess.h}}\index{libirprocess.h@{libirprocess.h}!IRPROC\_COLOR\_MODE\_14@{IRPROC\_COLOR\_MODE\_14}}}\mbox{\Hypertarget{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a81b07cbdd4ffda980e58e231b86356f5}\label{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a81b07cbdd4ffda980e58e231b86356f5}} 
+IRPROC\+\_\+\+COLOR\+\_\+\+MODE\+\_\+14&reserved \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRPROC\_COLOR\_MODE\_15@{IRPROC\_COLOR\_MODE\_15}!libirprocess.h@{libirprocess.h}}\index{libirprocess.h@{libirprocess.h}!IRPROC\_COLOR\_MODE\_15@{IRPROC\_COLOR\_MODE\_15}}}\mbox{\Hypertarget{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7ae12e5b7a810365a6e96f79fd9957f58e}\label{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7ae12e5b7a810365a6e96f79fd9957f58e}} 
+IRPROC\+\_\+\+COLOR\+\_\+\+MODE\+\_\+15&reserved \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRPROC\_COLOR\_MODE\_16@{IRPROC\_COLOR\_MODE\_16}!libirprocess.h@{libirprocess.h}}\index{libirprocess.h@{libirprocess.h}!IRPROC\_COLOR\_MODE\_16@{IRPROC\_COLOR\_MODE\_16}}}\mbox{\Hypertarget{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a7843c629d3f2e463a3f7c892d259db8d}\label{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a7843c629d3f2e463a3f7c892d259db8d}} 
+IRPROC\+\_\+\+COLOR\+\_\+\+MODE\+\_\+16&user reserved \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRPROC\_COLOR\_MODE\_17@{IRPROC\_COLOR\_MODE\_17}!libirprocess.h@{libirprocess.h}}\index{libirprocess.h@{libirprocess.h}!IRPROC\_COLOR\_MODE\_17@{IRPROC\_COLOR\_MODE\_17}}}\mbox{\Hypertarget{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a50161f09d50c7826bd2872bbda81a158}\label{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a50161f09d50c7826bd2872bbda81a158}} 
+IRPROC\+\_\+\+COLOR\+\_\+\+MODE\+\_\+17&user reserved \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRPROC\_COLOR\_MODE\_18@{IRPROC\_COLOR\_MODE\_18}!libirprocess.h@{libirprocess.h}}\index{libirprocess.h@{libirprocess.h}!IRPROC\_COLOR\_MODE\_18@{IRPROC\_COLOR\_MODE\_18}}}\mbox{\Hypertarget{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a1eb068fcdd14ad2cd99351754c174558}\label{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a1eb068fcdd14ad2cd99351754c174558}} 
+IRPROC\+\_\+\+COLOR\+\_\+\+MODE\+\_\+18&user reserved \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRPROC\_COLOR\_MODE\_19@{IRPROC\_COLOR\_MODE\_19}!libirprocess.h@{libirprocess.h}}\index{libirprocess.h@{libirprocess.h}!IRPROC\_COLOR\_MODE\_19@{IRPROC\_COLOR\_MODE\_19}}}\mbox{\Hypertarget{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a91444df5343ae54ad23924c5c1133773}\label{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a91444df5343ae54ad23924c5c1133773}} 
+IRPROC\+\_\+\+COLOR\+\_\+\+MODE\+\_\+19&user reserved \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRPROC\_COLOR\_MODE\_20@{IRPROC\_COLOR\_MODE\_20}!libirprocess.h@{libirprocess.h}}\index{libirprocess.h@{libirprocess.h}!IRPROC\_COLOR\_MODE\_20@{IRPROC\_COLOR\_MODE\_20}}}\mbox{\Hypertarget{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a961abbeb1251654677d1bcd4e4d08b58}\label{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7a961abbeb1251654677d1bcd4e4d08b58}} 
+IRPROC\+\_\+\+COLOR\+\_\+\+MODE\+\_\+20&user reserved \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57a}\label{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57a}} 
+\index{libirprocess.h@{libirprocess.h}!irproc\_error\_t@{irproc\_error\_t}}
+\index{irproc\_error\_t@{irproc\_error\_t}!libirprocess.h@{libirprocess.h}}
+\doxysubsubsection{\texorpdfstring{irproc\_error\_t}{irproc\_error\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57a}{irproc\+\_\+error\+\_\+t}}}
+
+
+
+Error type in libirprocess library. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRPROC\_SUCCESS@{IRPROC\_SUCCESS}!libirprocess.h@{libirprocess.h}}\index{libirprocess.h@{libirprocess.h}!IRPROC\_SUCCESS@{IRPROC\_SUCCESS}}}\mbox{\Hypertarget{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57aa04259c1240d2bb2e37b43471925875ee}\label{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57aa04259c1240d2bb2e37b43471925875ee}} 
+IRPROC\+\_\+\+SUCCESS&function excute success \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRPROC\_ERROR\_PARAM@{IRPROC\_ERROR\_PARAM}!libirprocess.h@{libirprocess.h}}\index{libirprocess.h@{libirprocess.h}!IRPROC\_ERROR\_PARAM@{IRPROC\_ERROR\_PARAM}}}\mbox{\Hypertarget{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57aa05bbc320655f2deb7a01ea9c01b684b9}\label{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57aa05bbc320655f2deb7a01ea9c01b684b9}} 
+IRPROC\+\_\+\+ERROR\+\_\+\+PARAM&parameter is invalid \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRPROC\_FMT\_NOT\_SUPPORTED@{IRPROC\_FMT\_NOT\_SUPPORTED}!libirprocess.h@{libirprocess.h}}\index{libirprocess.h@{libirprocess.h}!IRPROC\_FMT\_NOT\_SUPPORTED@{IRPROC\_FMT\_NOT\_SUPPORTED}}}\mbox{\Hypertarget{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57aadd3befe7d09aff06cdc64ebf703c468d}\label{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57aadd3befe7d09aff06cdc64ebf703c468d}} 
+IRPROC\+\_\+\+FMT\+\_\+\+NOT\+\_\+\+SUPPORTED&image format not supported \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRPROC\_MALLOC\_FAILED@{IRPROC\_MALLOC\_FAILED}!libirprocess.h@{libirprocess.h}}\index{libirprocess.h@{libirprocess.h}!IRPROC\_MALLOC\_FAILED@{IRPROC\_MALLOC\_FAILED}}}\mbox{\Hypertarget{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57aa878231398b64fa3b1fdd4cc037e3125d}\label{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57aa878231398b64fa3b1fdd4cc037e3125d}} 
+IRPROC\+\_\+\+MALLOC\+\_\+\+FAILED&alloc memory failed \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRPROC\_ERROR\_SOURCE@{IRPROC\_ERROR\_SOURCE}!libirprocess.h@{libirprocess.h}}\index{libirprocess.h@{libirprocess.h}!IRPROC\_ERROR\_SOURCE@{IRPROC\_ERROR\_SOURCE}}}\mbox{\Hypertarget{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57aacad5d42f3a8e3661dc6fed65c8598b83}\label{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57aacad5d42f3a8e3661dc6fed65c8598b83}} 
+IRPROC\+\_\+\+ERROR\+\_\+\+SOURCE&error source image \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{libirprocess_8h_a1d05cad2eddf6f18ef1ca3683c6f3c92}\label{libirprocess_8h_a1d05cad2eddf6f18ef1ca3683c6f3c92}} 
+\index{libirprocess.h@{libirprocess.h}!irproc\_log\_level\_t@{irproc\_log\_level\_t}}
+\index{irproc\_log\_level\_t@{irproc\_log\_level\_t}!libirprocess.h@{libirprocess.h}}
+\doxysubsubsection{\texorpdfstring{irproc\_log\_level\_t}{irproc\_log\_level\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{libirprocess_8h_a1d05cad2eddf6f18ef1ca3683c6f3c92}{irproc\+\_\+log\+\_\+level\+\_\+t}}}
+
+
+
+Log level definition in libirprocess library. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRPROC\_LOG\_DEBUG@{IRPROC\_LOG\_DEBUG}!libirprocess.h@{libirprocess.h}}\index{libirprocess.h@{libirprocess.h}!IRPROC\_LOG\_DEBUG@{IRPROC\_LOG\_DEBUG}}}\mbox{\Hypertarget{libirprocess_8h_a1d05cad2eddf6f18ef1ca3683c6f3c92a4d64afd742a5752421a89c92ac7ead7f}\label{libirprocess_8h_a1d05cad2eddf6f18ef1ca3683c6f3c92a4d64afd742a5752421a89c92ac7ead7f}} 
+IRPROC\+\_\+\+LOG\+\_\+\+DEBUG&print debug and error infomation \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRPROC\_LOG\_ERROR@{IRPROC\_LOG\_ERROR}!libirprocess.h@{libirprocess.h}}\index{libirprocess.h@{libirprocess.h}!IRPROC\_LOG\_ERROR@{IRPROC\_LOG\_ERROR}}}\mbox{\Hypertarget{libirprocess_8h_a1d05cad2eddf6f18ef1ca3683c6f3c92a60d43736c5ed955ef15cd25c419a69db}\label{libirprocess_8h_a1d05cad2eddf6f18ef1ca3683c6f3c92a60d43736c5ed955ef15cd25c419a69db}} 
+IRPROC\+\_\+\+LOG\+\_\+\+ERROR&only print error infomation \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRPROC\_LOG\_NO\_PRINT@{IRPROC\_LOG\_NO\_PRINT}!libirprocess.h@{libirprocess.h}}\index{libirprocess.h@{libirprocess.h}!IRPROC\_LOG\_NO\_PRINT@{IRPROC\_LOG\_NO\_PRINT}}}\mbox{\Hypertarget{libirprocess_8h_a1d05cad2eddf6f18ef1ca3683c6f3c92a9b60606387bbbc2d260c83f4656a9103}\label{libirprocess_8h_a1d05cad2eddf6f18ef1ca3683c6f3c92a9b60606387bbbc2d260c83f4656a9103}} 
+IRPROC\+\_\+\+LOG\+\_\+\+NO\+\_\+\+PRINT&don\textquotesingle{}t print debug and error infomation \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{libirprocess_8h_a52fd30261619bc0807381861b64c1244}\label{libirprocess_8h_a52fd30261619bc0807381861b64c1244}} 
+\index{libirprocess.h@{libirprocess.h}!irproc\_src\_fmt\_t@{irproc\_src\_fmt\_t}}
+\index{irproc\_src\_fmt\_t@{irproc\_src\_fmt\_t}!libirprocess.h@{libirprocess.h}}
+\doxysubsubsection{\texorpdfstring{irproc\_src\_fmt\_t}{irproc\_src\_fmt\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{libirprocess_8h_a52fd30261619bc0807381861b64c1244}{irproc\+\_\+src\+\_\+fmt\+\_\+t}}}
+
+
+
+Supported image format in libirprocess library. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRPROC\_SRC\_FMT\_Y14@{IRPROC\_SRC\_FMT\_Y14}!libirprocess.h@{libirprocess.h}}\index{libirprocess.h@{libirprocess.h}!IRPROC\_SRC\_FMT\_Y14@{IRPROC\_SRC\_FMT\_Y14}}}\mbox{\Hypertarget{libirprocess_8h_a52fd30261619bc0807381861b64c1244ab0ee89c5645ad12e535857b04886e458}\label{libirprocess_8h_a52fd30261619bc0807381861b64c1244ab0ee89c5645ad12e535857b04886e458}} 
+IRPROC\+\_\+\+SRC\+\_\+\+FMT\+\_\+\+Y14&Y14 format of source image. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRPROC\_SRC\_FMT\_YUV422@{IRPROC\_SRC\_FMT\_YUV422}!libirprocess.h@{libirprocess.h}}\index{libirprocess.h@{libirprocess.h}!IRPROC\_SRC\_FMT\_YUV422@{IRPROC\_SRC\_FMT\_YUV422}}}\mbox{\Hypertarget{libirprocess_8h_a52fd30261619bc0807381861b64c1244af5d8dfa7564abf12bfdb919b8f3bfe69}\label{libirprocess_8h_a52fd30261619bc0807381861b64c1244af5d8dfa7564abf12bfdb919b8f3bfe69}} 
+IRPROC\+\_\+\+SRC\+\_\+\+FMT\+\_\+\+YUV422&YUV422 format of source image. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRPROC\_SRC\_FMT\_YUV444@{IRPROC\_SRC\_FMT\_YUV444}!libirprocess.h@{libirprocess.h}}\index{libirprocess.h@{libirprocess.h}!IRPROC\_SRC\_FMT\_YUV444@{IRPROC\_SRC\_FMT\_YUV444}}}\mbox{\Hypertarget{libirprocess_8h_a52fd30261619bc0807381861b64c1244a250ee291a5209aef24b11649b51cc561}\label{libirprocess_8h_a52fd30261619bc0807381861b64c1244a250ee291a5209aef24b11649b51cc561}} 
+IRPROC\+\_\+\+SRC\+\_\+\+FMT\+\_\+\+YUV444&YUV444 format of source image. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRPROC\_SRC\_FMT\_RGB888@{IRPROC\_SRC\_FMT\_RGB888}!libirprocess.h@{libirprocess.h}}\index{libirprocess.h@{libirprocess.h}!IRPROC\_SRC\_FMT\_RGB888@{IRPROC\_SRC\_FMT\_RGB888}}}\mbox{\Hypertarget{libirprocess_8h_a52fd30261619bc0807381861b64c1244a598410a2bb3da05c3a9b57df55db8334}\label{libirprocess_8h_a52fd30261619bc0807381861b64c1244a598410a2bb3da05c3a9b57df55db8334}} 
+IRPROC\+\_\+\+SRC\+\_\+\+FMT\+\_\+\+RGB888&RGB888 format of source image. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IRPROC\_SRC\_FMT\_BGR888@{IRPROC\_SRC\_FMT\_BGR888}!libirprocess.h@{libirprocess.h}}\index{libirprocess.h@{libirprocess.h}!IRPROC\_SRC\_FMT\_BGR888@{IRPROC\_SRC\_FMT\_BGR888}}}\mbox{\Hypertarget{libirprocess_8h_a52fd30261619bc0807381861b64c1244a897e98da349df54d2333205057deb6f0}\label{libirprocess_8h_a52fd30261619bc0807381861b64c1244a897e98da349df54d2333205057deb6f0}} 
+IRPROC\+\_\+\+SRC\+\_\+\+FMT\+\_\+\+BGR888&BGR888 format of source image. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{libirprocess_8h_a501cbd2ad09a2ecc6536f487a2b093a2}\label{libirprocess_8h_a501cbd2ad09a2ecc6536f487a2b093a2}} 
+\index{libirprocess.h@{libirprocess.h}!flip@{flip}}
+\index{flip@{flip}!libirprocess.h@{libirprocess.h}}
+\doxysubsubsection{\texorpdfstring{flip()}{flip()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57a}{irproc\+\_\+error\+\_\+t}} flip (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{src,  }\item[{\mbox{\hyperlink{struct_image_res__t}{Image\+Res\+\_\+t}}}]{image\+\_\+res,  }\item[{\mbox{\hyperlink{libirprocess_8h_a52fd30261619bc0807381861b64c1244}{irproc\+\_\+src\+\_\+fmt\+\_\+t}}}]{input\+\_\+fmt,  }\item[{uint8\+\_\+t $\ast$}]{dst }\end{DoxyParamCaption})}
+
+
+
+Flip the frame (up and down side) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em src} & source image frame \\
+\hline
+\mbox{\texttt{ in}}  & {\em image\+\_\+res} & imput image resulution, detail see \mbox{\hyperlink{struct_image_res__t}{Image\+Res\+\_\+t}} \\
+\hline
+\mbox{\texttt{ in}}  & {\em input\+\_\+fmt} & imput image format, detail see irproc\+\_\+src\+\_\+fmt\+\_\+t \\
+\hline
+\mbox{\texttt{ out}}  & {\em dst} & destination frame after mirror\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irproc\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirprocess_8h_a016bb3a56b10c91aefdf81807f9b1d83}\label{libirprocess_8h_a016bb3a56b10c91aefdf81807f9b1d83}} 
+\index{libirprocess.h@{libirprocess.h}!gain\_switch\_detect@{gain\_switch\_detect}}
+\index{gain\_switch\_detect@{gain\_switch\_detect}!libirprocess.h@{libirprocess.h}}
+\doxysubsubsection{\texorpdfstring{gain\_switch\_detect()}{gain\_switch\_detect()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57a}{irproc\+\_\+error\+\_\+t}} gain\+\_\+switch\+\_\+detect (\begin{DoxyParamCaption}\item[{uint16\+\_\+t $\ast$}]{temp\+\_\+data,  }\item[{\mbox{\hyperlink{struct_image_res__t}{Image\+Res\+\_\+t}}}]{image\+\_\+res,  }\item[{\mbox{\hyperlink{struct_gain_switch_param__t}{Gain\+Switch\+Param\+\_\+t}}}]{gain\+\_\+switch\+\_\+param,  }\item[{uint8\+\_\+t $\ast$}]{detect\+\_\+flag }\end{DoxyParamCaption})}
+
+
+
+detect gain switch status 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em temp\+\_\+data} & temperature frame data \\
+\hline
+\mbox{\texttt{ in}}  & {\em image\+\_\+res} & image resolution \\
+\hline
+\mbox{\texttt{ in}}  & {\em gain\+\_\+switch\+\_\+param} & gain switch parameters \\
+\hline
+\mbox{\texttt{ out}}  & {\em detect\+\_\+flag} & detect flag status. 0\+:normal, 1\+:high-\/\texorpdfstring{$>$}{>}low gain, 2\+:low-\/\texorpdfstring{$>$}{>}high gain\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irproc\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirprocess_8h_acef2c9f27d4ee7d2910c01ad83e4ff30}\label{libirprocess_8h_acef2c9f27d4ee7d2910c01ad83e4ff30}} 
+\index{libirprocess.h@{libirprocess.h}!irproc\_log\_register@{irproc\_log\_register}}
+\index{irproc\_log\_register@{irproc\_log\_register}!libirprocess.h@{libirprocess.h}}
+\doxysubsubsection{\texorpdfstring{irproc\_log\_register()}{irproc\_log\_register()}}
+{\footnotesize\ttfamily DLLEXPORT void irproc\+\_\+log\+\_\+register (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{libirprocess_8h_a1d05cad2eddf6f18ef1ca3683c6f3c92}{irproc\+\_\+log\+\_\+level\+\_\+t}}}]{log\+\_\+level }\end{DoxyParamCaption})}
+
+
+
+Register log function depend on log level. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em log\+\_\+level} & detail see irproc\+\_\+log\+\_\+level\+\_\+t \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{libirprocess_8h_a03f1e005ab8c5fe7ab197a0153f1d5ec}\label{libirprocess_8h_a03f1e005ab8c5fe7ab197a0153f1d5ec}} 
+\index{libirprocess.h@{libirprocess.h}!irproc\_version@{irproc\_version}}
+\index{irproc\_version@{irproc\_version}!libirprocess.h@{libirprocess.h}}
+\doxysubsubsection{\texorpdfstring{irproc\_version()}{irproc\_version()}}
+{\footnotesize\ttfamily DLLEXPORT char $\ast$ irproc\+\_\+version (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get current libirprocess library version. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em NULL} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+current libirprocess library version 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirprocess_8h_ae8c5c1c16b575a6e3b153e501de2d962}\label{libirprocess_8h_ae8c5c1c16b575a6e3b153e501de2d962}} 
+\index{libirprocess.h@{libirprocess.h}!mirror@{mirror}}
+\index{mirror@{mirror}!libirprocess.h@{libirprocess.h}}
+\doxysubsubsection{\texorpdfstring{mirror()}{mirror()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57a}{irproc\+\_\+error\+\_\+t}} mirror (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{src,  }\item[{\mbox{\hyperlink{struct_image_res__t}{Image\+Res\+\_\+t}}}]{image\+\_\+res,  }\item[{\mbox{\hyperlink{libirprocess_8h_a52fd30261619bc0807381861b64c1244}{irproc\+\_\+src\+\_\+fmt\+\_\+t}}}]{input\+\_\+fmt,  }\item[{uint8\+\_\+t $\ast$}]{dst }\end{DoxyParamCaption})}
+
+
+
+Mirror the frame (left and right side) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em src} & source image frame \\
+\hline
+\mbox{\texttt{ in}}  & {\em image\+\_\+res} & imput image resulution, detail see \mbox{\hyperlink{struct_image_res__t}{Image\+Res\+\_\+t}} \\
+\hline
+\mbox{\texttt{ in}}  & {\em input\+\_\+fmt} & imput image format, detail see irproc\+\_\+src\+\_\+fmt\+\_\+t \\
+\hline
+\mbox{\texttt{ out}}  & {\em dst} & destination frame after mirror\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irproc\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirprocess_8h_a955442d5049f615e52542889fc2259c6}\label{libirprocess_8h_a955442d5049f615e52542889fc2259c6}} 
+\index{libirprocess.h@{libirprocess.h}!overexposure\_detect@{overexposure\_detect}}
+\index{overexposure\_detect@{overexposure\_detect}!libirprocess.h@{libirprocess.h}}
+\doxysubsubsection{\texorpdfstring{overexposure\_detect()}{overexposure\_detect()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57a}{irproc\+\_\+error\+\_\+t}} overexposure\+\_\+detect (\begin{DoxyParamCaption}\item[{uint16\+\_\+t $\ast$}]{temp\+\_\+data,  }\item[{\mbox{\hyperlink{struct_image_res__t}{Image\+Res\+\_\+t}}}]{image\+\_\+res,  }\item[{int}]{over\+\_\+temp\+\_\+data,  }\item[{float}]{pixel\+\_\+above\+\_\+prop,  }\item[{uint8\+\_\+t $\ast$}]{detect\+\_\+flag }\end{DoxyParamCaption})}
+
+
+
+detect overexposure status 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em temp\+\_\+data} & temperature frame data, in y14 format \\
+\hline
+\mbox{\texttt{ in}}  & {\em image\+\_\+res} & image resolution \\
+\hline
+\mbox{\texttt{ in}}  & {\em over\+\_\+temp\+\_\+data} & overexposure\textquotesingle{}s temperature value data, in y14 format \\
+\hline
+\mbox{\texttt{ in}}  & {\em pixel\+\_\+above\+\_\+prop} & above over\+\_\+temp\textquotesingle{}s proportion \\
+\hline
+\mbox{\texttt{ out}}  & {\em detect\+\_\+flag} & detect flag status. 0\+:noraml, 1\+:overexposure\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irproc\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirprocess_8h_a382e703887e28fc5261bb7d82bd3fe1c}\label{libirprocess_8h_a382e703887e28fc5261bb7d82bd3fe1c}} 
+\index{libirprocess.h@{libirprocess.h}!rotate\_180@{rotate\_180}}
+\index{rotate\_180@{rotate\_180}!libirprocess.h@{libirprocess.h}}
+\doxysubsubsection{\texorpdfstring{rotate\_180()}{rotate\_180()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57a}{irproc\+\_\+error\+\_\+t}} rotate\+\_\+180 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{src,  }\item[{\mbox{\hyperlink{struct_image_res__t}{Image\+Res\+\_\+t}}}]{image\+\_\+res,  }\item[{\mbox{\hyperlink{libirprocess_8h_a52fd30261619bc0807381861b64c1244}{irproc\+\_\+src\+\_\+fmt\+\_\+t}}}]{input\+\_\+fmt,  }\item[{uint8\+\_\+t $\ast$}]{dst }\end{DoxyParamCaption})}
+
+
+
+Rotate the frame 180 degree. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em src} & source image frame \\
+\hline
+\mbox{\texttt{ in}}  & {\em image\+\_\+res} & imput image resulution, detail see \mbox{\hyperlink{struct_image_res__t}{Image\+Res\+\_\+t}} \\
+\hline
+\mbox{\texttt{ in}}  & {\em input\+\_\+fmt} & imput image format, detail see irproc\+\_\+src\+\_\+fmt\+\_\+t \\
+\hline
+\mbox{\texttt{ out}}  & {\em dst} & destination frame after rotate\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irproc\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirprocess_8h_adc9645420303ab3c3df8f180d57249e4}\label{libirprocess_8h_adc9645420303ab3c3df8f180d57249e4}} 
+\index{libirprocess.h@{libirprocess.h}!rotate\_left\_90@{rotate\_left\_90}}
+\index{rotate\_left\_90@{rotate\_left\_90}!libirprocess.h@{libirprocess.h}}
+\doxysubsubsection{\texorpdfstring{rotate\_left\_90()}{rotate\_left\_90()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57a}{irproc\+\_\+error\+\_\+t}} rotate\+\_\+left\+\_\+90 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{src,  }\item[{\mbox{\hyperlink{struct_image_res__t}{Image\+Res\+\_\+t}}}]{image\+\_\+res,  }\item[{\mbox{\hyperlink{libirprocess_8h_a52fd30261619bc0807381861b64c1244}{irproc\+\_\+src\+\_\+fmt\+\_\+t}}}]{input\+\_\+fmt,  }\item[{uint8\+\_\+t $\ast$}]{dst }\end{DoxyParamCaption})}
+
+
+
+Rotate the frame left 90 degree. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em src} & source image frame \\
+\hline
+\mbox{\texttt{ in}}  & {\em image\+\_\+res} & imput image resulution, detail see \mbox{\hyperlink{struct_image_res__t}{Image\+Res\+\_\+t}} \\
+\hline
+\mbox{\texttt{ in}}  & {\em input\+\_\+fmt} & imput image format, detail see irproc\+\_\+src\+\_\+fmt\+\_\+t \\
+\hline
+\mbox{\texttt{ out}}  & {\em dst} & destination frame after rotate\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irproc\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirprocess_8h_ad0468d58b1305489cfc91e10cc7078a5}\label{libirprocess_8h_ad0468d58b1305489cfc91e10cc7078a5}} 
+\index{libirprocess.h@{libirprocess.h}!rotate\_right\_90@{rotate\_right\_90}}
+\index{rotate\_right\_90@{rotate\_right\_90}!libirprocess.h@{libirprocess.h}}
+\doxysubsubsection{\texorpdfstring{rotate\_right\_90()}{rotate\_right\_90()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57a}{irproc\+\_\+error\+\_\+t}} rotate\+\_\+right\+\_\+90 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{src,  }\item[{\mbox{\hyperlink{struct_image_res__t}{Image\+Res\+\_\+t}}}]{image\+\_\+res,  }\item[{\mbox{\hyperlink{libirprocess_8h_a52fd30261619bc0807381861b64c1244}{irproc\+\_\+src\+\_\+fmt\+\_\+t}}}]{input\+\_\+fmt,  }\item[{uint8\+\_\+t $\ast$}]{dst }\end{DoxyParamCaption})}
+
+
+
+Rotate the frame right 90 degree. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em src} & source image frame \\
+\hline
+\mbox{\texttt{ in}}  & {\em image\+\_\+res} & imput image resulution, detail see \mbox{\hyperlink{struct_image_res__t}{Image\+Res\+\_\+t}} \\
+\hline
+\mbox{\texttt{ in}}  & {\em input\+\_\+fmt} & imput image format, detail see irproc\+\_\+src\+\_\+fmt\+\_\+t \\
+\hline
+\mbox{\texttt{ out}}  & {\em dst} & destination frame after rotate\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irproc\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirprocess_8h_a2558debdb4c3dc6809484e447b5589f8}\label{libirprocess_8h_a2558debdb4c3dc6809484e447b5589f8}} 
+\index{libirprocess.h@{libirprocess.h}!y14\_image\_enhance@{y14\_image\_enhance}}
+\index{y14\_image\_enhance@{y14\_image\_enhance}!libirprocess.h@{libirprocess.h}}
+\doxysubsubsection{\texorpdfstring{y14\_image\_enhance()}{y14\_image\_enhance()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57a}{irproc\+\_\+error\+\_\+t}} y14\+\_\+image\+\_\+enhance (\begin{DoxyParamCaption}\item[{uint16\+\_\+t $\ast$}]{src,  }\item[{\mbox{\hyperlink{struct_image_res__t}{Image\+Res\+\_\+t}}}]{image\+\_\+res,  }\item[{\mbox{\hyperlink{struct_img_enhance_param__t}{Img\+Enhance\+Param\+\_\+t}}}]{img\+\_\+enhance\+\_\+param,  }\item[{uint16\+\_\+t $\ast$}]{dst }\end{DoxyParamCaption})}
+
+
+
+Enhance the y14 image. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em src} & source image frame with Y14 format \\
+\hline
+\mbox{\texttt{ in}}  & {\em image\+\_\+res} & image resolution \\
+\hline
+\mbox{\texttt{ in}}  & {\em img\+\_\+enhance\+\_\+param} & enhance parameters \\
+\hline
+\mbox{\texttt{ out}}  & {\em dst} & output frame after enhance\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irproc\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirprocess_8h_aeab0b9765be1abdaeb907eba11728b61}\label{libirprocess_8h_aeab0b9765be1abdaeb907eba11728b61}} 
+\index{libirprocess.h@{libirprocess.h}!y14\_image\_spatial\_noise\_reduction@{y14\_image\_spatial\_noise\_reduction}}
+\index{y14\_image\_spatial\_noise\_reduction@{y14\_image\_spatial\_noise\_reduction}!libirprocess.h@{libirprocess.h}}
+\doxysubsubsection{\texorpdfstring{y14\_image\_spatial\_noise\_reduction()}{y14\_image\_spatial\_noise\_reduction()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57a}{irproc\+\_\+error\+\_\+t}} y14\+\_\+image\+\_\+spatial\+\_\+noise\+\_\+reduction (\begin{DoxyParamCaption}\item[{uint16\+\_\+t $\ast$}]{src,  }\item[{\mbox{\hyperlink{struct_image_res__t}{Image\+Res\+\_\+t}}}]{image\+\_\+res,  }\item[{uint16\+\_\+t $\ast$}]{dst }\end{DoxyParamCaption})}
+
+
+
+Do spatial noise reduction to the y14 image. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em src} & source image frame with Y14 format \\
+\hline
+\mbox{\texttt{ in}}  & {\em image\+\_\+res} & image resolution \\
+\hline
+\mbox{\texttt{ out}}  & {\em dst} & output frame after snr\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irproc\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libirprocess_8h_a8bfd96567998614046efde475e974d82}\label{libirprocess_8h_a8bfd96567998614046efde475e974d82}} 
+\index{libirprocess.h@{libirprocess.h}!y14\_map\_to\_yuyv\_pseudocolor@{y14\_map\_to\_yuyv\_pseudocolor}}
+\index{y14\_map\_to\_yuyv\_pseudocolor@{y14\_map\_to\_yuyv\_pseudocolor}!libirprocess.h@{libirprocess.h}}
+\doxysubsubsection{\texorpdfstring{y14\_map\_to\_yuyv\_pseudocolor()}{y14\_map\_to\_yuyv\_pseudocolor()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{libirprocess_8h_a1fa2dfd35d72aed8978f9976ff72b57a}{irproc\+\_\+error\+\_\+t}} y14\+\_\+map\+\_\+to\+\_\+yuyv\+\_\+pseudocolor (\begin{DoxyParamCaption}\item[{uint16\+\_\+t $\ast$}]{image\+\_\+y14,  }\item[{uint32\+\_\+t}]{pix\+\_\+num,  }\item[{\mbox{\hyperlink{libirprocess_8h_aa55629569f49cf5d3c5f337083f294e7}{irproc\+\_\+color\+\_\+mode\+\_\+t}}}]{color\+\_\+mode,  }\item[{uint8\+\_\+t $\ast$}]{out\+\_\+yuv }\end{DoxyParamCaption})}
+
+
+
+Y14 array map to YUV422 pseudocolor array. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em image\+\_\+y14} & source image frame with Y14 format \\
+\hline
+\mbox{\texttt{ in}}  & {\em pix\+\_\+num} & pixel number of whole frame \\
+\hline
+\mbox{\texttt{ in}}  & {\em color\+\_\+mode} & pseudo color mode type \\
+\hline
+\mbox{\texttt{ out}}  & {\em out\+\_\+yuv} & destination frame after pseudo color mapping\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see irproc\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{libirprocess_8h_a53a7e081cc78b32d0b902b869282ff35}\label{libirprocess_8h_a53a7e081cc78b32d0b902b869282ff35}} 
+\index{libirprocess.h@{libirprocess.h}!irproc\_debug\_print@{irproc\_debug\_print}}
+\index{irproc\_debug\_print@{irproc\_debug\_print}!libirprocess.h@{libirprocess.h}}
+\doxysubsubsection{\texorpdfstring{irproc\_debug\_print}{irproc\_debug\_print}}
+{\footnotesize\ttfamily void($\ast$ irproc\+\_\+debug\+\_\+print) (const char $\ast$fmt,...) (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{libirprocess_8h_a3337e097efe333d3e3bc6db0acd5301e}\label{libirprocess_8h_a3337e097efe333d3e3bc6db0acd5301e}} 
+\index{libirprocess.h@{libirprocess.h}!irproc\_error\_print@{irproc\_error\_print}}
+\index{irproc\_error\_print@{irproc\_error\_print}!libirprocess.h@{libirprocess.h}}
+\doxysubsubsection{\texorpdfstring{irproc\_error\_print}{irproc\_error\_print}}
+{\footnotesize\ttfamily void($\ast$ irproc\+\_\+error\+\_\+print) (const char $\ast$fmt,...) (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+

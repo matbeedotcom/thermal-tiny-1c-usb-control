@@ -1,0 +1,127 @@
+\hypertarget{test__cmd_8h}{}\doxysection{test\+\_\+cmd.\+h File Reference}
+\label{test__cmd_8h}\index{test\_cmd.h@{test\_cmd.h}}
+{\ttfamily \#include \char`\"{}falcon\+\_\+cmd.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+DLLEXPORT \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390}{iruvc\+\_\+error\+\_\+t}} \mbox{\hyperlink{test__cmd_8h_ac7496ebf8d8b038f3a81eac71ced4662}{ddr\+\_\+read}} (uint32\+\_\+t addr, uint16\+\_\+t wlen, uint8\+\_\+t $\ast$pby\+Data)
+\begin{DoxyCompactList}\small\item\em Read ddr data from ISP chip. \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390}{iruvc\+\_\+error\+\_\+t}} \mbox{\hyperlink{test__cmd_8h_a05d6e5e91fcb069691c76b0141df602c}{ddr\+\_\+write}} (uint32\+\_\+t addr, uint16\+\_\+t wlen, uint8\+\_\+t $\ast$pby\+Data)
+\begin{DoxyCompactList}\small\item\em Write ddr data to ISP chip. \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390}{iruvc\+\_\+error\+\_\+t}} \mbox{\hyperlink{test__cmd_8h_abfce52b979fa873f2a41dc7a264358e8}{spi\+\_\+dma\+\_\+read}} (uint32\+\_\+t dw\+Addr1, uint32\+\_\+t dw\+Addr2, uint16\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em read flash to memory with DMA \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390}{iruvc\+\_\+error\+\_\+t}} \mbox{\hyperlink{test__cmd_8h_af68bc2cb924b3675f149515139319112}{spi\+\_\+dma\+\_\+write}} (uint32\+\_\+t dw\+Addr1, uint32\+\_\+t dw\+Addr2, uint16\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em write memory to flash with DMA \end{DoxyCompactList}\item 
+DLLEXPORT \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390}{iruvc\+\_\+error\+\_\+t}} \mbox{\hyperlink{test__cmd_8h_a17b76e119e2ae87ee36c81e2f2f50ccb}{add\+\_\+pseudo\+\_\+dead\+\_\+pixel}} (uint16\+\_\+t x, uint16\+\_\+t y)
+\begin{DoxyCompactList}\small\item\em add pseudo dead pixel \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{test__cmd_8h_a17b76e119e2ae87ee36c81e2f2f50ccb}\label{test__cmd_8h_a17b76e119e2ae87ee36c81e2f2f50ccb}} 
+\index{test\_cmd.h@{test\_cmd.h}!add\_pseudo\_dead\_pixel@{add\_pseudo\_dead\_pixel}}
+\index{add\_pseudo\_dead\_pixel@{add\_pseudo\_dead\_pixel}!test\_cmd.h@{test\_cmd.h}}
+\doxysubsubsection{\texorpdfstring{add\_pseudo\_dead\_pixel()}{add\_pseudo\_dead\_pixel()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390}{iruvc\+\_\+error\+\_\+t}} add\+\_\+pseudo\+\_\+dead\+\_\+pixel (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y }\end{DoxyParamCaption})}
+
+
+
+add pseudo dead pixel 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em x} & horizontal coordinate,start from 1, must satisfy x=4$\ast$n+2; \\
+\hline
+\mbox{\texttt{ in}}  & {\em y} & vertical coordinate,start from 1\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see iruvc\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{test__cmd_8h_ac7496ebf8d8b038f3a81eac71ced4662}\label{test__cmd_8h_ac7496ebf8d8b038f3a81eac71ced4662}} 
+\index{test\_cmd.h@{test\_cmd.h}!ddr\_read@{ddr\_read}}
+\index{ddr\_read@{ddr\_read}!test\_cmd.h@{test\_cmd.h}}
+\doxysubsubsection{\texorpdfstring{ddr\_read()}{ddr\_read()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390}{iruvc\+\_\+error\+\_\+t}} ddr\+\_\+read (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{addr,  }\item[{uint16\+\_\+t}]{wlen,  }\item[{uint8\+\_\+t $\ast$}]{pby\+Data }\end{DoxyParamCaption})}
+
+
+
+Read ddr data from ISP chip. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em memory} & address \\
+\hline
+\mbox{\texttt{ in}}  & {\em data} & length \\
+\hline
+\mbox{\texttt{ out}}  & {\em the} & data read from memory\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see iruvc\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{test__cmd_8h_a05d6e5e91fcb069691c76b0141df602c}\label{test__cmd_8h_a05d6e5e91fcb069691c76b0141df602c}} 
+\index{test\_cmd.h@{test\_cmd.h}!ddr\_write@{ddr\_write}}
+\index{ddr\_write@{ddr\_write}!test\_cmd.h@{test\_cmd.h}}
+\doxysubsubsection{\texorpdfstring{ddr\_write()}{ddr\_write()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390}{iruvc\+\_\+error\+\_\+t}} ddr\+\_\+write (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{addr,  }\item[{uint16\+\_\+t}]{wlen,  }\item[{uint8\+\_\+t $\ast$}]{pby\+Data }\end{DoxyParamCaption})}
+
+
+
+Write ddr data to ISP chip. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em memory} & address \\
+\hline
+\mbox{\texttt{ in}}  & {\em data} & length \\
+\hline
+\mbox{\texttt{ in}}  & {\em the} & data write to memory\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see iruvc\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{test__cmd_8h_abfce52b979fa873f2a41dc7a264358e8}\label{test__cmd_8h_abfce52b979fa873f2a41dc7a264358e8}} 
+\index{test\_cmd.h@{test\_cmd.h}!spi\_dma\_read@{spi\_dma\_read}}
+\index{spi\_dma\_read@{spi\_dma\_read}!test\_cmd.h@{test\_cmd.h}}
+\doxysubsubsection{\texorpdfstring{spi\_dma\_read()}{spi\_dma\_read()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390}{iruvc\+\_\+error\+\_\+t}} spi\+\_\+dma\+\_\+read (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{dw\+Addr1,  }\item[{uint32\+\_\+t}]{dw\+Addr2,  }\item[{uint16\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+
+
+read flash to memory with DMA 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em dw\+Addr1} & dest address in memory \\
+\hline
+\mbox{\texttt{ in}}  & {\em dw\+Addr2} & src address in flash \\
+\hline
+\mbox{\texttt{ in}}  & {\em len} & data length\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see iruvc\+\_\+error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{test__cmd_8h_af68bc2cb924b3675f149515139319112}\label{test__cmd_8h_af68bc2cb924b3675f149515139319112}} 
+\index{test\_cmd.h@{test\_cmd.h}!spi\_dma\_write@{spi\_dma\_write}}
+\index{spi\_dma\_write@{spi\_dma\_write}!test\_cmd.h@{test\_cmd.h}}
+\doxysubsubsection{\texorpdfstring{spi\_dma\_write()}{spi\_dma\_write()}}
+{\footnotesize\ttfamily DLLEXPORT \mbox{\hyperlink{all__config_8h_aaeb013a130bdccf32eaf935de3813390}{iruvc\+\_\+error\+\_\+t}} spi\+\_\+dma\+\_\+write (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{dw\+Addr1,  }\item[{uint32\+\_\+t}]{dw\+Addr2,  }\item[{uint16\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+
+
+write memory to flash with DMA 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em dw\+Addr1} & src address in memory \\
+\hline
+\mbox{\texttt{ in}}  & {\em dw\+Addr2} & dest address in flash \\
+\hline
+\mbox{\texttt{ in}}  & {\em len} & data length\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+see iruvc\+\_\+error\+\_\+t 
+\end{DoxyReturn}
